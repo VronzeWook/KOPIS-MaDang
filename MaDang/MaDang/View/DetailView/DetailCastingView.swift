@@ -53,7 +53,7 @@ struct DetailCastingView: View {
                 .padding(.top, 40)
         }
         
-        .background(.black)
+        .background(.nineBlack)
     }
 }
 

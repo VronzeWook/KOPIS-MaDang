@@ -23,10 +23,10 @@ struct DetailReviewView: View {
                 }, label: {
                     HStack {
                         Image(systemName: "text.bubble.fill")
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.nineYellow)
                         Text("Write")
                             .font(.system(size: 14))
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.nineYellow)
                     }
                 })
                 
@@ -98,9 +98,9 @@ struct DetailReviewView: View {
                     }, label: {
                         HStack(spacing: 2) {
                             Image(systemName: isLike ? "hand.thumbsup.fill" : "hand.thumbsup")
-                                .foregroundStyle(.yellow)
+                                .foregroundStyle(.nineYellow)
                             Text("\(likeCount)")
-                                .foregroundStyle(.yellow)
+                                .foregroundStyle(.nineYellow)
                                 .font(.system(size: 14))
                         }
                     })
@@ -119,7 +119,7 @@ struct DetailReviewView: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16) // 둥근 사각형 배경 추가
-                    .fill(Color(.darkGray)) // 배경 색상 설정
+                    .fill(.nineDarkGray) // 배경 색상 설정
             )
             
         }
@@ -134,12 +134,12 @@ struct DetailReviewView: View {
             HStack(spacing: 1) {
                 ForEach(0..<5) { index in
                     self.starType(for: index)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.nineYellow)
                 }
                 
                 Text(String(format: "%.1f", rating))
                     .font(.system(size: 14))
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(.nineYellow)
             }
         }
         
@@ -189,10 +189,10 @@ struct DetailReviewView: View {
                     }, label: {
                         Text("All")
                             .font(.system(size: 16))
-                            .foregroundStyle(selection == 0 ? .black : .white)
+                            .foregroundStyle(selection == 0 ? .nineBlack : .white)
                             .padding(.horizontal, 32)
                             .padding(.vertical, 8)
-                            .background(selection == 0 ? .yellow : .gray)
+                            .background(selection == 0 ? .nineYellow : .nineDarkGray)
                             .cornerRadius(55)
                     })
                     
@@ -201,10 +201,10 @@ struct DetailReviewView: View {
                     }, label: {
                         Text("🇺🇸 USA")
                             .font(.system(size: 16))
-                            .foregroundStyle(selection == 1 ? .black : .white)
+                            .foregroundStyle(selection == 1 ? .nineBlack : .white)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(selection == 1 ? .yellow : .gray)
+                            .background(selection == 1 ? .nineYellow : .nineDarkGray)
                             .cornerRadius(55)
                     })
                     
@@ -213,10 +213,10 @@ struct DetailReviewView: View {
                     }, label: {
                         Text("🇨🇳 CHN")
                             .font(.system(size: 16))
-                            .foregroundStyle(selection == 2 ? .black : .white)
+                            .foregroundStyle(selection == 2 ? .nineBlack : .white)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(selection == 2 ? .yellow : .gray)
+                            .background(selection == 2 ? .nineYellow : .nineDarkGray)
                             .cornerRadius(55)
                     })
                     
@@ -225,10 +225,10 @@ struct DetailReviewView: View {
                     }, label: {
                         Text("🇯🇵 JAN")
                             .font(.system(size: 16))
-                            .foregroundStyle(selection == 3 ? .black : .white)
+                            .foregroundStyle(selection == 3 ? .nineBlack : .white)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(selection == 3 ? .yellow : .gray)
+                            .background(selection == 3 ? .nineYellow : .nineDarkGray)
                             .cornerRadius(55)                    })
                     
                 }

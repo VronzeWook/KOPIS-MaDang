@@ -13,6 +13,17 @@ struct DetailImageView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
+                
+                HStack {
+                    Text("Details")
+                        .font(.system(size: 22))
+                        .foregroundStyle(.white)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                }
+                .padding(.bottom, 16)
+                
                 // 첫 번째 이미지
                 Image("kopisTestImage")
                     .resizable()
@@ -45,8 +56,8 @@ struct DetailImageView: View {
                                 }
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
-                                .background(.black.opacity(0.6))
-                                .foregroundStyle(.yellow)
+                                .background(.nineDarkGray)
+                                .foregroundStyle(.nineYellow)
                                 .cornerRadius(55)
                             }
                             .padding(.bottom, 120),
@@ -77,8 +88,8 @@ struct DetailImageView: View {
                             }
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(.black.opacity(0.6))
-                            .foregroundStyle(.yellow)
+                            .background(.nineDarkGray)
+                            .foregroundStyle(.nineYellow)
                             .cornerRadius(55)
                         }
                         .padding(.top, 20)
@@ -92,8 +103,10 @@ struct DetailImageView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal, 5)
                     .padding(.bottom, 20)
+                    .padding(.vertical, 16)
             }
         }
+        .background(.nineBlack)
     }
 }
 

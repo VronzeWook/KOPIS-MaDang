@@ -16,7 +16,7 @@ struct DetailView: View {
                 DetailReviewView()
                 DetailCastingView(numberOfCircles: 7)
         }
-        .background(.black)
+        .background(.nineBlack)
     }
 }
 

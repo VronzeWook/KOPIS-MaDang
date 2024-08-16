@@ -14,7 +14,7 @@ struct DetailInfoView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: .infinity) // 화면 너비에 맞추기
-                                    .background(Color.black)
+                                    .background(.nineBlack)
                 
                 Text("A Store Selling Time")
                     .fontWeight(.bold)
@@ -24,13 +24,13 @@ struct DetailInfoView: View {
                 
                 Text("Location")
                     .font(.system(size: 14))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.nineYellow)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 10)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(Color.yellow, lineWidth: 2)
+                            .stroke(.nineYellow, lineWidth: 2)
                     )
                 
                 Text("Bupyeong Arts Center Dalnuri Theater")
@@ -47,13 +47,13 @@ struct DetailInfoView: View {
 
                 Text("Period")
                     .font(.system(size: 14))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.nineYellow)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 10)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(Color.yellow, lineWidth: 2)
+                            .stroke(.nineYellow, lineWidth: 2)
                     )
                 
                 Text("Oct. 4, 2024(Fri.) ~ Oct. 19, 2024(Sat.)")
@@ -70,13 +70,13 @@ struct DetailInfoView: View {
                 
                 Text("Time")
                     .font(.system(size: 14))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.nineYellow)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 10)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(Color.yellow, lineWidth: 2)
+                            .stroke(.nineYellow, lineWidth: 2)
                     )
                 
                 Text("Fri. 19:30 / Sat. 18:00")
@@ -93,13 +93,13 @@ struct DetailInfoView: View {
                 
                 Text("Age")
                     .font(.system(size: 14))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.nineYellow)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 10)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(Color.yellow, lineWidth: 2)
+                            .stroke(.nineYellow, lineWidth: 2)
                     )
                 
                 Text("Suitable for ages 7 and older")
@@ -116,13 +116,13 @@ struct DetailInfoView: View {
                 
                 Text("Price")
                     .font(.system(size: 14))
-                    .foregroundColor(.yellow)
+                    .foregroundColor(.nineYellow)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 10)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(Color.yellow, lineWidth: 2)
+                            .stroke(.nineYellow, lineWidth: 2)
                     )
                 
                 Text("All seats ₩30,000 / $21.99")
