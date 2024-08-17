@@ -26,6 +26,14 @@
 		33388DA32C6F921400DECDC3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DA22C6F921400DECDC3 /* Genre.swift */; };
 		33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DB32C6FCC5F00DECDC3 /* Country.swift */; };
 		33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DB72C6FCE0700DECDC3 /* AttractionType.swift */; };
+		33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DBC2C7085C300DECDC3 /* MainView.swift */; };
+		33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DBE2C70864700DECDC3 /* WhatIsNewView.swift */; };
+		33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DC02C70865A00DECDC3 /* PopularityRankingView.swift */; };
+		33388DC32C70866600DECDC3 /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DC22C70866600DECDC3 /* GenreView.swift */; };
+		33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DC42C70867500DECDC3 /* BestReviewView.swift */; };
+		33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DC62C7086E600DECDC3 /* BestReviewRow.swift */; };
+		33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */; };
+		33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +57,14 @@
 		33388DA22C6F921400DECDC3 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		33388DB32C6FCC5F00DECDC3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		33388DB72C6FCE0700DECDC3 /* AttractionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionType.swift; sourceTree = "<group>"; };
+		33388DBC2C7085C300DECDC3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		33388DBE2C70864700DECDC3 /* WhatIsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatIsNewView.swift; sourceTree = "<group>"; };
+		33388DC02C70865A00DECDC3 /* PopularityRankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityRankingView.swift; sourceTree = "<group>"; };
+		33388DC22C70866600DECDC3 /* GenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
+		33388DC42C70867500DECDC3 /* BestReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewView.swift; sourceTree = "<group>"; };
+		33388DC62C7086E600DECDC3 /* BestReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewRow.swift; sourceTree = "<group>"; };
+		33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
+		33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
+				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
 			);
 			path = View;
@@ -182,6 +199,21 @@
 				33388D952C6F88F900DECDC3 /* Performance.swift */,
 			);
 			path = Structs;
+			sourceTree = "<group>";
+		};
+		33388DBB2C7085A700DECDC3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				33388DBC2C7085C300DECDC3 /* MainView.swift */,
+				33388DBE2C70864700DECDC3 /* WhatIsNewView.swift */,
+				33388DC02C70865A00DECDC3 /* PopularityRankingView.swift */,
+				33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */,
+				33388DC22C70866600DECDC3 /* GenreView.swift */,
+				33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */,
+				33388DC42C70867500DECDC3 /* BestReviewView.swift */,
+				33388DC62C7086E600DECDC3 /* BestReviewRow.swift */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,19 +287,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
+				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
+				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
 				33388D8F2C6F369300DECDC3 /* DetailCastingView.swift in Sources */,
+				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
 				33388D8B2C6F367300DECDC3 /* DetailReviewView.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
+				33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */,
+				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
 				33388DA32C6F921400DECDC3 /* Genre.swift in Sources */,
+				33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */,
+				33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */,
 				33388D9C2C6F8FB300DECDC3 /* TouristInfo.swift in Sources */,
 				33388D962C6F88F900DECDC3 /* Performance.swift in Sources */,
 				33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
+				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
 				33388D842C6F363800DECDC3 /* DetailView.swift in Sources */,
 				33388D702C6F2C0A00DECDC3 /* MaDangApp.swift in Sources */,

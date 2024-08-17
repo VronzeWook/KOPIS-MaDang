@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AttractionType {
+enum AttractionType: String, Codable, CaseIterable {
     case restaurant
     case cafe
     case touristSpot
