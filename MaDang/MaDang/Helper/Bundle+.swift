@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension Bundle {
+    var apiKey: String? {
+        return infoDictionary?["KOPIS_API_KEY"] as? String
+    }
+}
