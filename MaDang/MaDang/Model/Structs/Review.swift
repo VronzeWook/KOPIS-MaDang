@@ -16,6 +16,6 @@ struct Review {
     var createdDate: Date
     var content: String
     var likeCount: Int
-    var starRating: StarRating
+    var starRating: Double
     var isReported: Bool
 }
