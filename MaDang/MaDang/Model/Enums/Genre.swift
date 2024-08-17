@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Genre {
+enum Genre: String, Codable, CaseIterable {
+    case All
     case Theater
     case Musical
     case Classic
