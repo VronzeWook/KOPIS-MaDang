@@ -199,7 +199,9 @@ extension KopisNetworkingManager {
                 area: db.area,
                 posterUrlList: [db.poster], // 포스터 URL을 배열로 초기화
                 reviewList: [], // 리뷰 목록 초기화
-                actorList: [] // 배우 목록 초기화
+                actorList: [], // 배우 목록 초기화
+                likeCount: 0,
+                starRating: 0
             )
         }
         
