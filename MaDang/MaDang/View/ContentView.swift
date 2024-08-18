@@ -40,6 +40,29 @@ struct ContentView: View {
             }, label: {
                 Text("Button")
             })
+            
+            Button(action: {
+                shared.fetchPerform(id: "PF132236") { result in
+                    switch result {
+                    case .success(let perform) :
+                        print("success")
+                        print("-----------------------------")
+                        print(" perform id :\(perform.id)")
+                        print(" perform title :\(perform.title)")
+                        print(" perform genre : \(perform.genre)")
+                        print(" perform startdate : \(perform.startDate)")
+                        print("-----------------------------")
+                        
+
+                    case .failure(_):
+                         print("failure")
+                     }
+                 }
+
+            }, label: {
+                Text("Button")
+            })
+            
         }
         .padding()
     }

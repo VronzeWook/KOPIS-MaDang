@@ -42,6 +42,8 @@
 		33388DF62C720F3300DECDC3 /* GPTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DF52C720F3300DECDC3 /* GPTManager.swift */; };
 		33388DF92C720F5700DECDC3 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DF82C720F5700DECDC3 /* ChatGPTSwift */; };
 		33388DFB2C720F5700DECDC3 /* SampleApp in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DFA2C720F5700DECDC3 /* SampleApp */; };
+		33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFC2C72149E00DECDC3 /* DataManager.swift */; };
+		33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		33388DEA2C713C6900DECDC3 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		33388DEC2C713E5C00DECDC3 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		33388DF52C720F3300DECDC3 /* GPTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTManager.swift; sourceTree = "<group>"; };
+		33388DFC2C72149E00DECDC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailXMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DE52C71305B00DECDC3 /* Constants.swift */,
 				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
+				33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			children = (
 				33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */,
 				33388DF52C720F3300DECDC3 /* GPTManager.swift */,
+				33388DFC2C72149E00DECDC3 /* DataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
+				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
@@ -329,6 +336,7 @@
 				33388D8B2C6F367300DECDC3 /* DetailReviewView.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
+				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
 				33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */,
 				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,

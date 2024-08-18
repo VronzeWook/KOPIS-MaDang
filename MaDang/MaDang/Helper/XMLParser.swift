@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - PerformList parser
 final class MyXMLParser: NSObject, XMLParserDelegate {
     private var currentElement: String?
     private var currentDB: DB?
