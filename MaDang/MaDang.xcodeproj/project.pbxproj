@@ -34,6 +34,11 @@
 		33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DC62C7086E600DECDC3 /* BestReviewRow.swift */; };
 		33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */; };
 		33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */; };
+		33388DE22C712E3800DECDC3 /* KopisNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */; };
+		33388DE62C71305B00DECDC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DE52C71305B00DECDC3 /* Constants.swift */; };
+		33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DE82C71324100DECDC3 /* Bundle+.swift */; };
+		33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEA2C713C6900DECDC3 /* ApiModel.swift */; };
+		33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEC2C713E5C00DECDC3 /* XMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,13 @@
 		33388DC62C7086E600DECDC3 /* BestReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewRow.swift; sourceTree = "<group>"; };
 		33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModalView.swift; sourceTree = "<group>"; };
+		33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KopisNetworkingManager.swift; sourceTree = "<group>"; };
+		33388DE32C712E6100DECDC3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		33388DE42C712EF700DECDC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		33388DE52C71305B00DECDC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		33388DE82C71324100DECDC3 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		33388DEA2C713C6900DECDC3 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		33388DEC2C713E5C00DECDC3 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,13 +109,15 @@
 		33388D6E2C6F2C0A00DECDC3 /* MaDang */ = {
 			isa = PBXGroup;
 			children = (
+				33388DE42C712EF700DECDC3 /* Info.plist */,
+				33388DE02C712E0E00DECDC3 /* Manager */,
 				33388D7D2C6F34BA00DECDC3 /* App */,
 				33388D932C6F866800DECDC3 /* Model */,
 				33388D812C6F352700DECDC3 /* Helper */,
-				33388D802C6F352000DECDC3 /* Manager */,
 				33388D7F2C6F351400DECDC3 /* Resources */,
 				33388D7E2C6F34E200DECDC3 /* View */,
 				33388D752C6F2C0C00DECDC3 /* Preview Content */,
+				33388DE32C712E6100DECDC3 /* Config.xcconfig */,
 			);
 			path = MaDang;
 			sourceTree = "<group>";
@@ -142,17 +156,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		33388D802C6F352000DECDC3 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		33388D812C6F352700DECDC3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				33388DE82C71324100DECDC3 /* Bundle+.swift */,
 				33388D902C6F635300DECDC3 /* Color+.swift */,
+				33388DE52C71305B00DECDC3 /* Constants.swift */,
+				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 			children = (
 				33388DA12C6F920200DECDC3 /* Structs */,
 				33388DA02C6F91FB00DECDC3 /* Enums */,
+				33388DEA2C713C6900DECDC3 /* ApiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +225,14 @@
 				33388DC62C7086E600DECDC3 /* BestReviewRow.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		33388DE02C712E0E00DECDC3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
+				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
@@ -298,6 +318,8 @@
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
 				33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */,
 				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,
+				33388DE22C712E3800DECDC3 /* KopisNetworkingManager.swift in Sources */,
+				33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */,
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
 				33388DA32C6F921400DECDC3 /* Genre.swift in Sources */,
@@ -311,6 +333,8 @@
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
 				33388D842C6F363800DECDC3 /* DetailView.swift in Sources */,
 				33388D702C6F2C0A00DECDC3 /* MaDangApp.swift in Sources */,
+				33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */,
+				33388DE62C71305B00DECDC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +343,7 @@
 /* Begin XCBuildConfiguration section */
 		33388D782C6F2C0C00DECDC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33388DE32C712E6100DECDC3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -382,6 +407,7 @@
 		};
 		33388D792C6F2C0C00DECDC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33388DE32C712E6100DECDC3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -438,6 +464,7 @@
 		};
 		33388D7B2C6F2C0C00DECDC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33388DE32C712E6100DECDC3 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -446,6 +473,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MaDang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MaDang/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -466,6 +494,7 @@
 		};
 		33388D7C2C6F2C0C00DECDC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33388DE32C712E6100DECDC3 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +503,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MaDang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MaDang/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
