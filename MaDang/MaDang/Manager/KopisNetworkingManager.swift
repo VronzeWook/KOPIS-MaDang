@@ -222,6 +222,9 @@ extension KopisNetworkingManager {
                            salesVolume: 0,
                            posterUrlList: detailDB.imageUrls,
                            reviewList: [],
-                           actorList: [])
+                           actorList: [],
+                           likeCount: 0,
+                           starRating: 0
+        )
     }
 }
