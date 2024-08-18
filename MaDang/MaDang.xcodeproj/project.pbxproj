@@ -39,6 +39,13 @@
 		33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DE82C71324100DECDC3 /* Bundle+.swift */; };
 		33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEA2C713C6900DECDC3 /* ApiModel.swift */; };
 		33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEC2C713E5C00DECDC3 /* XMLParser.swift */; };
+		4665F0D82C7208E5007867FB /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D72C7208E5007867FB /* RankingView.swift */; };
+		4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D92C7209A0007867FB /* LogoHeader.swift */; };
+		4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DB2C720BAB007867FB /* Ranking.swift */; };
+		4665F0DE2C720CCD007867FB /* RankingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DD2C720CCD007867FB /* RankingModalView.swift */; };
+		4665F0E02C721AB9007867FB /* LangSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DF2C721AB9007867FB /* LangSelectionView.swift */; };
+		4665F0E22C721C22007867FB /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0E12C721C22007867FB /* RankingListView.swift */; };
+		4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0E72C721F68007867FB /* RankingListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +84,13 @@
 		33388DE82C71324100DECDC3 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		33388DEA2C713C6900DECDC3 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		33388DEC2C713E5C00DECDC3 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		4665F0D92C7209A0007867FB /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
+		4665F0DB2C720BAB007867FB /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
+		4665F0DD2C720CCD007867FB /* RankingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModalView.swift; sourceTree = "<group>"; };
+		4665F0DF2C721AB9007867FB /* LangSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangSelectionView.swift; sourceTree = "<group>"; };
+		4665F0E12C721C22007867FB /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
+		4665F0E72C721F68007867FB /* RankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +155,7 @@
 		33388D7E2C6F34E200DECDC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4665F0D62C7208D2007867FB /* RankingView */,
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
@@ -196,6 +211,7 @@
 				33388DA22C6F921400DECDC3 /* Genre.swift */,
 				33388DB32C6FCC5F00DECDC3 /* Country.swift */,
 				33388DB72C6FCE0700DECDC3 /* AttractionType.swift */,
+				4665F0DB2C720BAB007867FB /* Ranking.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -233,6 +249,19 @@
 				33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		4665F0D62C7208D2007867FB /* RankingView */ = {
+			isa = PBXGroup;
+			children = (
+				4665F0D72C7208E5007867FB /* RankingView.swift */,
+				4665F0D92C7209A0007867FB /* LogoHeader.swift */,
+				4665F0DD2C720CCD007867FB /* RankingModalView.swift */,
+				4665F0DF2C721AB9007867FB /* LangSelectionView.swift */,
+				4665F0E72C721F68007867FB /* RankingListCell.swift */,
+				4665F0E12C721C22007867FB /* RankingListView.swift */,
+			);
+			path = RankingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,13 +335,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
+				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
+				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
+				4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */,
 				33388D8F2C6F369300DECDC3 /* DetailCastingView.swift in Sources */,
 				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
 				33388D8B2C6F367300DECDC3 /* DetailReviewView.swift in Sources */,
+				4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
@@ -324,10 +357,12 @@
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
 				33388DA32C6F921400DECDC3 /* Genre.swift in Sources */,
 				33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */,
+				4665F0DE2C720CCD007867FB /* RankingModalView.swift in Sources */,
 				33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */,
 				33388D9C2C6F8FB300DECDC3 /* TouristInfo.swift in Sources */,
 				33388D962C6F88F900DECDC3 /* Performance.swift in Sources */,
 				33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */,
+				4665F0D82C7208E5007867FB /* RankingView.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
@@ -335,6 +370,7 @@
 				33388D702C6F2C0A00DECDC3 /* MaDangApp.swift in Sources */,
 				33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */,
 				33388DE62C71305B00DECDC3 /* Constants.swift in Sources */,
+				4665F0E02C721AB9007867FB /* LangSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
