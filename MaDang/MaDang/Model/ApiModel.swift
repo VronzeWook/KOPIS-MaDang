@@ -20,7 +20,7 @@ struct Dbs {
 
 // MARK: - DB
 struct DB {
-    var mt20ID, prfnm, prfpdfrom, prfpdto: String
+    var mt20id, prfnm, prfpdfrom, prfpdto: String
     var fcltynm: String
     var poster: String
     var area, genrenm, openrun, prfstate: String
