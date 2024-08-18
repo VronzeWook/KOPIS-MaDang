@@ -19,10 +19,19 @@ struct ContentView: View {
             Text("Hello, world!")
             
             Button(action: {
-                 shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5, genreCode: "AAAA") { result in
+                shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5, genreCode: Genre.Theater.code) { result in
                      switch result {
-                     case .success(_) :
+                     case .success(let performs) :
                          print("success")
+                         for perform in performs {
+                             print("-----------------------------")
+                             print(" perform id :\(perform.id)")
+                             print(" perform title :\(perform.title)")
+                             print(" perform genre : \(perform.genre)")
+                             print(" perform startdate : \(perform.startDate)")
+                             print("-----------------------------")
+                         }
+                         
                      case .failure(_):
                          print("failure")
                      }

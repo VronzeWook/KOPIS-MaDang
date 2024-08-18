@@ -28,7 +28,14 @@ final class KopisNetworkingManager {
     
     private init() {}
     
-    typealias PerformListNetworkCompletion = (Result<[DB], NetworkError>) -> Void
+    typealias PerformListNetworkCompletion = (Result<[Performance], NetworkError>) -> Void
+    
+    // Date 변환을 위한 DateFormatter 설정
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
     
     // MARK: - URL 생성 후 request 실행
     func fetchPerformList(startDate: String, endDate: String, row: Int, genreCode: String, completion: @escaping PerformListNetworkCompletion) {
@@ -66,8 +73,8 @@ final class KopisNetworkingManager {
             }
             
             //XML parsing
-            if let db = self.parsePerformListXML(safeData) {
-                completion(.success(db))
+            if let performs = self.parsePerformListXML(safeData) {
+                completion(.success(performs))
             } else {
                 completion(.failure(.parseError))
             }
@@ -76,20 +83,60 @@ final class KopisNetworkingManager {
     }
     
     // MARK: - MyXMLParser 객체를 이용해서 XML 파싱
-    private func parsePerformListXML(_ performData: Data) -> [DB]? {
+    private func parsePerformListXML(_ performData: Data) -> [Performance]? {
+        var dbs: [DB] = []
         let parser = XMLParser(data: performData)
         let myParser = MyXMLParser()
         parser.delegate = myParser
         
         if parser.parse() {
             if let parsedData = myParser.getParsedData() {
-                return parsedData.dbs.db // 파싱된 DB 배열을 반환
+                dbs = parsedData.dbs.db // 파싱된 DB 배열을 반환
             }
             
             // 여기서 DTO -> entity 변환
             // 그리고 [DB]?가 아닌 [Performance]?를 반환하도록
+            if let performs = convertDBArrayToPerformanceArray(dbs) {
+                return performs
+            }
         }
-        
         return nil
     }
+}
+
+extension KopisNetworkingManager {
+
+    func convertStringToDate(_ dateString: String) -> Date {
+        return dateFormatter.date(from: dateString) ?? Date() // 기본 값은 현재 날짜
+    }
+
+    // [DB]? 배열을 [Performance]? 배열로 변환하는 함수
+    func convertDBArrayToPerformanceArray(_ dbArray: [DB]?) -> [Performance]? {
+        guard let dbArray = dbArray else { return nil }
+        
+        let performances: [Performance] = dbArray.map { db in
+            return Performance(
+                id: db.mt20id,
+                title: db.prfnm,
+                genre: findGenre(from: db.genrenm), // DB의 genrenm 값을 Genre로 변환
+                startDate: convertStringToDate(db.prfpdfrom),
+                endDate: convertStringToDate(db.prfpdto),
+                showtime: "",
+                ageLimit: "",
+                salesVolume: 0,
+                area: db.area,
+                posterUrlList: [db.poster], // 포스터 URL을 배열로 초기화
+                reviewList: [], // 리뷰 목록 초기화
+                actorList: [] // 배우 목록 초기화
+            )
+        }
+        
+        return performances
+    }
+    
+    func findGenre(from genrenm: String) -> Genre {
+        return Genre(rawValue: genrenm) ?? .All
+    }
+    
+
 }
