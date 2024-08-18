@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailReviewView: View {
+    @Binding var perform: Performance
+    
     var body: some View {
         VStack{
             HStack {
@@ -240,5 +242,5 @@ struct DetailReviewView: View {
 }
 
 #Preview {
-    DetailReviewView()
+    DetailReviewView(perform: .constant(Performance.performList[0]))
 }

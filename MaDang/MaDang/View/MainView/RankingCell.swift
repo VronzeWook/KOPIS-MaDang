@@ -9,9 +9,8 @@ import SwiftUI
 
 struct RankingCell: View {
     
-    let title: String
     let rank: Int
-    let imageUrl: String
+    @Binding var perform: Performance
     
     var body: some View {
         let screenWidth = UIScreen.main.bounds.width
@@ -20,10 +19,21 @@ struct RankingCell: View {
         
         VStack{
             ZStack(alignment: .bottomLeading) {
-                Image("kopisTestImage")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: imageWidth, height: imageWidth * aspectRatio)
+                let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
+//                Image("kopisTestImage")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: imageWidth, height: imageWidth * aspectRatio)
+                
+                AsyncImage(url: URL(string: url)) {image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: imageWidth, height: imageWidth * aspectRatio)
+                
                 Text("\(rank)")
                     .foregroundColor(Color.yellow.opacity(0.5))
                     .fontWeight(.bold)
@@ -31,7 +41,7 @@ struct RankingCell: View {
                     .offset(x: -20, y: 23)
             }
             
-            Text(title)
+            Text(perform.title)
                 .font(.system(size: 16))
                 .frame(width: 123)
                 .foregroundStyle(.gray)
@@ -43,5 +53,5 @@ struct RankingCell: View {
 }
 
 #Preview {
-    RankingCell(title: "A Store Selling Time", rank: 2, imageUrl: "url")
+    RankingCell(rank: 2, perform: .constant(Performance.performList[0]))
 }

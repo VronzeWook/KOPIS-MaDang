@@ -16,6 +16,7 @@ struct DetailCastingView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+    @Binding var perform: Performance
     
     var body: some View {
         VStack {
@@ -58,5 +59,5 @@ struct DetailCastingView: View {
 }
 
 #Preview {
-    DetailCastingView(numberOfCircles: 7)
+    DetailCastingView(numberOfCircles: 7, perform: .constant(Performance.performList[0]))
 }

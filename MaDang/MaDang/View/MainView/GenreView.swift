@@ -11,15 +11,19 @@ struct GenreView: View {
     
     @State private var isModalPresented: Bool = false
     @Binding var currentGenre: Genre
-    @State private var performs: [Performance] = Performance.performList
+    @Binding var performs: [Performance]
     
     var body: some View {
         
-        let filteredPerforms = performs.filter { per in
-            if currentGenre == .All {return true}
-            return per.genre == currentGenre
-        }
-        .prefix(9)
+        let filteredPerforms = performs
+//            
+//            .filter { per in
+////            if currentGenre == .All {return true}
+////            return per.genre == currentGenre
+//              return true
+//        }
+//        .prefix(9)
+        
         
         let columns = Array(repeating: GridItem(.flexible()), count: 3)
         
@@ -59,9 +63,25 @@ struct GenreView: View {
                 LazyVGrid(columns: columns, spacing: 8) {
                     ForEach(filteredPerforms, id: \.id) { perform in
                         ZStack {
-                            Image("kopisTestImage")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
+//                            Image("kopisTestImage")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+                            
+                            let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
+                            
+                            AsyncImage(url: URL(string: url)) {image in
+                                image
+                                    .resizable()
+                                    .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
+                                    //.frame(width: 100, height: 150) // 적절한 크기로 제한
+                                    //.clipped() //
+                            } placeholder: {
+                                ProgressView()
+                                    .foregroundStyle(.nineDarkGray)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            }
+                            .aspectRatio(contentMode: .fit)
+                            .clipped()
                             
                             LinearGradient(
                                 gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
@@ -71,12 +91,16 @@ struct GenreView: View {
                             .frame(maxWidth: .infinity, alignment: .bottom)
                         }
                     }
+                    .onAppear{
+                        print("공연 개수 : \(filteredPerforms.count)")
+                    }
                 }
                 .padding(.top, 20)
   
             }
             .background(.nineBlack)
             .allowsHitTesting(!isModalPresented)
+            
             
             if isModalPresented {
                 Color.black.opacity(0.4)
@@ -101,5 +125,5 @@ extension GenreView {
 }
 
 #Preview {
-    GenreView(currentGenre: .constant(.All))
+    GenreView(currentGenre: .constant(.All), performs: .constant(Performance.performList))
 }

@@ -173,6 +173,7 @@ extension KopisNetworkingManager {
         }
         return nil
     }
+    
 }
 
 extension KopisNetworkingManager {
@@ -213,7 +214,6 @@ extension KopisNetworkingManager {
     // MARK: - DetailDB to Performance
     func convertDetailDBtoPerformance(_ detailDB: DetailDB?) -> Performance? {
         guard let detailDB = detailDB else { return nil}
-        
         return Performance(id: detailDB.id,
                            title: detailDB.title,
                            genre: findGenre(from: detailDB.genre),
@@ -229,4 +229,6 @@ extension KopisNetworkingManager {
                            starRating: 0
         )
     }
+    
+
 }

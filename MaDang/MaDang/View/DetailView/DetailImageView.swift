@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailImageView: View {
     @State private var showMoreImages = false
+    @Binding var perform: Performance
     
     var body: some View {
         ScrollView {
@@ -68,13 +69,18 @@ struct DetailImageView: View {
 
                 if showMoreImages {
                     VStack(spacing: 0) {
-                        Image("kopisTestImage")
-                            .resizable()
-                            .scaledToFit()
-                        
-                        Image("kopisTestImage")
-                            .resizable()
-                            .scaledToFit()
+                        ForEach(perform.posterUrlList.indices, id: \.self) { index in
+                            if !(index == 0) && !(index == 1) {
+                                AsyncImage(url: URL(string: perform.posterUrlList[index])) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxWidth: .infinity)
+                                } placeholder: {
+                                    Color.gray
+                                }
+                            }
+                        }
                         
                         
                         Button(action: {
@@ -111,5 +117,5 @@ struct DetailImageView: View {
 }
 
 #Preview {
-    DetailImageView()
+    DetailImageView(perform: .constant(Performance.performList[0]))
 }

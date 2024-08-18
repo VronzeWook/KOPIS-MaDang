@@ -10,7 +10,7 @@ import SwiftUI
 struct PopularityRankingView: View {
     
     // 랭킹 및 국가로 필터링 된 공연
-    let performs: [Performance]
+    @Binding var performs: [Performance]
     @State private var selection = 0
     
     var body: some View {
@@ -45,9 +45,9 @@ struct PopularityRankingView: View {
                         ForEach(performs.indices, id: \.self) { i in
                             VStack {
                                 NavigationLink {
-                                    DetailView()
+                                    DetailView(perform: $performs[i])
                                 } label: {
-                                    RankingCell(title: performs[i].title, rank: i + 1, imageUrl: "")
+                                    RankingCell(rank: i + 1, perform: $performs[i])
                                         .padding(.horizontal, 6)
                                 }
                                 
@@ -121,5 +121,5 @@ extension PopularityRankingView {
 }
 
 #Preview {
-    PopularityRankingView(performs: Performance.performList)
+    PopularityRankingView(performs: .constant(Performance.performList))
 }

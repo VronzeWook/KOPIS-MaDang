@@ -9,12 +9,11 @@ import SwiftUI
 
 struct WhatIsNewView: View {
     @State private var currentIndex: Int = 0
-    // @ObservedObject var dataManager: DataManager = DataManager.shared
     @Binding var performs: [Performance]
     
     var body: some View {
-       // let topPerformances = Array(dataManager.performs.prefix(4))
-        
+        let recentPerforms = Array(performs.sorted { $0.startDate > $1.startDate }.prefix(4))
+    
         VStack{
             HStack{
                 Text("What's new")
@@ -25,61 +24,66 @@ struct WhatIsNewView: View {
                 Spacer()
             }
             
-            CarouselView(currentIndex: $currentIndex, performs: $performs)
+            CarouselView(currentIndex: $currentIndex, performs: $performs, pageCount: recentPerforms.count)
                 .frame(height: UIScreen.main.bounds.height * 3/5)
                 .padding(.bottom, 10)
             
             
             PageIndicator(currentIndex: $currentIndex, pageCount: 4)
         }
+
         .background(.nineBlack)
         .border(.yellow)
     }
 }
 
 fileprivate struct CarouselView: View {
-  
+
     @GestureState var dragOffset: CGFloat = 0
     @Binding var currentIndex: Int
     @Binding var performs: [Performance]
-    
+    @State private var isDetailViewPresented: Bool = false
+    @State private var selectedPerform: Performance = Performance.performList[0]
+
     /// pageCount는 1 이상입니다.
-    let pageCount: Int = 4
+    let pageCount: Int
     let spacing: CGFloat = 0
     let visibleEdgeSpace: CGFloat = 20
-    
+
     var body: some View {
         let filtered = Array(performs.prefix(4))
-        
+
         GeometryReader { proxy in
-            
+
             /// 첫번째 요소의 왼쪽 여백입니다.
             let baseOffset: CGFloat = spacing + visibleEdgeSpace
-            
+
             /// 티켓 하나 width를 나타냅니다.
             let pageWidth: CGFloat = proxy.size.width - (visibleEdgeSpace + spacing) * 2
-            
+
             /// HStack에서 보여질 곳을 정합니다.
             let offsetX: CGFloat = baseOffset + CGFloat(currentIndex) * -pageWidth + CGFloat(currentIndex) * -spacing + dragOffset
-            
+
             HStack(spacing: spacing) {
-                ForEach(filtered.indices, id: \.self) { pageIndex in
-                    VStack{
-                        //Image("kopisTestImage")
-                        AsyncImage(url: URL(string: "")) {image in
+                ForEach(0..<pageCount, id: \.self) { index in
+                    let url = performs[index].posterUrlList.isEmpty ? "" : performs[index].posterUrlList[0]
+
+                    VStack {
+                        AsyncImage(url: URL(string: url)) { image in
                             image
                                 .resizable()
                                 .scaledToFit()
                         } placeholder: {
-                            // Progress View
+                            ProgressView()
                         }
-//                            .resizable()
-//                            .scaledToFit()
-                            .frame(width: pageWidth)
-                            .scaleEffect(scaleFor(index: pageIndex, pageWidth: pageWidth))
-                        // Text("\(pageIndex)")
+                        .frame(width: pageWidth)
+                        .scaleEffect(scaleFor(index: index, pageWidth: pageWidth))
+                        .onTapGesture {
+                            selectedPerform = performs[index]
+                            isDetailViewPresented = true
+                        }
                     }
-                    .frame(width: pageWidth) // 삭제
+                    .frame(width: pageWidth)
                 }
                 .contentShape(RoundedRectangle(cornerRadius: 20))
             }
@@ -95,7 +99,7 @@ fileprivate struct CarouselView: View {
                         let offsetX = value.translation.width
                         let progress = -offsetX / pageWidth
                         let increment = Int(progress.rounded())
-                        
+
                         currentIndex = max(min(currentIndex + increment, pageCount - 1), 0)
                     }
             )
@@ -103,8 +107,13 @@ fileprivate struct CarouselView: View {
             .animation(.easeInOut, value: dragOffset == 0)
         }
         .border(Color.blue)
+        .sheet(isPresented: $isDetailViewPresented) {
+                DetailView(perform: $selectedPerform)
+//                DetailView(perform: Binding(get: { selectedPerform }, set: { _ in }))
+            
+        }
     }
-    
+
     private func scaleFor(index: Int, pageWidth: CGFloat) -> CGFloat {
         let offset = CGFloat(index - currentIndex) * pageWidth + dragOffset
         let distanceFromCenter = abs(offset) / pageWidth
@@ -126,7 +135,4 @@ struct PageIndicator: View {
         }
     }
 }
-//
-//#Preview {
-//    WhatIsNewView()
-//}
+

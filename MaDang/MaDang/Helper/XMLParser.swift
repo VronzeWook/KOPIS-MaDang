@@ -46,6 +46,7 @@ final class MyXMLParser: NSObject, XMLParserDelegate {
         case "fcltynm":
             self.currentDB?.fcltynm = currentValue
         case "poster":
+            currentValue = convertToHTTPS(urlString: currentValue)
             self.currentDB?.poster = currentValue
         case "area":
             self.currentDB?.area = currentValue
@@ -97,5 +98,12 @@ final class MyXMLParser: NSObject, XMLParserDelegate {
     // 파싱된 데이터를 반환하는 메서드
     func getParsedData() -> Welcome4? {
         return welcome4
+    }
+    
+    func convertToHTTPS(urlString: String) -> String {
+        if urlString.lowercased().hasPrefix("http://") {
+            return urlString.replacingOccurrences(of: "http://", with: "https://")
+        }
+        return urlString
     }
 }
