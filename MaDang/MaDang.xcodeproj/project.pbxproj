@@ -39,6 +39,7 @@
 		33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DE82C71324100DECDC3 /* Bundle+.swift */; };
 		33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEA2C713C6900DECDC3 /* ApiModel.swift */; };
 		33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DEC2C713E5C00DECDC3 /* XMLParser.swift */; };
+
 		4665F0D82C7208E5007867FB /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D72C7208E5007867FB /* RankingView.swift */; };
 		4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D92C7209A0007867FB /* LogoHeader.swift */; };
 		4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DB2C720BAB007867FB /* Ranking.swift */; };
@@ -46,6 +47,13 @@
 		4665F0E02C721AB9007867FB /* LangSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DF2C721AB9007867FB /* LangSelectionView.swift */; };
 		4665F0E22C721C22007867FB /* RankingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0E12C721C22007867FB /* RankingListView.swift */; };
 		4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0E72C721F68007867FB /* RankingListCell.swift */; };
+
+		33388DF62C720F3300DECDC3 /* GPTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DF52C720F3300DECDC3 /* GPTManager.swift */; };
+		33388DF92C720F5700DECDC3 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DF82C720F5700DECDC3 /* ChatGPTSwift */; };
+		33388DFB2C720F5700DECDC3 /* SampleApp in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DFA2C720F5700DECDC3 /* SampleApp */; };
+		33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFC2C72149E00DECDC3 /* DataManager.swift */; };
+		33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +92,7 @@
 		33388DE82C71324100DECDC3 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		33388DEA2C713C6900DECDC3 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		33388DEC2C713E5C00DECDC3 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+
 		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		4665F0D92C7209A0007867FB /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		4665F0DB2C720BAB007867FB /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
@@ -91,6 +100,11 @@
 		4665F0DF2C721AB9007867FB /* LangSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangSelectionView.swift; sourceTree = "<group>"; };
 		4665F0E12C721C22007867FB /* RankingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListView.swift; sourceTree = "<group>"; };
 		4665F0E72C721F68007867FB /* RankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListCell.swift; sourceTree = "<group>"; };
+
+		33388DF52C720F3300DECDC3 /* GPTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTManager.swift; sourceTree = "<group>"; };
+		33388DFC2C72149E00DECDC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailXMLParser.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33388DFB2C720F5700DECDC3 /* SampleApp in Frameworks */,
+				33388DF92C720F5700DECDC3 /* ChatGPTSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +194,7 @@
 				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DE52C71305B00DECDC3 /* Constants.swift */,
 				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
+				33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -247,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */,
+				33388DF52C720F3300DECDC3 /* GPTManager.swift */,
+				33388DFC2C72149E00DECDC3 /* DataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -280,6 +299,10 @@
 			dependencies = (
 			);
 			name = MaDang;
+			packageProductDependencies = (
+				33388DF82C720F5700DECDC3 /* ChatGPTSwift */,
+				33388DFA2C720F5700DECDC3 /* SampleApp */,
+			);
 			productName = MaDang;
 			productReference = 33388D6C2C6F2C0A00DECDC3 /* MaDang.app */;
 			productType = "com.apple.product-type.application";
@@ -308,6 +331,9 @@
 				Base,
 			);
 			mainGroup = 33388D632C6F2C0A00DECDC3;
+			packageReferences = (
+				33388DF72C720F5700DECDC3 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+			);
 			productRefGroup = 33388D6D2C6F2C0A00DECDC3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,7 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
+
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
+
+				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
+
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
@@ -348,6 +378,7 @@
 				4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
+				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
 				33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */,
 				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,
@@ -356,6 +387,7 @@
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
 				33388DA32C6F921400DECDC3 /* Genre.swift in Sources */,
+				33388DF62C720F3300DECDC3 /* GPTManager.swift in Sources */,
 				33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */,
 				4665F0DE2C720CCD007867FB /* RankingModalView.swift in Sources */,
 				33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */,
@@ -580,6 +612,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33388DF72C720F5700DECDC3 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33388DF82C720F5700DECDC3 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33388DF72C720F5700DECDC3 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
+		};
+		33388DFA2C720F5700DECDC3 /* SampleApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33388DF72C720F5700DECDC3 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = SampleApp;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33388D642C6F2C0A00DECDC3 /* Project object */;
 }
