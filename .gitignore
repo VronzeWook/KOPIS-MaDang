@@ -115,3 +115,4 @@ xcuserdata
 
 .DS_Store
 *.xcconfig
+SwiftPM/
