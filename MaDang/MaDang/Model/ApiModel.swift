@@ -25,3 +25,5 @@ struct DB {
     var poster: String
     var area, genrenm, openrun, prfstate: String
 }
+
+// MARK: - 장르 코드
