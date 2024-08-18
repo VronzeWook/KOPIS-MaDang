@@ -27,5 +27,6 @@ public struct PerformList {
     static let openrun = "openrun" // 오픈런, Y/N
     static let newsql = "newsql" // 최신 공연 순, Y/N
     
+    
     private init(){}
 }

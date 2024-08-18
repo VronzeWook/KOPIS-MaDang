@@ -26,4 +26,30 @@ struct DB {
     var area, genrenm, openrun, prfstate: String
 }
 
-// MARK: - 장르 코드
+
+struct DetailDB {
+    var id: String
+    var title: String
+    var genre: String
+    var startDate: String
+    var endDate: String
+    var venue: String
+    var cast: [String]
+    var crew: [String]
+    var runtime: String
+    var ageLimit: String
+    var company: String
+    var ticketPrice: String
+    var posterUrl: String
+    var imageUrls: [String]
+    var area: String
+    var performanceStatus: String
+    var showtimes: String
+    var relatedLinks: [DetailDbs]
+}
+
+struct DetailDbs {
+    var name: String
+    var url: String
+}
+
