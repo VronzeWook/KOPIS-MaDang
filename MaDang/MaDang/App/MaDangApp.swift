@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MaDangApp: App {
+    init() {
+        DataManager.shared.fetchData()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            MainView()
         }
     }
 }

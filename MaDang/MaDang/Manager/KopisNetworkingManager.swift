@@ -47,7 +47,7 @@ final class KopisNetworkingManager {
         }
         
         let urlString = "\(PerformList.requestUrl)\(PerformList.service)=\(key)&\(PerformList.stdate)=\(startDate)&\(PerformList.eddate)=\(endDate)&cpage=1&\(PerformList.rows)=\(row)&\(PerformList.shcate)=\(genreCode)&\(PerformList.newsql)=Y"
-   
+        
         print("\(urlString)")
         
         performPerformListRequest(with: urlString) { result in
@@ -75,17 +75,17 @@ final class KopisNetworkingManager {
             }
             
             //XML parsing
-//            if let performs = self.parsePerformXML(safeData) {
-//                completion(.success(performs))
-//            } else {
-//                completion(.failure(.parseError))
-//            }
+            if let performs = self.parsePerformListXML(safeData) {
+                completion(.success(performs))
+            } else {
+                completion(.failure(.parseError))
+            }
         }
         task.resume()
     }
     
     // MARK: - MyXMLParser 객체를 이용해서 XML 파싱
-    private func parsePerformListXML(_ performData: Data) -> Performance? {
+    private func parsePerformListXML(_ performData: Data) -> [Performance]? {
         var dbs: [DB] = []
         let parser = XMLParser(data: performData)
         let myParser = MyXMLParser()
@@ -98,14 +98,16 @@ final class KopisNetworkingManager {
             
             // 여기서 DTO -> entity 변환
             // 그리고 [DB]?가 아닌 [Performance]?를 반환하도록
-//            if let performs = convertDBArrayToPerformanceArray(dbs) {
-//                return performs
-//            }
+            if let performs = convertDBArrayToPerformanceArray(dbs) {
+                return performs
+            }
         }
         return nil
     }
-    
-    // MARK: - 하나의 공연에 대해 요청
+}
+
+// MARK: - 하나의 공연에 대해 요청
+extension KopisNetworkingManager {
     // MARK: - URL 생성 후 request 실행
     func fetchPerform(id: String, completion: @escaping PerformNetworkCompletion) {
         guard let key = Bundle.main.apiKey else {

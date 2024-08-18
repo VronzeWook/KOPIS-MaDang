@@ -9,8 +9,12 @@ import SwiftUI
 
 struct WhatIsNewView: View {
     @State private var currentIndex: Int = 0
+    // @ObservedObject var dataManager: DataManager = DataManager.shared
+    @Binding var performs: [Performance]
     
     var body: some View {
+       // let topPerformances = Array(dataManager.performs.prefix(4))
+        
         VStack{
             HStack{
                 Text("What's new")
@@ -21,7 +25,7 @@ struct WhatIsNewView: View {
                 Spacer()
             }
             
-            CarouselView(currentIndex: $currentIndex)
+            CarouselView(currentIndex: $currentIndex, performs: $performs)
                 .frame(height: UIScreen.main.bounds.height * 3/5)
                 .padding(.bottom, 10)
             
@@ -34,9 +38,10 @@ struct WhatIsNewView: View {
 }
 
 fileprivate struct CarouselView: View {
-    
+  
     @GestureState var dragOffset: CGFloat = 0
     @Binding var currentIndex: Int
+    @Binding var performs: [Performance]
     
     /// pageCount는 1 이상입니다.
     let pageCount: Int = 4
@@ -44,6 +49,8 @@ fileprivate struct CarouselView: View {
     let visibleEdgeSpace: CGFloat = 20
     
     var body: some View {
+        let filtered = Array(performs.prefix(4))
+        
         GeometryReader { proxy in
             
             /// 첫번째 요소의 왼쪽 여백입니다.
@@ -56,12 +63,18 @@ fileprivate struct CarouselView: View {
             let offsetX: CGFloat = baseOffset + CGFloat(currentIndex) * -pageWidth + CGFloat(currentIndex) * -spacing + dragOffset
             
             HStack(spacing: spacing) {
-                ForEach(0..<pageCount, id: \.self) { pageIndex in
-                    
+                ForEach(filtered.indices, id: \.self) { pageIndex in
                     VStack{
-                        Image("kopisTestImage")
-                            .resizable()
-                            .scaledToFit()
+                        //Image("kopisTestImage")
+                        AsyncImage(url: URL(string: "")) {image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            // Progress View
+                        }
+//                            .resizable()
+//                            .scaledToFit()
                             .frame(width: pageWidth)
                             .scaleEffect(scaleFor(index: pageIndex, pageWidth: pageWidth))
                         // Text("\(pageIndex)")
@@ -113,7 +126,7 @@ struct PageIndicator: View {
         }
     }
 }
-
-#Preview {
-    WhatIsNewView()
-}
+//
+//#Preview {
+//    WhatIsNewView()
+//}
