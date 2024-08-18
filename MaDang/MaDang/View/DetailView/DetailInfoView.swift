@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct DetailInfoView: View {
+    @Binding var perform: Performance
+    
     var body: some View {
             VStack(alignment: .leading) {
-                Image("kopisTestImage")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: .infinity) // 화면 너비에 맞추기
-                                    .background(.nineBlack)
                 
-                Text("A Store Selling Time")
+                let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
+                
+                AsyncImage(url: URL(string: url)) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity)
+                } placeholder: {
+                    Color.gray
+                }
+                
+                
+                Text("\(perform.title)")
                     .fontWeight(.bold)
                     .font(.system(size: 28))
                     .foregroundStyle(.white)
@@ -33,7 +42,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("Bupyeong Arts Center Dalnuri Theater")
+                Text("\(perform.area)")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
@@ -56,7 +65,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("Oct. 4, 2024(Fri.) ~ Oct. 19, 2024(Sat.)")
+                Text("\(perform.startDate) ~ \(perform.endDate)")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
@@ -79,7 +88,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("Fri. 19:30 / Sat. 18:00")
+                Text("\(perform.showtime)")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
@@ -102,7 +111,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("Suitable for ages 7 and older")
+                Text("\(perform.ageLimit)")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
@@ -125,7 +134,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("All seats ₩30,000 / $21.99")
+                Text("삭제 예정")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
@@ -138,5 +147,5 @@ struct DetailInfoView: View {
 
 
 #Preview {
-    DetailInfoView()
+    DetailInfoView(perform: .constant(Performance.performList[0]))
 }

@@ -31,7 +31,6 @@ struct RankingModalView: View {
                         .background(Color.gray)
                         .padding(.vertical,16)
 
-                    
                     Button(action: {
                         withAnimation {
                             selectedRanking = ranking
@@ -39,25 +38,17 @@ struct RankingModalView: View {
                         }
                     }, label: {
                         VStack{
-                            
-                            
-                            
                             Text("\(ranking.rawValue)")
                                 .font(.callout)
                                 .foregroundStyle(.white)
-                                
-                            
                         }
                     })
                     
                 }
-                
             }.padding(.bottom, 16)
             .background(.nineDarkGray)
                 .cornerRadius(15)
-                
                 .padding(.horizontal,44)
-        
     }
 }
 

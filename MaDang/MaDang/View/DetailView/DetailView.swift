@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @Binding var perform: Performance
+    
     var body: some View {
         ScrollView {
-                DetailInfoView()
+            DetailInfoView(perform: $perform)
                 .padding(.bottom, 96)
-                DetailImageView()
-                DetailReviewView()
-                DetailCastingView(numberOfCircles: 7)
+            DetailImageView(perform: $perform)
+            DetailReviewView(perform: $perform)
+            DetailCastingView(numberOfCircles: 7, perform: $perform)
         }
         .background(.nineBlack)
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(perform: .constant(Performance.performList[0]))
 }
