@@ -21,7 +21,7 @@ struct RatingView: View {
 
     var body: some View {
         ZStack {
-            HStack {
+            HStack(spacing: 1) {
                 ForEach(0..<Int(rating), id: \.self) { idx in
                     fullStar
                 }
@@ -99,7 +99,7 @@ struct RatingView: View {
 fileprivate extension Image {
     func star(size: CGSize) -> some View {
         return self
-            .font(.title)
+            .font(.system(size: 24))
             .background(
                 GeometryReader { proxy in
                     Color.clear.preference(key: StarSizeKey.self, value: proxy.size)

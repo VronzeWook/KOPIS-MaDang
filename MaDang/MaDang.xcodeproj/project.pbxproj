@@ -46,6 +46,7 @@
 		33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */; };
 		33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E002C72827300DECDC3 /* ReviewEditorView.swift */; };
 		33388E052C728B7F00DECDC3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E042C728B7F00DECDC3 /* RatingView.swift */; };
+		33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */; };
 		4665F0D82C7208E5007867FB /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D72C7208E5007867FB /* RankingView.swift */; };
 		4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D92C7209A0007867FB /* LogoHeader.swift */; };
 		4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0DB2C720BAB007867FB /* Ranking.swift */; };
@@ -98,6 +99,7 @@
 		33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailXMLParser.swift; sourceTree = "<group>"; };
 		33388E002C72827300DECDC3 /* ReviewEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditorView.swift; sourceTree = "<group>"; };
 		33388E042C728B7F00DECDC3 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextEditor.swift; sourceTree = "<group>"; };
 		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
 		4665F0D92C7209A0007867FB /* LogoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoHeader.swift; sourceTree = "<group>"; };
 		4665F0DB2C720BAB007867FB /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
@@ -148,9 +150,6 @@
 				33388D812C6F352700DECDC3 /* Helper */,
 				33388D7F2C6F351400DECDC3 /* Resources */,
 				33388D7E2C6F34E200DECDC3 /* View */,
-				33388E002C72827300DECDC3 /* ReviewEditorView.swift */,
-				33388E042C728B7F00DECDC3 /* RatingView.swift */,
-				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
 				33388D752C6F2C0C00DECDC3 /* Preview Content */,
 				33388DE32C712E6100DECDC3 /* Config.xcconfig */,
 			);
@@ -180,6 +179,10 @@
 				4665F0D62C7208D2007867FB /* RankingView */,
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
+				33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */,
+				33388E002C72827300DECDC3 /* ReviewEditorView.swift */,
+				33388E042C728B7F00DECDC3 /* RatingView.swift */,
+				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				4665F0D82C7208E5007867FB /* RankingView.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
+				33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */,
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
 				33388D842C6F363800DECDC3 /* DetailView.swift in Sources */,
 				33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */,
@@ -543,9 +547,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MaDang/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FFZZTFJHB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MaDang/Info.plist;
@@ -561,6 +567,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Saejaksaejak.MaDang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -573,9 +580,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MaDang/Preview Content\"";
+				DEVELOPMENT_TEAM = 6FFZZTFJHB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MaDang/Info.plist;
@@ -591,6 +600,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Saejaksaejak.MaDang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
