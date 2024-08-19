@@ -20,22 +20,36 @@ struct DetailImageView: View {
                         .font(.system(size: 22))
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
-                    
+
                     Spacer()
                 }
                 .padding(.bottom, 16)
                 
                 // 첫 번째 이미지
-                Image("kopisTestImage")
-                    .resizable()
-                    .scaledToFit()
+//                Image("kopisTestImage")
+//                    .resizable()
+//                    .scaledToFit()
+//                AsyncImage(url: URL(string: perform.posterUrlList[0])) { image in
+//                    image
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(maxWidth: .infinity)
+//                } placeholder: {
+//                    Color.gray
+//                }
+//                
                 
                 // 두 번째 이미지가 전부 보이게 표시
                 ZStack(alignment: .bottom) {
-                    Image("kopisTestImage")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width)
+                    AsyncImage(url: URL(string: perform.posterUrlList[0])) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+                    } placeholder: {
+                        Color.gray
+                    }
+                    
                     
                     if !showMoreImages {
                         LinearGradient(
