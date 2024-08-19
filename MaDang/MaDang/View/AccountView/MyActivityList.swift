@@ -10,7 +10,7 @@ import SwiftUI
 struct MyActivityList: View {
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
                 
                 
@@ -22,7 +22,7 @@ struct MyActivityList: View {
                     Spacer()
                 }
                 VStack{
-                    NavigationLink(destination: LikesView(user: currentUser)) {
+                    //NavigationLink(destination: LikesView(user: currentUser)) {
                         HStack{
                             Image(systemName: "heart")
                                 .font(.system(size: 18))
@@ -40,29 +40,31 @@ struct MyActivityList: View {
                                 .fontWeight(.medium)
                                 .foregroundStyle(.white)
                         }
-                    }
+                    //}
                     Divider()
                         .background(Color.gray)
                         .padding(.vertical,4)
                     
-                    HStack{
-                        Image(systemName: "text.bubble")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .foregroundStyle(.white)
-                        Text("Reviews")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .foregroundStyle(.white)
-                        
-                        Spacer()
-                        
-                        Image(systemName:"chevron.right")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .foregroundStyle(.white)
-                    }
-                    .padding(.vertical,4)
+                    //NavigationLink(destination: MyReviewView(user: currentUser)) {
+                        HStack{
+                            Image(systemName: "text.bubble")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            Text("Reviews")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            
+                            Spacer()
+                            
+                            Image(systemName:"chevron.right")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                        }
+                        .padding(.vertical,4)
+                    //}
                     Divider()
                         .background(Color.gray)
                         .padding(.vertical,4)
@@ -95,7 +97,7 @@ struct MyActivityList: View {
             }
             .background(.nineBlack)
             .padding(.horizontal, 16)
-        }
+        //}
     }
 }
 

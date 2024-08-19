@@ -166,6 +166,7 @@ struct LikesView: View {
             .padding(.horizontal)
         }
         .background(Color.black)
+        .navigationTitle("Likes")
         
         
     }
