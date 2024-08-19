@@ -69,6 +69,8 @@
 		468EEED92C73BCA500C07488 /* MyActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEED82C73BCA500C07488 /* MyActivityList.swift */; };
 		468EEEDB2C73C05900C07488 /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEDA2C73C05900C07488 /* CommunityList.swift */; };
 		468EEEDD2C73C45D00C07488 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEDC2C73C45D00C07488 /* LikesView.swift */; };
+		468EEEE32C73EAFD00C07488 /* MyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEE22C73EAFD00C07488 /* MyReviewView.swift */; };
+		468EEEE52C73EFB000C07488 /* MyReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEE42C73EFB000C07488 /* MyReviewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		468EEED82C73BCA500C07488 /* MyActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityList.swift; sourceTree = "<group>"; };
 		468EEEDA2C73C05900C07488 /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
 		468EEEDC2C73C45D00C07488 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
+		468EEEE22C73EAFD00C07488 /* MyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewView.swift; sourceTree = "<group>"; };
+		468EEEE42C73EFB000C07488 /* MyReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +347,8 @@
 				468EEED82C73BCA500C07488 /* MyActivityList.swift */,
 				468EEEDA2C73C05900C07488 /* CommunityList.swift */,
 				468EEEDC2C73C45D00C07488 /* LikesView.swift */,
+				468EEEE22C73EAFD00C07488 /* MyReviewView.swift */,
+				468EEEE42C73EFB000C07488 /* MyReviewRow.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468EEEE32C73EAFD00C07488 /* MyReviewView.swift in Sources */,
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
@@ -435,11 +442,8 @@
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
 				4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */,
-
 				33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */,
-
 				4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */,
-
 				33388D8F2C6F369300DECDC3 /* DetailCastingView.swift in Sources */,
 				33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */,
 				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
@@ -462,6 +466,7 @@
 				33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */,
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
+				468EEEE52C73EFB000C07488 /* MyReviewRow.swift in Sources */,
 				33388DA32C6F921400DECDC3 /* Genre.swift in Sources */,
 				33388DF62C720F3300DECDC3 /* GPTManager.swift in Sources */,
 				33388DDB2C70E0DB00DECDC3 /* RankingCell.swift in Sources */,

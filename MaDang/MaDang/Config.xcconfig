@@ -7,3 +7,7 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+KOPIS_API_KEY = c86e16401fc6457480156420bd8beebe
+
+GPT_API_KEY = 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
