@@ -15,4 +15,30 @@ struct TouristInfo {
     var imageUrl: String
     var name: String
     var detail: String
+    
+    static var infoList: [TouristInfo] = [
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        TouristInfo(region: "InCheon", address: "Bupyeong-gu, Incheon", country: .USA, type: .restaurant, imageUrl: "kopisTestImage", name: "Bupyeong History Museum", detail: ""),
+        
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        TouristInfo(region: "cafe region", address: "cafe-gu, Incheon", country: .USA, type: .cafe, imageUrl: "kopisTestImage", name: "cafe cafe cafe", detail: ""),
+        
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+        TouristInfo(region: "tourSpot region", address: "tourSpot-gu, tourSpot", country: .USA, type: .touristSpot, imageUrl: "kopisTestImage", name: "tourSpot tourSpot tourSpot", detail: ""),
+    ]
 }
