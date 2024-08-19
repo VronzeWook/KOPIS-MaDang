@@ -18,6 +18,7 @@ struct DetailView: View {
             DetailImageView(perform: $perform)
             DetailReviewView(perform: $perform)
             DetailCastingView(numberOfCircles: 7, perform: $perform)
+            DetailTouristInfoView()
         }
         .background(.nineBlack)
     }
