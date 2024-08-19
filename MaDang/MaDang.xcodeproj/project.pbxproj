@@ -64,6 +64,11 @@
 		4665F1282C73B062007867FB /* ByGenreModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1272C73B062007867FB /* ByGenreModalView.swift */; };
 		4665F12A2C73B08B007867FB /* ByGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1292C73B08B007867FB /* ByGenreView.swift */; };
 		4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F12B2C73B0B2007867FB /* ByGenreViewModel.swift */; };
+		468EEED52C73B35A00C07488 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEED42C73B35A00C07488 /* AccountView.swift */; };
+		468EEED72C73B4EC00C07488 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEED62C73B4EC00C07488 /* AccountProfile.swift */; };
+		468EEED92C73BCA500C07488 /* MyActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEED82C73BCA500C07488 /* MyActivityList.swift */; };
+		468EEEDB2C73C05900C07488 /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEDA2C73C05900C07488 /* CommunityList.swift */; };
+		468EEEDD2C73C45D00C07488 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEDC2C73C45D00C07488 /* LikesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +130,11 @@
 		4665F1272C73B062007867FB /* ByGenreModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreModalView.swift; sourceTree = "<group>"; };
 		4665F1292C73B08B007867FB /* ByGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreView.swift; sourceTree = "<group>"; };
 		4665F12B2C73B0B2007867FB /* ByGenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreViewModel.swift; sourceTree = "<group>"; };
+		468EEED42C73B35A00C07488 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		468EEED62C73B4EC00C07488 /* AccountProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfile.swift; sourceTree = "<group>"; };
+		468EEED82C73BCA500C07488 /* MyActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyActivityList.swift; sourceTree = "<group>"; };
+		468EEEDA2C73C05900C07488 /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
+		468EEEDC2C73C45D00C07488 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +201,7 @@
 		33388D7E2C6F34E200DECDC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				468EEED32C73B34700C07488 /* AccountView */,
 				4665F1222C73AFEA007867FB /* ByGenreView */,
 				4665F0ED2C723802007867FB /* MainTabView.swift */,
 				4665F0D62C7208D2007867FB /* RankingView */,
@@ -324,6 +335,18 @@
 			path = ByGenreView;
 			sourceTree = "<group>";
 		};
+		468EEED32C73B34700C07488 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				468EEED42C73B35A00C07488 /* AccountView.swift */,
+				468EEED62C73B4EC00C07488 /* AccountProfile.swift */,
+				468EEED82C73BCA500C07488 /* MyActivityList.swift */,
+				468EEEDA2C73C05900C07488 /* CommunityList.swift */,
+				468EEEDC2C73C45D00C07488 /* LikesView.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,8 +427,10 @@
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
+				468EEED52C73B35A00C07488 /* AccountView.swift in Sources */,
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
+				468EEED92C73BCA500C07488 /* MyActivityList.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
@@ -444,9 +469,12 @@
 				33388DC72C7086E600DECDC3 /* BestReviewRow.swift in Sources */,
 				33388D9C2C6F8FB300DECDC3 /* TouristInfo.swift in Sources */,
 				33388D962C6F88F900DECDC3 /* Performance.swift in Sources */,
+				468EEEDD2C73C45D00C07488 /* LikesView.swift in Sources */,
 				33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */,
 				4665F0D82C7208E5007867FB /* RankingView.swift in Sources */,
+				468EEEDB2C73C05900C07488 /* CommunityList.swift in Sources */,
 				4665F1282C73B062007867FB /* ByGenreModalView.swift in Sources */,
+				468EEED72C73B4EC00C07488 /* AccountProfile.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */,

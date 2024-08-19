@@ -25,12 +25,25 @@ struct MainTabView: View {
                 }
                 .tag(0)
             
+            ByGenreView()
+                .tabItem {
+                    Image(systemName: "rectangle.3.group.fill")
+                    Text(Title.genre.name)
+                }
+                .tag(1)
             RankingView()
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text(Title.ranking.name)
                 }
-                .tag(1)
+                .tag(2)
+            AccountView()
+                .tabItem {
+                    Image(systemName: "person.circle.fill")
+                    Text(Title.account.name)
+                }
+                .tag(3)
+
             
         }
         
