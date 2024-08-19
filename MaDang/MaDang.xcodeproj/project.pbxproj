@@ -47,7 +47,6 @@
 		33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E002C72827300DECDC3 /* ReviewEditorView.swift */; };
 		33388E052C728B7F00DECDC3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E042C728B7F00DECDC3 /* RatingView.swift */; };
 		33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */; };
-		33A068962C73B01100EF0F09 /* TouristInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068952C73B01100EF0F09 /* TouristInfoView.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
 		4665F0D82C7208E5007867FB /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D72C7208E5007867FB /* RankingView.swift */; };
@@ -108,7 +107,6 @@
 		33388E002C72827300DECDC3 /* ReviewEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditorView.swift; sourceTree = "<group>"; };
 		33388E042C728B7F00DECDC3 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextEditor.swift; sourceTree = "<group>"; };
-		33A068952C73B01100EF0F09 /* TouristInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoView.swift; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
@@ -191,16 +189,13 @@
 		33388D7E2C6F34E200DECDC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4665F1222C73AFEA007867FB /* ByGenreView */,
 				4665F0ED2C723802007867FB /* MainTabView.swift */,
+				33A0689B2C73D13800EF0F09 /* ReviewEditorView */,
+				4665F1222C73AFEA007867FB /* ByGenreView */,
 				4665F0D62C7208D2007867FB /* RankingView */,
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
-				33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */,
-				33388E002C72827300DECDC3 /* ReviewEditorView.swift */,
-				33388E042C728B7F00DECDC3 /* RatingView.swift */,
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
-				33A068952C73B01100EF0F09 /* TouristInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,8 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				33388DE82C71324100DECDC3 /* Bundle+.swift */,
-				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DE52C71305B00DECDC3 /* Constants.swift */,
+				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
 				33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */,
 			);
@@ -297,6 +292,16 @@
 				33388DFC2C72149E00DECDC3 /* DataManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		33A0689B2C73D13800EF0F09 /* ReviewEditorView */ = {
+			isa = PBXGroup;
+			children = (
+				33388E002C72827300DECDC3 /* ReviewEditorView.swift */,
+				33388E042C728B7F00DECDC3 /* RatingView.swift */,
+				33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */,
+			);
+			path = ReviewEditorView;
 			sourceTree = "<group>";
 		};
 		4665F0D62C7208D2007867FB /* RankingView */ = {
@@ -410,11 +415,8 @@
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
 				4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */,
-
 				33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */,
-
 				4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */,
-
 				33388D8F2C6F369300DECDC3 /* DetailCastingView.swift in Sources */,
 				33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */,
 				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
@@ -432,7 +434,6 @@
 				33388DDD2C70FC6200DECDC3 /* GenreModalView.swift in Sources */,
 				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,
 				33388DE22C712E3800DECDC3 /* KopisNetworkingManager.swift in Sources */,
-				33A068962C73B01100EF0F09 /* TouristInfoView.swift in Sources */,
 				4665F1242C73B028007867FB /* ByGenreHeader.swift in Sources */,
 				33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */,
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,

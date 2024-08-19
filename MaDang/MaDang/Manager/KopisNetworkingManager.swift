@@ -214,6 +214,11 @@ extension KopisNetworkingManager {
     // MARK: - DetailDB to Performance
     func convertDetailDBtoPerformance(_ detailDB: DetailDB?) -> Performance? {
         guard let detailDB = detailDB else { return nil}
+        
+        for url in detailDB.imageUrls {
+            print("********* \(url)")
+        }
+        
         return Performance(id: detailDB.id,
                            title: detailDB.title,
                            genre: findGenre(from: detailDB.genre),
