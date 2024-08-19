@@ -18,8 +18,8 @@ struct GenreView: View {
         let filteredPerforms = performs
 //            
 //            .filter { per in
-////            if currentGenre == .All {return true}
-////            return per.genre == currentGenre
+//            if currentGenre == .All {return true}
+//            return per.genre == currentGenre
 //              return true
 //        }
 //        .prefix(9)
@@ -62,33 +62,38 @@ struct GenreView: View {
                 
                 LazyVGrid(columns: columns, spacing: 8) {
                     ForEach(filteredPerforms, id: \.id) { perform in
-                        ZStack {
-//                            Image("kopisTestImage")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-                            
-                            let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
-                            
-                            AsyncImage(url: URL(string: url)) {image in
-                                image
-                                    .resizable()
-                                    .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
-                                    //.frame(width: 100, height: 150) // 적절한 크기로 제한
-                                    //.clipped() //
-                            } placeholder: {
-                                ProgressView()
-                                    .foregroundStyle(.nineDarkGray)
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
+                        NavigationLink {
+                            DetailView(perform: $performs[performs.firstIndex(where: { $0.id == perform.id })!])
+                        } label: {
+                            ZStack {
+    //                            Image("kopisTestImage")
+    //                                .resizable()
+    //                                .aspectRatio(contentMode: .fill)
+                                
+                                let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
+                                
+                                AsyncImage(url: URL(string: url)) {image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
+                                        //.frame(width: 100, height: 150) // 적절한 크기로 제한
+                                        //.clipped()
+                                } placeholder: {
+                                    ProgressView()
+                                        .foregroundStyle(.nineDarkGray)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                }
+                                .aspectRatio(contentMode: .fit)
+                                .clipped()
+                                
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
+                                    startPoint: .bottom,
+                                    endPoint: .center
+                                )
+                                .frame(maxWidth: .infinity, alignment: .bottom)
                             }
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
-                                startPoint: .bottom,
-                                endPoint: .center
-                            )
-                            .frame(maxWidth: .infinity, alignment: .bottom)
                         }
                     }
                     .onAppear{

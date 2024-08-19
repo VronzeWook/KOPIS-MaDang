@@ -36,7 +36,7 @@ final class DetailXMLParser : NSObject, XMLParserDelegate {
     
     // XMLParserDelegate 메서드 중 종료 태그를 만났을 때 호출되는 메서드
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        guard var detailDB = detailDB else { return }
+        guard var _ = detailDB else { return }
         
         switch elementName {
         case "mt20id":
@@ -52,7 +52,7 @@ final class DetailXMLParser : NSObject, XMLParserDelegate {
         case "prfcast":
             self.detailDB?.cast = currentValue.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
         case "prfcrew":
-            detailDB.crew = currentValue.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+            self.detailDB?.crew = currentValue.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
         case "prfruntime":
             self.detailDB?.runtime = currentValue
         case "prfage":
@@ -64,7 +64,8 @@ final class DetailXMLParser : NSObject, XMLParserDelegate {
         case "poster":
             self.detailDB?.posterUrl = currentValue
         case "styurl":
-            imageUrls.append(currentValue)
+            let https = convertToHTTPS(urlString: currentValue)
+            self.imageUrls.append(https)
         case "area":
             self.detailDB?.area = currentValue
         case "prfstate":
@@ -79,9 +80,10 @@ final class DetailXMLParser : NSObject, XMLParserDelegate {
                 relatedLinks[lastIndex].url = currentValue
             }
         case "db":
+
             self.detailDB?.imageUrls = imageUrls
             self.detailDB?.relatedLinks = relatedLinks
-            self.detailDB = detailDB
+            // self.detailDB = detailDB
         default:
             break
         }
@@ -99,5 +101,12 @@ final class DetailXMLParser : NSObject, XMLParserDelegate {
     // 파싱된 데이터를 반환하는 메서드
     func getParsedData() -> DetailDB? {
         return detailDB
+    }
+    
+    func convertToHTTPS(urlString: String) -> String {
+        if urlString.lowercased().hasPrefix("http://") {
+            return urlString.replacingOccurrences(of: "http://", with: "https://")
+        }
+        return urlString
     }
 }
