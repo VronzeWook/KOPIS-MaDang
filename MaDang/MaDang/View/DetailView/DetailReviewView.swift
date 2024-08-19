@@ -20,9 +20,9 @@ struct DetailReviewView: View {
                     
                 Spacer()
                 
-                Button(action: {
-                    
-                }, label: {
+                NavigationLink {
+                    ReviewEditorView()
+                } label: {
                     HStack {
                         Image(systemName: "text.bubble.fill")
                             .foregroundStyle(.nineYellow)
@@ -30,7 +30,7 @@ struct DetailReviewView: View {
                             .font(.system(size: 14))
                             .foregroundStyle(.nineYellow)
                     }
-                })
+                }
                 
             }
             

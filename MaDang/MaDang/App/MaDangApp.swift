@@ -11,7 +11,8 @@ import SwiftUI
 struct MaDangApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+             MainTabView()
+            //ReviewEditorView()
         }
     }
 }
