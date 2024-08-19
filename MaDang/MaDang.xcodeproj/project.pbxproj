@@ -59,6 +59,11 @@
 		4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0E72C721F68007867FB /* RankingListCell.swift */; };
 		4665F0EE2C723802007867FB /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0ED2C723802007867FB /* MainTabView.swift */; };
 		4665F0F02C72384F007867FB /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0EF2C72384F007867FB /* Title.swift */; };
+		4665F1242C73B028007867FB /* ByGenreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1232C73B028007867FB /* ByGenreHeader.swift */; };
+		4665F1262C73B04B007867FB /* ByGenreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1252C73B04B007867FB /* ByGenreListCell.swift */; };
+		4665F1282C73B062007867FB /* ByGenreModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1272C73B062007867FB /* ByGenreModalView.swift */; };
+		4665F12A2C73B08B007867FB /* ByGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F1292C73B08B007867FB /* ByGenreView.swift */; };
+		4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F12B2C73B0B2007867FB /* ByGenreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +120,11 @@
 		4665F0E72C721F68007867FB /* RankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListCell.swift; sourceTree = "<group>"; };
 		4665F0ED2C723802007867FB /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4665F0EF2C72384F007867FB /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		4665F1232C73B028007867FB /* ByGenreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreHeader.swift; sourceTree = "<group>"; };
+		4665F1252C73B04B007867FB /* ByGenreListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreListCell.swift; sourceTree = "<group>"; };
+		4665F1272C73B062007867FB /* ByGenreModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreModalView.swift; sourceTree = "<group>"; };
+		4665F1292C73B08B007867FB /* ByGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreView.swift; sourceTree = "<group>"; };
+		4665F12B2C73B0B2007867FB /* ByGenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGenreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +191,7 @@
 		33388D7E2C6F34E200DECDC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4665F1222C73AFEA007867FB /* ByGenreView */,
 				4665F0ED2C723802007867FB /* MainTabView.swift */,
 				4665F0D62C7208D2007867FB /* RankingView */,
 				33388DBB2C7085A700DECDC3 /* MainView */,
@@ -301,6 +312,18 @@
 			path = RankingView;
 			sourceTree = "<group>";
 		};
+		4665F1222C73AFEA007867FB /* ByGenreView */ = {
+			isa = PBXGroup;
+			children = (
+				4665F1232C73B028007867FB /* ByGenreHeader.swift */,
+				4665F1252C73B04B007867FB /* ByGenreListCell.swift */,
+				4665F1272C73B062007867FB /* ByGenreModalView.swift */,
+				4665F1292C73B08B007867FB /* ByGenreView.swift */,
+				4665F12B2C73B0B2007867FB /* ByGenreViewModel.swift */,
+			);
+			path = ByGenreView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,7 +410,11 @@
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
 				4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */,
+
 				33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */,
+
+				4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */,
+
 				33388D8F2C6F369300DECDC3 /* DetailCastingView.swift in Sources */,
 				33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */,
 				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
@@ -397,6 +424,8 @@
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
+				4665F1262C73B04B007867FB /* ByGenreListCell.swift in Sources */,
+				4665F12A2C73B08B007867FB /* ByGenreView.swift in Sources */,
 				4665F0F02C72384F007867FB /* Title.swift in Sources */,
 				4665F0EE2C723802007867FB /* MainTabView.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
@@ -404,6 +433,7 @@
 				33388DC32C70866600DECDC3 /* GenreView.swift in Sources */,
 				33388DE22C712E3800DECDC3 /* KopisNetworkingManager.swift in Sources */,
 				33A068962C73B01100EF0F09 /* TouristInfoView.swift in Sources */,
+				4665F1242C73B028007867FB /* ByGenreHeader.swift in Sources */,
 				33388DED2C713E5C00DECDC3 /* XMLParser.swift in Sources */,
 				33388D872C6F365300DECDC3 /* DetailInfoView.swift in Sources */,
 				33388D892C6F365E00DECDC3 /* DetailImageView.swift in Sources */,
@@ -416,6 +446,7 @@
 				33388D962C6F88F900DECDC3 /* Performance.swift in Sources */,
 				33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */,
 				4665F0D82C7208E5007867FB /* RankingView.swift in Sources */,
+				4665F1282C73B062007867FB /* ByGenreModalView.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */,

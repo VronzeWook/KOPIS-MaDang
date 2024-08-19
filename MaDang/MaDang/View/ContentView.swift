@@ -18,6 +18,8 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
             
+            Text("Git PR Test")
+            
             Button(action: {
                 shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5, genreCode: Genre.Theater.code) { result in
                      switch result {
