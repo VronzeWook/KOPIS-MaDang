@@ -30,7 +30,8 @@ final class DataManager: ObservableObject {
     func fetchData() {
         let network = KopisNetworkingManager.shared
         // 임의 조건 설정
-        network.fetchPerformList(startDate: "20240801", endDate: "20240831", row: 10, genreCode: "AAAA") { result in
+//        network.fetchPerformList(startDate: "20240801", endDate: "20240831", row: 10, genreCode: "AAAA") { result in
+        network.fetchPerformList(startDate: "20240801", endDate: "20240831", row: 10) { result in
             switch result {
             case .success(let performs):
                 self.performs = performs

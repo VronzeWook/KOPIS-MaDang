@@ -8,26 +8,26 @@
 import Foundation
 
 enum Genre: String, Codable, CaseIterable {
-//    case All
-//    case Theater = "연극"
-//    case Musical = "뮤지컬"
-//    case Classic = "서양음악(클래식)"
-//    case KoreanTraditionalMusic = "한국음악(국악)"
-//    case PopularMusic = "대중음악"
-//    case KoreanTraditionalDancing = "무용(서양/한국무용)"
-//    case PublicDance = "대중무용"
-//    case CircusMagic = "서커스/마술"
-//    
-    
     case All
-    case Theater = "Theater"
-    case Musical = "Musical"
-    case Classic = "Classic"
-    case KoreanTraditionalMusic = "KoreanTraditionalMusic"
-    case PopularMusic = "PopularMusic"
-    case KoreanTraditionalDancing = "KoreanTraditionalDancing"
-    case PublicDance = "PublicDance"
-    case CircusMagic = "CircusMagic"
+    case Theater = "연극"
+    case Musical = "뮤지컬"
+    case Classic = "서양음악(클래식)"
+    case KoreanTraditionalMusic = "한국음악(국악)"
+    case PopularMusic = "대중음악"
+    case KoreanTraditionalDancing = "무용(서양/한국무용)"
+    case PublicDance = "대중무용"
+    case CircusMagic = "서커스/마술"
+    
+    
+//    case All
+//    case Theater = "Theater"
+//    case Musical = "Musical"
+//    case Classic = "Classic"
+//    case KoreanTraditionalMusic = "KoreanTraditionalMusic"
+//    case PopularMusic = "PopularMusic"
+//    case KoreanTraditionalDancing = "KoreanTraditionalDancing"
+//    case PublicDance = "PublicDance"
+//    case CircusMagic = "CircusMagic"
     
     var code: String {
         switch self {

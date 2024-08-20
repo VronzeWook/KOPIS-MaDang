@@ -30,7 +30,8 @@ struct MaDangApp: App {
                 .onAppear {
                     let shared = KopisNetworkingManager.shared
                     // 임의 조건 설정
-                    shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 9, genreCode: Genre.Theater.code) { result in
+                    //shared.fetchPerformList(startDate: "20240601", endDate: "20240831", row: 20, genreCode: Genre.Theater.code) { result in
+                    shared.fetchPerformList(startDate: "20240801", endDate: "20240831", row: 20) { result in
                          switch result {
                          case .success(let performs) :
                              print("success")

@@ -21,7 +21,8 @@ struct ContentView: View {
             Text("Git PR Test")
             
             Button(action: {
-                shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5, genreCode: Genre.Theater.code) { result in
+//                shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5, genreCode: Genre.Theater.code) { result in
+                shared.fetchPerformList(startDate: "20240601", endDate: "20240631", row: 5) { result in
                      switch result {
                      case .success(let performs) :
                          print("success")

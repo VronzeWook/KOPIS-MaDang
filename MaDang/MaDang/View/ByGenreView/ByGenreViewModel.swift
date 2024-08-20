@@ -23,8 +23,9 @@ final class ByGenreViewModel: ObservableObject {
         let startDate = getCurrentDateString()
         let endDate = startDate
         
-        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 20, genreCode: genre.code) { [weak self] result in
-            DispatchQueue.main.async {
+//        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 20, genreCode: genre.code) { [weak self] result in
+        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 20) { [weak self] result in
+        DispatchQueue.main.async {
                 switch result {
                 case .success(let performances):
                     self?.performances = performances

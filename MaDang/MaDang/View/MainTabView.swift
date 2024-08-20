@@ -32,7 +32,7 @@ struct MainTabView: View {
                         }
                         .tag(0)
                     
-                    ByGenreView()
+                    ByGenreView(performs: $performs)
                         .tabItem {
                             Image(systemName: "rectangle.3.group.fill")
                             Text(Title.genre.name)
