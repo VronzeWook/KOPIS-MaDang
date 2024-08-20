@@ -10,7 +10,8 @@ import SwiftUI
 struct BestReviewView: View {
     
     let performs: [Performance] = Performance.performList
-    let reviews: [Review] = Review.reviews
+    let shared = FirestoreManager.shared
+    @State private var reviews: [Review] = []
     
     var body: some View {
         let bestReviews = reviews.prefix(4)
@@ -37,6 +38,12 @@ struct BestReviewView: View {
             
         }
         .background(.nineBlack)
+        .onAppear {
+            // 테스트 요청
+            shared.fetchReviewsOrderedByLikes { reviews in
+                self.reviews = reviews
+            }
+        }
     }
 }
 
