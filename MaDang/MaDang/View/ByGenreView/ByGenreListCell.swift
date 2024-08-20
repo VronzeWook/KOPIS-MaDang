@@ -60,7 +60,8 @@ struct ByGenreListCell: View {
         let startDate = "2024-08-01"
         let endDate = "2024-08-01"
 
-        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 10, genreCode: selectedGenre.code) { result in
+        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 10) { result in
+//        KopisNetworkingManager.shared.fetchPerformList(startDate: startDate, endDate: endDate, row: 10, genreCode: selectedGenre.code) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let fetchedPerformances):

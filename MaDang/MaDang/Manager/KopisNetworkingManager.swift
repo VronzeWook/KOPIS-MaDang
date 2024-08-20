@@ -40,13 +40,20 @@ final class KopisNetworkingManager {
     
     // MARK: - PerfromList 요청
     // MARK: - URL 생성 후 request 실행
-    func fetchPerformList(startDate: String, endDate: String, row: Int, genreCode: String, completion: @escaping PerformListNetworkCompletion) {
+//    func fetchPerformList(startDate: String, endDate: String, row: Int, genreCode: String, completion: @escaping PerformListNetworkCompletion) {
+//        guard let key = Bundle.main.apiKey else {
+//            print("No KOPIS_API_KEY")
+//            return
+//        }
+        
+//        let urlString = "\(PerformList.requestUrl)\(PerformList.service)=\(key)&\(PerformList.stdate)=\(startDate)&\(PerformList.eddate)=\(endDate)&cpage=1&\(PerformList.rows)=\(row)&\(PerformList.shcate)=\(genreCode)&\(PerformList.newsql)=Y"
+    
+    func fetchPerformList(startDate: String, endDate: String, row: Int, completion: @escaping PerformListNetworkCompletion) {
         guard let key = Bundle.main.apiKey else {
             print("No KOPIS_API_KEY")
             return
         }
-        
-        let urlString = "\(PerformList.requestUrl)\(PerformList.service)=\(key)&\(PerformList.stdate)=\(startDate)&\(PerformList.eddate)=\(endDate)&cpage=1&\(PerformList.rows)=\(row)&\(PerformList.shcate)=\(genreCode)&\(PerformList.newsql)=Y"
+        let urlString = "\(PerformList.requestUrl)\(PerformList.service)=\(key)&\(PerformList.stdate)=\(startDate)&\(PerformList.eddate)=\(endDate)&cpage=1&\(PerformList.rows)=\(row)"
         
         print("\(urlString)")
         
@@ -182,6 +189,7 @@ extension KopisNetworkingManager {
     }
     
     func findGenre(from genrenm: String) -> Genre {
+       // return Genre(rawValue: genrenm) ?? .All
         return Genre(rawValue: genrenm) ?? .All
     }
     
