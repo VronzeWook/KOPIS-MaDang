@@ -12,6 +12,8 @@ extension UIColor {
     ///
     /// NineYellow color - (250, 255, 0, 100%)
     class var NineYellow: UIColor? { return UIColor(named: "NineYellow") }
+    /// NineYellow color - (250, 255, 0, 100%)
+    class var NineDarkYellow: UIColor? { return UIColor(named: "NineDarkYellow") }
     /// NineDarkGray color - (51, 51, 51, 100%)
     class var NineDarkGray: UIColor? { return UIColor(named: "NineDarkGray") }
     /// Tertiary color - (0, 0, 0, 100%)
