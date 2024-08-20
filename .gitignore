@@ -116,3 +116,4 @@ xcuserdata
 .DS_Store
 *.xcconfig
 SwiftPM/
+GoogleService-Info.plist

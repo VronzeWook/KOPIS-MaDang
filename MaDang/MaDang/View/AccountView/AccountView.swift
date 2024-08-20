@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AccountView: View {
-
+    @EnvironmentObject var authManager: AppleAuthManager
+    
     var body: some View {
         ZStack {
             ScrollView {
@@ -19,6 +20,13 @@ struct AccountView: View {
                     .padding(.bottom, 51)
                 
                 CommunityList()
+                
+                Button {
+                    KeychainHelper.shared.deleteUserIdentifier()
+                    authManager.authState = .signedOut
+                } label: {
+                    Text("로그아웃")
+                }
             }
             .background(.nineBlack)
         }
