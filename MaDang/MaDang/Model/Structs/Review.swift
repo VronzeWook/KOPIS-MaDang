@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
-struct Review : Identifiable {
-    var id: UUID
+struct Review : Identifiable, Codable {
+    @DocumentID var id: String?
     var performanceId: String
-    var writerId: UUID
+    var writerId: String
     var writerCountry: Country
     var writerName: String
     var createdDate: Date
@@ -19,10 +20,10 @@ struct Review : Identifiable {
     var starRating: Double
     var isReported: Bool
     
-    static var reviews: [Review] = [Review(id: UUID(), performanceId: Performance.performList[0].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false),
-                                    Review(id: UUID(), performanceId: Performance.performList[1].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false),
-                                    Review(id: UUID(), performanceId: Performance.performList[2].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false), 
-                                    Review(id: UUID(), performanceId: Performance.performList[0].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false)
-                                    
-    ]
+//    static var reviews: [Review] = [Review(id: UUID(), performanceId: Performance.performList[0].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false),
+//                                    Review(id: UUID(), performanceId: Performance.performList[1].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false),
+//                                    Review(id: UUID(), performanceId: Performance.performList[2].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false),
+//                                    Review(id: UUID(), performanceId: Performance.performList[0].id, writerId: UUID(), writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false)
+//
+//    ]
 }
