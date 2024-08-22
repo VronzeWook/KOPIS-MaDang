@@ -1,10 +1,3 @@
-//
-//  ReviewEditorView.swift
-//  MaDang
-//
-//  Created by LDW on 8/19/24.
-//
-
 import SwiftUI
 import FirebaseAuth
 
@@ -12,16 +5,21 @@ struct ReviewEditorView: View {
     @FocusState private var isFocused: Bool
     @State private var text: String = ""
     @State private var rating: Double = 0
+    @Binding var perform: Performance
+    
+    @EnvironmentObject var userManager: UserManager
     @Environment(\.presentationMode) var presentationMode
     
     var writerId: String {
            return Auth.auth().currentUser?.uid ?? "Unknown User"
        }
     
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.black
-        UITabBar.appearance().barTintColor = UIColor.NineYellow
-    }
+    init(perform: Binding<Performance>) {
+           self._perform = perform
+
+           UITabBar.appearance().backgroundColor = UIColor.black
+           UITabBar.appearance().barTintColor = UIColor.NineYellow
+       }
     
     
     var body: some View {
@@ -100,20 +98,27 @@ struct ReviewEditorView: View {
                 .navigationTitle("Write Review")
                 .navigationBarItems(trailing: Button("Save") {
                     FirestoreManager.shared.addReview(
-                        performanceId: "someID",
+                        performanceId: perform.id,
                         writerId: writerId,
                         writerCountry: .KOR,
                         writerName: "Andrew",
                         content: text,
                         starRating: rating
-                    )
-                    presentationMode.wrappedValue.dismiss()
+                    ) { result in
+                        switch result {
+                        case .success():
+                            print("Review added successfully")
+                            presentationMode.wrappedValue.dismiss()
+                        case .failure(let error):
+                            print("Failed to add review: \(error.localizedDescription)")
+                        }
+                    }
                 })
             }
     }
 }
 
 #Preview {
-    ReviewEditorView()
+    ReviewEditorView(perform: .constant(Performance.performList[0]))
 }
 

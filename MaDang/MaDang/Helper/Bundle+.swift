@@ -11,4 +11,8 @@ extension Bundle {
     var apiKey: String? {
         return infoDictionary?["KOPIS_API_KEY"] as? String
     }
+    
+    var gptApiKey: String? {
+        return infoDictionary?["GPT_API_KEY"] as? String
+    }
 }

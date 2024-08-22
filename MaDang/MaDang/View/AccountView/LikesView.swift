@@ -14,7 +14,7 @@ struct LikesView: View {
     // 초기화 시, 사용자 즐겨찾기 ID를 상태로 설정
     init(user: User) {
         self.user = user
-        _favoritePerformanceIds = State(initialValue: Set(user.favoritePerformanceId))
+        _favoritePerformanceIds = State(initialValue: Set(user.likePerformIdList))
     }
     
     // 사용자의 favoritePerformanceId와 일치하는 공연 필터링
@@ -172,6 +172,6 @@ struct LikesView: View {
     }
 }
 
-#Preview {
-    LikesView(user: currentUser)
-}
+//#Preview {
+//    LikesView(user: )
+//}
