@@ -98,6 +98,10 @@
 		468EEEDD2C73C45D00C07488 /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEDC2C73C45D00C07488 /* LikesView.swift */; };
 		468EEEE32C73EAFD00C07488 /* MyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEE22C73EAFD00C07488 /* MyReviewView.swift */; };
 		468EEEE52C73EFB000C07488 /* MyReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEEE42C73EFB000C07488 /* MyReviewRow.swift */; };
+		46C62C672C779C0B00357422 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46C62C662C779C0B00357422 /* GoogleService-Info.plist */; };
+		46C62C692C77A36800357422 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C682C77A36800357422 /* MainHeader.swift */; };
+		46C62C6B2C77AC7000357422 /* LangModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C6A2C77AC7000357422 /* LangModalView.swift */; };
+		46C62C6D2C77AF3400357422 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C6C2C77AF3400357422 /* Language.swift */; };
 		46E02B9F2C750A6F002CA1A3 /* AlertSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E02B9E2C750A6F002CA1A3 /* AlertSettingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +176,10 @@
 		468EEEDC2C73C45D00C07488 /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
 		468EEEE22C73EAFD00C07488 /* MyReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewView.swift; sourceTree = "<group>"; };
 		468EEEE42C73EFB000C07488 /* MyReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewRow.swift; sourceTree = "<group>"; };
+		46C62C662C779C0B00357422 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46C62C682C77A36800357422 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		46C62C6A2C77AC7000357422 /* LangModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangModalView.swift; sourceTree = "<group>"; };
+		46C62C6C2C77AF3400357422 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		46E02B9E2C750A6F002CA1A3 /* AlertSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				33A0689C2C7464C300EF0F09 /* MaDang.entitlements */,
+				46C62C662C779C0B00357422 /* GoogleService-Info.plist */,
 				33A068D92C75188300EF0F09 /* GoogleService-Info.plist */,
 				33388DE42C712EF700DECDC3 /* Info.plist */,
 				33388DE02C712E0E00DECDC3 /* Manager */,
@@ -330,6 +339,7 @@
 				33388DB32C6FCC5F00DECDC3 /* Country.swift */,
 				33388DB72C6FCE0700DECDC3 /* AttractionType.swift */,
 				4665F0DB2C720BAB007867FB /* Ranking.swift */,
+				46C62C6C2C77AF3400357422 /* Language.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -358,6 +368,8 @@
 				33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */,
 				33388DC42C70867500DECDC3 /* BestReviewView.swift */,
 				33388DC62C7086E600DECDC3 /* BestReviewRow.swift */,
+				46C62C682C77A36800357422 /* MainHeader.swift */,
+				46C62C6A2C77AC7000357422 /* LangModalView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -524,6 +536,7 @@
 				33388D772C6F2C0C00DECDC3 /* Preview Assets.xcassets in Resources */,
 				33A068DA2C75188300EF0F09 /* GoogleService-Info.plist in Resources */,
 				33388D742C6F2C0C00DECDC3 /* Assets.xcassets in Resources */,
+				46C62C672C779C0B00357422 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,8 +552,10 @@
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
 				468EEED52C73B35A00C07488 /* AccountView.swift in Sources */,
+				46C62C692C77A36800357422 /* MainHeader.swift in Sources */,
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
 				33388DBD2C7085C300DECDC3 /* MainView.swift in Sources */,
+				46C62C6B2C77AC7000357422 /* LangModalView.swift in Sources */,
 				468EEED92C73BCA500C07488 /* MyActivityList.swift in Sources */,
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
@@ -553,6 +568,7 @@
 				33388DBF2C70864700DECDC3 /* WhatIsNewView.swift in Sources */,
 				33388E052C728B7F00DECDC3 /* RatingView.swift in Sources */,
 				33388D8B2C6F367300DECDC3 /* DetailReviewView.swift in Sources */,
+				46C62C6D2C77AF3400357422 /* Language.swift in Sources */,
 				4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
