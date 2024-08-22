@@ -44,7 +44,8 @@ struct MainTabView: View {
                             Text(Title.ranking.name)
                         }
                         .tag(2)
-                    AccountView()
+                    //AccountView()
+                    TranslateTestView()
                         .tabItem {
                             Image(systemName: "person.circle.fill")
                             Text(Title.account.name)

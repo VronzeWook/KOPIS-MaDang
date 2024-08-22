@@ -103,6 +103,10 @@
 		46C62C692C77A36800357422 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C682C77A36800357422 /* MainHeader.swift */; };
 		46C62C6B2C77AC7000357422 /* LangModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C6A2C77AC7000357422 /* LangModalView.swift */; };
 		46C62C6D2C77AF3400357422 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C6C2C77AF3400357422 /* Language.swift */; };
+		46C62C6F2C77BAC800357422 /* TranslateTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C6E2C77BAC800357422 /* TranslateTestView.swift */; };
+		46C62C712C77BBF300357422 /* TranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C702C77BBF300357422 /* TranslateViewModel.swift */; };
+		46C62C732C77BC8300357422 /* TextDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C722C77BC8300357422 /* TextDetectionViewModel.swift */; };
+		46C62C752C77D64300357422 /* GPTTesttView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C62C742C77D64300357422 /* GPTTesttView.swift */; };
 		46E02B9F2C750A6F002CA1A3 /* AlertSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E02B9E2C750A6F002CA1A3 /* AlertSettingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +186,10 @@
 		46C62C682C77A36800357422 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
 		46C62C6A2C77AC7000357422 /* LangModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangModalView.swift; sourceTree = "<group>"; };
 		46C62C6C2C77AF3400357422 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		46C62C6E2C77BAC800357422 /* TranslateTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateTestView.swift; sourceTree = "<group>"; };
+		46C62C702C77BBF300357422 /* TranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModel.swift; sourceTree = "<group>"; };
+		46C62C722C77BC8300357422 /* TextDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewModel.swift; sourceTree = "<group>"; };
+		46C62C742C77D64300357422 /* GPTTesttView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTTesttView.swift; sourceTree = "<group>"; };
 		46E02B9E2C750A6F002CA1A3 /* AlertSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -366,12 +374,16 @@
 				33388DBE2C70864700DECDC3 /* WhatIsNewView.swift */,
 				33388DC02C70865A00DECDC3 /* PopularityRankingView.swift */,
 				33388DDA2C70E0DB00DECDC3 /* RankingCell.swift */,
+				46C62C6E2C77BAC800357422 /* TranslateTestView.swift */,
 				33388DC22C70866600DECDC3 /* GenreView.swift */,
 				33388DDC2C70FC6200DECDC3 /* GenreModalView.swift */,
 				33388DC42C70867500DECDC3 /* BestReviewView.swift */,
 				33388DC62C7086E600DECDC3 /* BestReviewRow.swift */,
 				46C62C682C77A36800357422 /* MainHeader.swift */,
 				46C62C6A2C77AC7000357422 /* LangModalView.swift */,
+				46C62C702C77BBF300357422 /* TranslateViewModel.swift */,
+				46C62C722C77BC8300357422 /* TextDetectionViewModel.swift */,
+				46C62C742C77D64300357422 /* GPTTesttView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -574,6 +586,7 @@
 				33388D8B2C6F367300DECDC3 /* DetailReviewView.swift in Sources */,
 				46C62C6D2C77AF3400357422 /* Language.swift in Sources */,
 				4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */,
+				46C62C752C77D64300357422 /* GPTTesttView.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
@@ -608,6 +621,8 @@
 				33A068A02C74797C00EF0F09 /* AppleAuthManager.swift in Sources */,
 				468EEED72C73B4EC00C07488 /* AccountProfile.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
+				46C62C732C77BC8300357422 /* TextDetectionViewModel.swift in Sources */,
+				46C62C712C77BBF300357422 /* TranslateViewModel.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */,
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
@@ -618,6 +633,7 @@
 				33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */,
 				33388DE62C71305B00DECDC3 /* Constants.swift in Sources */,
 				4665F0E02C721AB9007867FB /* LangSelectionView.swift in Sources */,
+				46C62C6F2C77BAC800357422 /* TranslateTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
