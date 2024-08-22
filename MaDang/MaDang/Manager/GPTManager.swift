@@ -15,7 +15,8 @@ class GPTManager: ObservableObject {
         self.response = ""
         Task {
             do {
-                let api = ChatGPTAPI(apiKey: Bundle.main.object(forInfoDictionaryKey: "API_KEY_GPT") as! String)
+                let api = ChatGPTAPI(apiKey: Bundle.main.object(forInfoDictionaryKey: "GPT_API_KEY") as! String)
+
                 let stream = try await api.sendMessageStream(text: text,
                                                              model: .gpt_hyphen_4,
                                                              systemText: """
@@ -47,7 +48,7 @@ class GPTManager: ObservableObject {
 
 // 사용 예시
 // @StateObject var gptManager = GPTManager()
-
+//
 // gptManager.sendMessage(from: originalText) { result in
 //    switch result {
 //    case .success:

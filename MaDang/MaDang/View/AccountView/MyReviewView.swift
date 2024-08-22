@@ -14,12 +14,12 @@ struct MyReviewView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(user.reviews) { review in
-                    MyReviewRow(review: review, performances: Performance.performList)
-                        .padding(.vertical, 4)
-                        .background(Color.black) 
-                        .cornerRadius(10)
-                }
+//                ForEach(user.reviews) { review in
+//                    MyReviewRow(review: review, performances: Performance.performList)
+//                        .padding(.vertical, 4)
+//                        .background(Color.black) 
+//                        .cornerRadius(10)
+//                }
             }
             .padding()
         }
@@ -29,7 +29,7 @@ struct MyReviewView: View {
     }
 }
 
-#Preview {
-    MyReviewView(user: currentUser)
-}
+//#Preview {
+//    MyReviewView(user: currentUser)
+//}
 

@@ -40,8 +40,15 @@ struct BestReviewView: View {
         .background(.nineBlack)
         .onAppear {
             // 테스트 요청
-            shared.fetchReviewsOrderedByLikes { reviews in
-                self.reviews = reviews
+            shared.fetchReviewsOrderedByLikes { result in
+                
+                switch result {
+                case .success(let reveiws):
+                    self.reviews = reviews
+                case .failure(_):
+                    print("failed to fetch reveiw in BestReviewView")
+                }
+
             }
         }
     }
