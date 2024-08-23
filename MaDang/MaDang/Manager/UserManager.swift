@@ -47,4 +47,34 @@ final class UserManager: ObservableObject {
         }
     }
     
+    // MARK: - 사용자 삭제 메서드
+     func deleteUser(completion: @escaping (Result<Void, Error>) -> Void) {
+         guard let fUser = fUser else {
+             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No authenticated user"])))
+             return
+         }
+
+         // Firestore에서 사용자 정보 삭제
+         FirestoreManager.shared.deleteUser(userId: fUser.uid) { [weak self] result in
+             switch result {
+             case .success:
+                 // Firebase Auth에서 사용자 삭제
+                 fUser.delete { error in
+                     if let error = error {
+                         print("Error deleting Firebase Auth user: \(error.localizedDescription)")
+                         completion(.failure(error))
+                     } else {
+                         // 삭제 성공 시 상태 초기화
+                         self?.fUser = nil
+                         self?.user = nil
+                         self?.isUserLoggedIn = false
+                         completion(.success(()))
+                         print("User deleted successfully from Firebase Auth")
+                     }
+                 }
+             case .failure(let error):
+                 completion(.failure(error))
+             }
+         }
+     }
 }

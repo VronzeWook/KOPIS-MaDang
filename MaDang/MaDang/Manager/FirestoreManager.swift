@@ -248,4 +248,17 @@ final class FirestoreManager: ObservableObject {
                completion(.failure(error))
            }
        }
+    
+    // MARK: - User 삭제 메서드
+     func deleteUser(userId: String, completion: @escaping (Result<Void, Error>) -> Void) {
+         db.collection("users").document(userId).delete { error in
+             if let error = error {
+                 print("Error deleting user: \(error.localizedDescription)")
+                 completion(.failure(error))
+             } else {
+                 print("User deleted successfully from Firestore")
+                 completion(.success(()))
+             }
+         }
+     }
 }
