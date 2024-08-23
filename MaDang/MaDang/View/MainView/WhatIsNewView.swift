@@ -67,7 +67,23 @@ fileprivate struct CarouselView: View {
             HStack(spacing: spacing) {
                 ForEach(0..<pageCount, id: \.self) { index in
                     let url = performs[index].posterUrlList.isEmpty ? "" : performs[index].posterUrlList[0]
-
+                    // 이미지 추출 및 번역 프로세스
+                    //                    //  URL로부터  UIImage 생성하기
+                    //                    if let imageUrl = URL(string: url), let imageData = try? Data(contentsOf: imageUrl), let image = UIImage(data: imageData) {
+                    //                        ImageWithOverlayView(image: image)
+                    //                            .frame(width: pageWidth)
+                    //                            .scaleEffect(scaleFor(index: index, pageWidth: pageWidth))
+                    //                            .onTapGesture {
+                    //                                selectedPerform = performs[index]
+                    //                                isDetailViewPresented = true
+                    //                            }
+                    //                    } else {
+                    //                        // place holder
+                    //                        Text("No image")
+                    //                            .frame(width: pageWidth)
+                    //                    }
+                    
+                    
                     VStack {
                         AsyncImage(url: URL(string: url)) { image in
                             image
@@ -134,5 +150,9 @@ struct PageIndicator: View {
             }
         }
     }
+}
+
+#Preview {
+    WhatIsNewView(performs: .constant(Performance.performList))
 }
 

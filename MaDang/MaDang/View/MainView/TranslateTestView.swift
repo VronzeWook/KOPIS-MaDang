@@ -36,6 +36,15 @@ struct TranslateTestView: View {
                                         .cornerRadius(5)
                                         .padding([.top, .leading], 10)
                                 }
+                                
+                                
+                                Text(gptManager.response)
+                                    .font(.caption)
+                                    .foregroundColor(.white)
+                                    .padding(5)
+                                    .background(Color.black.opacity(0.7))
+                                    .cornerRadius(5)
+                                    .padding([.top, .leading], 10)
                             }
                         }
                         .onAppear {
@@ -92,7 +101,6 @@ struct TranslateTestView: View {
         print("complete Translate")
         UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         isGenerating = false
-        // updateUserUsageInfo()
         withAnimation {
             rotation = 45
         }
@@ -102,4 +110,3 @@ struct TranslateTestView: View {
 #Preview {
     TranslateTestView()
 }
-
