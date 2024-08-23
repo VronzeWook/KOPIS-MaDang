@@ -7,11 +7,12 @@
 import SwiftUI
 
 struct DetailReviewView: View {
-    @Binding var reviews: [Review]
+    @State private var reviews: [Review] = []
     @Binding var perform: Performance
-    
+    @EnvironmentObject var userManager: UserManager
     @State private var selection: Country = .ALL
     
+
     var body: some View {
         VStack {
             HStack {
@@ -50,6 +51,30 @@ struct DetailReviewView: View {
                 .padding(.horizontal, 5)
                 .padding(.top, 40)
         }
+        .onAppear {
+            FirestoreManager.shared.fetchReviewsByPerformance(performanceId: perform.id) { result in
+                switch result {
+                case .success(let reviews):
+                    if reviews.isEmpty {
+                        print("No reviews available.")
+                    } else {
+                        self.reviews = reviews
+                        print("Fetched reviews successfully.")
+                        print("user : \(userManager.user?.name ?? "nil")")
+                        for review in reviews {
+                            print(review.id!)
+                            print(review.performanceId)
+                            print(review.content)
+                            print(review.writerId)
+                        }
+                    }
+                case .failure(let error):
+                    print("Failed to fetch reviews: \(error.localizedDescription)")
+                }
+            }
+            
+            
+        }
         .background(.black)
     }
     
@@ -58,6 +83,12 @@ struct DetailReviewView: View {
         @Binding var review: Review
         @EnvironmentObject var userManager: UserManager
 
+        private var formattedDate: String {
+              let formatter = DateFormatter()
+              formatter.dateFormat = "yyyy-MM-dd"
+              return formatter.string(from: review.createdDate)
+          }
+        
         var body: some View {
             if let user = userManager.user {
                 VStack(alignment: .leading) {
@@ -77,7 +108,7 @@ struct DetailReviewView: View {
                     HStack {
                         StarRatingView(rating: review.starRating)
                         Spacer()
-                        Text("2024-10-18")
+                        Text(formattedDate)
                             .font(.system(size: 12))
                             .foregroundStyle(.gray)
                     }
@@ -266,6 +297,8 @@ struct DetailReviewView: View {
             .padding(.vertical, 16)
         }
     }
+    
+    
 }
 
 //#Preview {

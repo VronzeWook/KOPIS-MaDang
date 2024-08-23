@@ -10,7 +10,6 @@ import SwiftUI
 struct DetailView: View {
     
     @Binding var perform: Performance
-    @State private var reviews: [Review] = []
     @State private var isDataLoaded = false
     
     var body: some View {
@@ -18,7 +17,7 @@ struct DetailView: View {
             DetailInfoView(perform: $perform)
                 .padding(.bottom, 96)
             DetailImageView(perform: $perform)
-            DetailReviewView(reviews: $reviews, perform: $perform)
+            DetailReviewView(perform: $perform)
             DetailCastingView(numberOfCircles: 7, perform: $perform)
             DetailTouristInfoView()
         }
@@ -40,15 +39,15 @@ struct DetailView: View {
                     print("KOPIS perform fetch failure")
                 }
                 
-                // 공연 아이디로 리뷰데이터 호출
-                FirestoreManager.shared.fetchReviewsByPerformance(performanceId: perform.id) { result in
-                    switch result {
-                    case .success(let reviews):
-                        self.reviews = reviews
-                    case .failure(_):
-                        print("Firestore reviews by perform failure")
-                    }
-                }
+//                // 공연 아이디로 리뷰데이터 호출
+//                FirestoreManager.shared.fetchReviewsByPerformance(performanceId: perform.id) { result in
+//                    switch result {
+//                    case .success(let reviews):
+//                        self.reviews = reviews
+//                    case .failure(_):
+//                        print("Firestore reviews by perform failure")
+//                    }
+//               }
             }
         }
     }

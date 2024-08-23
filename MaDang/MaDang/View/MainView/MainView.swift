@@ -77,6 +77,10 @@ struct MainView: View {
         } message: {
             Text("Please enter your password to confirm account deletion.")
         }
+//        .onAppear{
+//            UITabBar.appearance().backgroundColor = UIColor.black
+//            UITabBar.appearance().barTintColor = UIColor.black
+//        }
     }
 
     func reauthenticateAndDeleteUser() {

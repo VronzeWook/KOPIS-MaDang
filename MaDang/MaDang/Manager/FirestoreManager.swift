@@ -9,7 +9,6 @@ final class FirestoreManager: ObservableObject {
     static let shared = FirestoreManager()
     private init() {}
 
-    
     // MARK: - 리뷰 등록
     func addReview(performanceId: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<Void, Error>) -> Void) {
         let newReview = Review(

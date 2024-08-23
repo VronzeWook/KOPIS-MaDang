@@ -10,11 +10,23 @@ final class UserManager: ObservableObject {
         checkLoginStatus()
     }
     
+    // MARK: - 사용자 로그인 상태 체크
     func checkLoginStatus() {
         if let currentUser = Auth.auth().currentUser {
             // 사용자가 로그인되어 있음
             self.fUser = currentUser
             self.isUserLoggedIn = true
+            // user 요청
+            guard let f = fUser else {return}
+            FirestoreManager.shared.fetchUserById(userId: f.uid) { [weak self] result in
+                switch result {
+                case .success(let user):
+                    self?.user = user
+                case .failure(let error):
+                    print("Error fetching user data: \(error.localizedDescription)")
+                    self?.user = nil
+                }
+            }
         } else {
             // 사용자가 로그인되어 있지 않음
             self.user = nil
@@ -22,6 +34,7 @@ final class UserManager: ObservableObject {
         }
     }
     
+    // MARK: - 사용자 로그인
     func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             if let error = error {
@@ -37,6 +50,7 @@ final class UserManager: ObservableObject {
         }
     }
     
+    // MARK: - 사용자 로그아웃
     func logoutUser() {
         do {
             try Auth.auth().signOut()
