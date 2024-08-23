@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedTab: Int = 0
     @Binding var performs: [Performance]
-    @EnvironmentObject var authManager: AppleAuthManager
+
     //    init() {
     //            UITabBar.appearance().backgroundColor = UIColor.black
     //            UITabBar.appearance().barTintColor = UIColor.black
@@ -18,12 +18,7 @@ struct MainTabView: View {
     
     
     var body: some View {
-        VStack{
-            if authManager.authState == .signedOut {
-                
-                AppleLoginView()
-            } else {
-                
+
                 TabView(selection: $selectedTab) {
                     MainView(performs: $performs)
                         .tabItem {
@@ -59,11 +54,6 @@ struct MainTabView: View {
                     UITabBar.appearance().backgroundColor = UIColor.black
                     UITabBar.appearance().barTintColor = UIColor.black
                 }
-            }
-        }
-        .onAppear {
-            authManager.checkForExistingUser()
-        }
     }
 }
 
