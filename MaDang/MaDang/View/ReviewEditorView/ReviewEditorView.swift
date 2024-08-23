@@ -11,8 +11,16 @@ struct ReviewEditorView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var writerId: String {
-           return Auth.auth().currentUser?.uid ?? "Unknown User"
+           return Auth.auth().currentUser?.uid ?? "Unknown UserID"
        }
+    
+    var writerCountry: Country {
+        return userManager.user?.country ?? .ALL
+    }
+    
+    var writerName: String {
+        return userManager.user?.name ?? "Unknown UserName"
+    }
     
     init(perform: Binding<Performance>) {
            self._perform = perform
@@ -20,7 +28,7 @@ struct ReviewEditorView: View {
            UITabBar.appearance().backgroundColor = UIColor.black
            UITabBar.appearance().barTintColor = UIColor.NineYellow
        }
-    
+
     
     var body: some View {
 
@@ -100,8 +108,8 @@ struct ReviewEditorView: View {
                     FirestoreManager.shared.addReview(
                         performanceId: perform.id,
                         writerId: writerId,
-                        writerCountry: .KOR,
-                        writerName: "Andrew",
+                        writerCountry: writerCountry,
+                        writerName: writerName,
                         content: text,
                         starRating: rating
                     ) { result in

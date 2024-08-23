@@ -28,6 +28,11 @@ struct MaDangApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var userManager: UserManager = UserManager()
     
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.black
+        UITabBar.appearance().barTintColor = UIColor.black
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack{

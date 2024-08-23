@@ -8,6 +8,8 @@ struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
+    @State private var name: String = ""
+    @State private var selectedCountry: Country = .ALL
     @State private var emailValidationMessage: String = ""
     @State private var passwordValidationMessage: String = ""
     @State private var confirmPasswordMessage: String = ""
@@ -20,6 +22,12 @@ struct RegisterView: View {
                 .font(.largeTitle)
                 .padding()
 
+            TextField("Enter your name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            SegmentedCountryView(selection: $selectedCountry)
+            
             TextField("Enter your email", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
@@ -73,48 +81,49 @@ struct RegisterView: View {
     }
 
     func registerUser() {
-          guard canRegister() else { return }
+        guard canRegister() else { return }
 
-          Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-              DispatchQueue.main.async {
-                  if let error = error {
-                      self.errorMessage = error.localizedDescription
-                      self.showingAlert = true
-                  } else if let authResult = authResult {
-                      // Registration successful, now save the user data to Firestore
-                      saveUserToFirestore(uid: authResult.user.uid)
-                  }
-              }
-          }
-      }
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.errorMessage = error.localizedDescription
+                    self.showingAlert = true
+                } else if let authResult = authResult {
+                    // Registration successful, now save the user data to Firestore
+                    saveUserToFirestore(uid: authResult.user.uid)
+                }
+            }
+        }
+    }
 
-      func saveUserToFirestore(uid: String) {
-          let db = Firestore.firestore()
-          
-          let user = User(
-              id: uid,
-              name: email, // Assuming you're using email as the user's name, customize as needed
-              country: Country.ALL, // Replace with the actual value or input from the user
-              reviewIdList: [],
-              likeReviewIdList: [],
-              likePerformIdList: []
-          )
+    func saveUserToFirestore(uid: String) {
+        let db = Firestore.firestore()
+        
+        let user = User(
+            id: uid,
+            name: name, // Use the entered name
+            email: email,
+            country: selectedCountry, // Use the selected country
+            reviewIdList: [],
+            likeReviewIdList: [],
+            likePerformIdList: []
+        )
 
-          do {
-              try db.collection("users").document(uid).setData(from: user) { error in
-                  if let error = error {
-                      self.errorMessage = "Error saving user data: \(error.localizedDescription)"
-                      self.showingAlert = true
-                  } else {
-                      self.presentationMode.wrappedValue.dismiss()
-                      print("User registered and data saved to Firestore successfully!")
-                  }
-              }
-          } catch let error {
-              self.errorMessage = "Error saving user data: \(error.localizedDescription)"
-              self.showingAlert = true
-          }
-      }
+        do {
+            try db.collection("users").document(uid).setData(from: user) { error in
+                if let error = error {
+                    self.errorMessage = "Error saving user data: \(error.localizedDescription)"
+                    self.showingAlert = true
+                } else {
+                    self.presentationMode.wrappedValue.dismiss()
+                    print("User registered and data saved to Firestore successfully!")
+                }
+            }
+        } catch let error {
+            self.errorMessage = "Error saving user data: \(error.localizedDescription)"
+            self.showingAlert = true
+        }
+    }
 
     func validateEmail() -> Bool {
         let emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$"
@@ -131,7 +140,54 @@ struct RegisterView: View {
     }
 
     func canRegister() -> Bool {
-        return validateEmail() && validatePassword() && passwordsMatch()
+        return !name.isEmpty && validateEmail() && validatePassword() && passwordsMatch()
+    }
+    
+    private struct SegmentedCountryView: View {
+        @Binding var selection: Country
+        
+        var body: some View {
+            ScrollView(.horizontal) {
+                HStack {
+                    Button(action: {
+                        selection = .USA
+                    }, label: {
+                        Text("🇺🇸 USA")
+                            .font(.system(size: 16))
+                            .foregroundStyle(selection == .USA ? .nineBlack : .white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(selection == .USA ? .nineYellow : .nineDarkGray)
+                            .cornerRadius(55)
+                    })
+                    
+                    Button(action: {
+                        selection = .CHN
+                    }, label: {
+                        Text("🇨🇳 CHN")
+                            .font(.system(size: 16))
+                            .foregroundStyle(selection == .CHN ? .nineBlack : .white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(selection == .CHN ? .nineYellow : .nineDarkGray)
+                            .cornerRadius(55)
+                    })
+                    
+                    Button(action: {
+                        selection = .JPN
+                    }, label: {
+                        Text("🇯🇵 JPN")
+                            .font(.system(size: 16))
+                            .foregroundStyle(selection == .JPN ? .nineBlack : .white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(selection == .JPN ? .nineYellow : .nineDarkGray)
+                            .cornerRadius(55)
+                    })
+                }
+            }
+            .padding(.vertical, 16)
+        }
     }
 }
 

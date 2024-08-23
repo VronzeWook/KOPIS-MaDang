@@ -11,12 +11,7 @@ struct MainTabView: View {
     @State private var selectedTab: Int = 0
     @Binding var performs: [Performance]
 
-    //    init() {
-    //            UITabBar.appearance().backgroundColor = UIColor.black
-    //            UITabBar.appearance().barTintColor = UIColor.black
-    //        }
-    
-    
+
     var body: some View {
 
                 TabView(selection: $selectedTab) {
@@ -50,10 +45,10 @@ struct MainTabView: View {
                     
                 }
                 .tint(Color(.nineYellow))
-                .onAppear {
-                    UITabBar.appearance().backgroundColor = UIColor.black
-                    UITabBar.appearance().barTintColor = UIColor.black
-                }
+//                .onAppear {
+//                    UITabBar.appearance().backgroundColor = UIColor.black
+//                    UITabBar.appearance().barTintColor = UIColor.black
+//                }
     }
 }
 

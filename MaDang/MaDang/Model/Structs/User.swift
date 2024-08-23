@@ -11,6 +11,7 @@ import FirebaseFirestore
 struct User: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     var name: String
+    var email: String = ""
     var country: Country
     var reviewIdList: [String]
     var likeReviewIdList: [String]
