@@ -43,6 +43,9 @@ class GPTManager: ObservableObject {
             }
         }
     }
+    
+
+
 }
 
 

@@ -13,6 +13,17 @@ struct GenreView: View {
     @Binding var currentGenre: Genre
     @Binding var performs: [Performance]
     
+    
+    
+    @StateObject private var viewModel = TextDetectionViewModel()
+    @StateObject private var gptManager = GPTManager()
+    @State private var uiImage: UIImage? = UIImage(named: "kopisTestImage")
+    @State private var isGenerating: Bool = false
+    @State private var rotation: Double = 0.0
+    @State private var isLoading: Bool = false
+    @State private var showErrorAlert: Bool = false
+    @State private var errorMessage: String = ""
+    
     var body: some View {
         
         let filteredPerforms = performs
@@ -67,9 +78,6 @@ struct GenreView: View {
                             DetailView(perform: $performs[performs.firstIndex(where: { $0.id == perform.id })!])
                         } label: {
                             ZStack {
-    //                            Image("kopisTestImage")
-    //                                .resizable()
-    //                                .aspectRatio(contentMode: .fill)
                                 
                                 let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
                                 
@@ -79,6 +87,7 @@ struct GenreView: View {
                                         .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
                                         //.frame(width: 100, height: 150) // 적절한 크기로 제한
                                         //.clipped()
+                                        
                                 } placeholder: {
                                     ProgressView()
                                         .foregroundStyle(.nineDarkGray)
@@ -86,7 +95,6 @@ struct GenreView: View {
                                 }
                                 .aspectRatio(contentMode: .fit)
                                 .clipped()
-                                
                                 LinearGradient(
                                     gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
                                     startPoint: .bottom,
@@ -121,13 +129,50 @@ struct GenreView: View {
             }
         }
     }
+    private func translateText() {
+        guard !viewModel.detectedText.isEmpty else { return }
+        isLoading = true
+        gptManager.sendMessage(from: viewModel.detectedText) { result in
+            DispatchQueue.main.async {
+                isLoading = false
+                switch result {
+                case .success:
+                    print("Translation successful")
+                    completeTranslate()
+                case .failure(let error):
+                    errorMessage = error.localizedDescription
+                    showErrorAlert = true
+                }
+            }
+        }
+    }
+    private func completeTranslate() {
+        print("complete Translate")
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+        isGenerating = false
+        withAnimation {
+            rotation = 45
+        }
+    }
 }
 
 extension GenreView {
-    
-    
-    
+  
 }
+
+extension Image {
+    func asUIImage() -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 150))
+        return renderer.image { _ in
+            self
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 150)
+                .clipped()
+        }
+    }
+}
+
 
 #Preview {
     GenreView(currentGenre: .constant(.All), performs: .constant(Performance.performList))
