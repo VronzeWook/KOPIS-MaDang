@@ -75,7 +75,6 @@
 		33A068D02C747BB300EF0F09 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068CF2C747BB300EF0F09 /* FirebaseStorage */; };
 		33A068D22C747BB300EF0F09 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068D12C747BB300EF0F09 /* FirebaseStorageCombine-Community */; };
 		33A068D42C747BB300EF0F09 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068D32C747BB300EF0F09 /* FirebaseVertexAI-Preview */; };
-		33A068DA2C75188300EF0F09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A068D92C75188300EF0F09 /* GoogleService-Info.plist */; };
 		33A068DC2C7518AC00EF0F09 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068DB2C7518AC00EF0F09 /* FirestoreManager.swift */; };
 		33DF50692C77B1F300D0A5C1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF50682C77B1F300D0A5C1 /* UserManager.swift */; };
 		4665F0D82C7208E5007867FB /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665F0D72C7208E5007867FB /* RankingView.swift */; };
@@ -160,7 +159,6 @@
 		33A0689F2C74797C00EF0F09 /* AppleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthManager.swift; sourceTree = "<group>"; };
 		33A068A12C74799800EF0F09 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		33A068A42C7479F800EF0F09 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
-		33A068D92C75188300EF0F09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33A068DB2C7518AC00EF0F09 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		33DF50682C77B1F300D0A5C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			children = (
 				33A0689C2C7464C300EF0F09 /* MaDang.entitlements */,
 				46C62C662C779C0B00357422 /* GoogleService-Info.plist */,
-				33A068D92C75188300EF0F09 /* GoogleService-Info.plist */,
 				33388DE42C712EF700DECDC3 /* Info.plist */,
 				33388DE02C712E0E00DECDC3 /* Manager */,
 				33388D7D2C6F34BA00DECDC3 /* App */,
@@ -555,7 +552,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33388D772C6F2C0C00DECDC3 /* Preview Assets.xcassets in Resources */,
-				33A068DA2C75188300EF0F09 /* GoogleService-Info.plist in Resources */,
 				33388D742C6F2C0C00DECDC3 /* Assets.xcassets in Resources */,
 				46C62C672C779C0B00357422 /* GoogleService-Info.plist in Resources */,
 			);
