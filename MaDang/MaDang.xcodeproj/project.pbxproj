@@ -42,16 +42,14 @@
 		33388DF62C720F3300DECDC3 /* GPTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DF52C720F3300DECDC3 /* GPTManager.swift */; };
 		33388DF92C720F5700DECDC3 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DF82C720F5700DECDC3 /* ChatGPTSwift */; };
 		33388DFB2C720F5700DECDC3 /* SampleApp in Frameworks */ = {isa = PBXBuildFile; productRef = 33388DFA2C720F5700DECDC3 /* SampleApp */; };
-		33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFC2C72149E00DECDC3 /* DataManager.swift */; };
 		33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */; };
 		33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E002C72827300DECDC3 /* ReviewEditorView.swift */; };
 		33388E052C728B7F00DECDC3 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E042C728B7F00DECDC3 /* RatingView.swift */; };
 		33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */; };
+		334FE8602C78D4B400A5404E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE85F2C78D4B400A5404E /* RegisterView.swift */; };
+		334FE8622C78FD6400A5404E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE8612C78FD6400A5404E /* LoginView.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
-		33A068A02C74797C00EF0F09 /* AppleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0689F2C74797C00EF0F09 /* AppleAuthManager.swift */; };
-		33A068A22C74799800EF0F09 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068A12C74799800EF0F09 /* KeychainHelper.swift */; };
-		33A068A52C7479F800EF0F09 /* AppleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068A42C7479F800EF0F09 /* AppleLoginView.swift */; };
 		33A068A82C747BB300EF0F09 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A72C747BB300EF0F09 /* FirebaseAnalytics */; };
 		33A068AA2C747BB300EF0F09 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A92C747BB300EF0F09 /* FirebaseAnalyticsOnDeviceConversion */; };
 		33A068AC2C747BB300EF0F09 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068AB2C747BB300EF0F09 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -148,17 +146,15 @@
 		33388DEA2C713C6900DECDC3 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		33388DEC2C713E5C00DECDC3 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		33388DF52C720F3300DECDC3 /* GPTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTManager.swift; sourceTree = "<group>"; };
-		33388DFC2C72149E00DECDC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailXMLParser.swift; sourceTree = "<group>"; };
 		33388E002C72827300DECDC3 /* ReviewEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEditorView.swift; sourceTree = "<group>"; };
 		33388E042C728B7F00DECDC3 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextEditor.swift; sourceTree = "<group>"; };
+		334FE85F2C78D4B400A5404E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		334FE8612C78FD6400A5404E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		33A0689C2C7464C300EF0F09 /* MaDang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaDang.entitlements; sourceTree = "<group>"; };
-		33A0689F2C74797C00EF0F09 /* AppleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthManager.swift; sourceTree = "<group>"; };
-		33A068A12C74799800EF0F09 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		33A068A42C7479F800EF0F09 /* AppleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginView.swift; sourceTree = "<group>"; };
 		33A068DB2C7518AC00EF0F09 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		33DF50682C77B1F300D0A5C1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4665F0D72C7208E5007867FB /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
@@ -284,16 +280,18 @@
 		33388D7E2C6F34E200DECDC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4665F0ED2C723802007867FB /* MainTabView.swift */,
 				46C62C7E2C78489900357422 /* Translate */,
 				33A068A32C7479E900EF0F09 /* LoginView */,
 				468EEED32C73B34700C07488 /* AccountView */,
-				4665F0ED2C723802007867FB /* MainTabView.swift */,
 				33A0689B2C73D13800EF0F09 /* ReviewEditorView */,
 				4665F1222C73AFEA007867FB /* ByGenreView */,
 				4665F0D62C7208D2007867FB /* RankingView */,
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
+				334FE85F2C78D4B400A5404E /* RegisterView.swift */,
+				334FE8612C78FD6400A5404E /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,7 +312,6 @@
 				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
 				33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */,
-				33A068A12C74799800EF0F09 /* KeychainHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -391,8 +388,6 @@
 			children = (
 				33388DE12C712E3800DECDC3 /* KopisNetworkingManager.swift */,
 				33388DF52C720F3300DECDC3 /* GPTManager.swift */,
-				33388DFC2C72149E00DECDC3 /* DataManager.swift */,
-				33A0689F2C74797C00EF0F09 /* AppleAuthManager.swift */,
 				33A068DB2C7518AC00EF0F09 /* FirestoreManager.swift */,
 				33DF50682C77B1F300D0A5C1 /* UserManager.swift */,
 			);
@@ -412,7 +407,6 @@
 		33A068A32C7479E900EF0F09 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				33A068A42C7479F800EF0F09 /* AppleLoginView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -576,7 +570,6 @@
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33DF50692C77B1F300D0A5C1 /* UserManager.swift in Sources */,
-				33388DFD2C72149E00DECDC3 /* DataManager.swift in Sources */,
 				468EEED52C73B35A00C07488 /* AccountView.swift in Sources */,
 				46C62C692C77A36800357422 /* MainHeader.swift in Sources */,
 				33388DE92C71324100DECDC3 /* Bundle+.swift in Sources */,
@@ -586,6 +579,7 @@
 				33388DC52C70867500DECDC3 /* BestReviewView.swift in Sources */,
 				4665F0DC2C720BAB007867FB /* Ranking.swift in Sources */,
 				33388D912C6F635300DECDC3 /* Color+.swift in Sources */,
+				334FE8602C78D4B400A5404E /* RegisterView.swift in Sources */,
 				4665F0DA2C7209A0007867FB /* LogoHeader.swift in Sources */,
 				33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */,
 				4665F12C2C73B0B2007867FB /* ByGenreViewModel.swift in Sources */,
@@ -624,21 +618,19 @@
 				33388D962C6F88F900DECDC3 /* Performance.swift in Sources */,
 				46C62C772C78090100357422 /* TextAndTranslateManager.swift in Sources */,
 				468EEEDD2C73C45D00C07488 /* LikesView.swift in Sources */,
-				33A068A22C74799800EF0F09 /* KeychainHelper.swift in Sources */,
 				33388DB42C6FCC5F00DECDC3 /* Country.swift in Sources */,
 				4665F0D82C7208E5007867FB /* RankingView.swift in Sources */,
 				468EEEDB2C73C05900C07488 /* CommunityList.swift in Sources */,
 				4665F1282C73B062007867FB /* ByGenreModalView.swift in Sources */,
 				46C62C7D2C78096800357422 /* ImageWithOverlayView.swift in Sources */,
-				33A068A02C74797C00EF0F09 /* AppleAuthManager.swift in Sources */,
 				468EEED72C73B4EC00C07488 /* AccountProfile.swift in Sources */,
 				33388DB82C6FCE0700DECDC3 /* AttractionType.swift in Sources */,
 				46C62C732C77BC8300357422 /* TextDetectionViewModel.swift in Sources */,
 				46C62C712C77BBF300357422 /* TranslateViewModel.swift in Sources */,
+				334FE8622C78FD6400A5404E /* LoginView.swift in Sources */,
 				33388DC12C70865A00DECDC3 /* PopularityRankingView.swift in Sources */,
 				33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */,
 				33388D8D2C6F368300DECDC3 /* DetailTouristInfoView.swift in Sources */,
-				33A068A52C7479F800EF0F09 /* AppleLoginView.swift in Sources */,
 				33388D842C6F363800DECDC3 /* DetailView.swift in Sources */,
 				33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */,
 				33388D702C6F2C0A00DECDC3 /* MaDangApp.swift in Sources */,

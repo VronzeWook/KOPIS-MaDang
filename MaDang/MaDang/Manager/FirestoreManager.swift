@@ -1,14 +1,15 @@
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 final class FirestoreManager: ObservableObject {
     @Published var reviews: [Review] = []
 
     private var db = Firestore.firestore()
-
     static let shared = FirestoreManager()
     private init() {}
 
+    
     // MARK: - 리뷰 등록
     func addReview(performanceId: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<Void, Error>) -> Void) {
         let newReview = Review(

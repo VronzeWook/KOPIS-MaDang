@@ -69,7 +69,7 @@ final class MyXMLParser: NSObject, XMLParserDelegate {
         currentValue = ""
     }
     
-    // 파싱이 완료되었을 때 호출되는 메서드 (테스트용)
+     // 파싱이 완료되었을 때 호출되는 메서드 (테스트용)
     func parserDidEndDocument(_ parser: XMLParser) {
         let dbs = Dbs(script: script, db: dbList)
         welcome4 = Welcome4(dbs: dbs)
