@@ -48,6 +48,7 @@
 		33388E072C732F6900DECDC3 /* FocusableTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */; };
 		334FE8602C78D4B400A5404E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE85F2C78D4B400A5404E /* RegisterView.swift */; };
 		334FE8622C78FD6400A5404E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE8612C78FD6400A5404E /* LoginView.swift */; };
+		334FE8642C79CEC300A5404E /* RetryingAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
 		33A068A82C747BB300EF0F09 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A72C747BB300EF0F09 /* FirebaseAnalytics */; };
@@ -152,6 +153,7 @@
 		33388E062C732F6900DECDC3 /* FocusableTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextEditor.swift; sourceTree = "<group>"; };
 		334FE85F2C78D4B400A5404E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		334FE8612C78FD6400A5404E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryingAsyncImage.swift; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		33A0689C2C7464C300EF0F09 /* MaDang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaDang.entitlements; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
+				334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				33388D842C6F363800DECDC3 /* DetailView.swift in Sources */,
 				33388E012C72827300DECDC3 /* ReviewEditorView.swift in Sources */,
 				33388D702C6F2C0A00DECDC3 /* MaDangApp.swift in Sources */,
+				334FE8642C79CEC300A5404E /* RetryingAsyncImage.swift in Sources */,
 				33388DEB2C713C6900DECDC3 /* ApiModel.swift in Sources */,
 				33388DE62C71305B00DECDC3 /* Constants.swift in Sources */,
 				4665F0E02C721AB9007867FB /* LangSelectionView.swift in Sources */,
