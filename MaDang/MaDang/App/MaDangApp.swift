@@ -35,7 +35,7 @@ struct MaDangApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
+            NavigationStack {
                 if !userManager.isUserLoggedIn {
                     LoginView()
                 } else {
@@ -53,7 +53,9 @@ struct MaDangApp: App {
                                     print("failure")
                                 }
                             }
-
+                            
+                            // 유저 정보 갱신
+                            userManager.checkLoginStatus()
                         }
                 }
             }

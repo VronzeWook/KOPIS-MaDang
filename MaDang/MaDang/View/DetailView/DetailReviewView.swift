@@ -88,7 +88,7 @@ struct DetailReviewView: View {
               formatter.dateFormat = "yyyy-MM-dd"
               return formatter.string(from: review.createdDate)
           }
-        
+
         var body: some View {
             if let user = userManager.user {
                 VStack(alignment: .leading) {
@@ -96,7 +96,7 @@ struct DetailReviewView: View {
                         Image(systemName: "person.crop.circle.fill")
                             .foregroundStyle(.white)
                         
-                        Text("\(user.name) \(user.country.rawValue)")
+                        Text("\(user.name) \(user.country.flag)")
                             .foregroundStyle(.white)
                             .font(.system(size: 14))
                             .fontWeight(.bold)
@@ -118,35 +118,57 @@ struct DetailReviewView: View {
                         .padding(.bottom, 16)
                     
                     HStack {
+                        
                         Button(action: {
+                            guard let user = userManager.user else { return }
+
+                            // Step 1: 업데이트할 유저 정보 복사
+                            var updatedUser = user
+
+                            // Step 2: Like/Unlike 처리 및 review의 likeCount 갱신
                             if isLike {
-                                review.likeCount -= 1
-                                removeLikeReviewId(review.id)
+                                if review.likeCount > 0 {
+                                    review.likeCount -= 1
+                                }
+
+                                if let index = updatedUser.likeReviewIdList.firstIndex(of: review.id!) {
+                                    updatedUser.likeReviewIdList.remove(at: index)
+                                }
                             } else {
                                 review.likeCount += 1
+                                  // empathyCount 증가
                                 if let id = review.id {
-                                    userManager.user?.likeReviewIdList.append(id)
+                                    updatedUser.likeReviewIdList.append(id)
                                 }
                             }
+
                             isLike.toggle()
-                            FirestoreManager.shared.upsertReview(performId: review.performanceId, writerId: review.writerId, review: review) { result in
-                                switch result {
+
+                            // Step 3: Firestore에 review 업데이트
+                            FirestoreManager.shared.upsertReview(performId: review.performanceId, writerId: review.writerId, review: review) { reviewResult in
+                                switch reviewResult {
                                 case .success():
+                                    updateUserEmpathyCount(for: review.writerId, increment: isLike)
+                                    // 토글됬으니 반대로
+                                    // Step 4: Firestore에 유저 정보 업데이트
+                                    FirestoreManager.shared.updateUser(updatedUser) { userResult in
+                                        switch userResult {
+                                        case .success():
+                                            // Firestore에 업데이트가 완료된 후, UI를 메인 쓰레드에서 갱신
+                                            DispatchQueue.main.async {
+                                                userManager.user = updatedUser  // 업데이트된 유저 정보로 교체
+                                                print("User Like Review update success")
+                                            }
+                                        case .failure(let error):
+                                            print("User Like Review update failure: \(error.localizedDescription)")
+                                        }
+                                    }
                                     print("LikeCount update success")
-                                case .failure(_):
-                                    print("LikeCount update failure")
+                                case .failure(let error):
+                                    print("LikeCount update failure: \(error.localizedDescription)")
                                 }
                             }
-                            
-                            guard let user = userManager.user else { return }
-                            FirestoreManager.shared.updateUser(user) { result in
-                                switch result {
-                                case .success():
-                                    print("User Like Review update success")
-                                case .failure(_):
-                                    print("User Like Review update failure")
-                                }
-                            }
+
                         }, label: {
                             HStack(spacing: 2) {
                                 Image(systemName: isLike ? "hand.thumbsup.fill" : "hand.thumbsup")
@@ -184,10 +206,32 @@ struct DetailReviewView: View {
             }
         }
         
-        private func removeLikeReviewId(_ id: String?) {
-            guard let id = id else { return }
-            guard let index = userManager.user?.likeReviewIdList.firstIndex(of: id) else { return }
-            userManager.user?.likeReviewIdList.remove(at: index)
+        
+        private func updateUserEmpathyCount(for writerId: String, increment: Bool) {
+            FirestoreManager.shared.fetchUserById(userId: writerId) { result in
+                switch result {
+                case .success(var user):
+                    // likeCount 증가 시 empathyCount 증가, 감소 시 empathyCount 감소
+                    user.empathyCount += increment ? 1 : -1
+
+                    // 업데이트된 유저 정보 Firestore에 저장
+                    FirestoreManager.shared.updateUser(user) { updateResult in
+                        switch updateResult {
+                        case .success():
+                            DispatchQueue.main.async {
+                                userManager.user = user  // 업데이트된 유저 정보로 교체
+                                print("User Like Review update success")
+                            }
+                            print("Writer's empathyCount updated successfully in Firestore")
+                            // 여기서 userManager.user를 업데이트하지 않음
+                        case .failure(let error):
+                            print("Failed to update writer's empathyCount in Firestore: \(error.localizedDescription)")
+                        }
+                    }
+                case .failure(let error):
+                    print("Failed to fetch writer for updating empathyCount: \(error.localizedDescription)")
+                }
+            }
         }
     }
     

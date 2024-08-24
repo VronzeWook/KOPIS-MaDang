@@ -34,8 +34,8 @@ struct MainTabView: View {
                             Text(Title.ranking.name)
                         }
                         .tag(2)
-                    //AccountView()
-                    TranslateTestView()
+                    AccountView()
+                    // TranslateTestView()
                         .tabItem {
                             Image(systemName: "person.circle.fill")
                             Text(Title.account.name)
@@ -45,10 +45,6 @@ struct MainTabView: View {
                     
                 }
                 .tint(Color(.nineYellow))
-//                .onAppear {
-//                    UITabBar.appearance().backgroundColor = UIColor.black
-//                    UITabBar.appearance().barTintColor = UIColor.black
-//                }
     }
 }
 

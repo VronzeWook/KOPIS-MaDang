@@ -106,7 +106,8 @@ struct RegisterView: View {
             country: selectedCountry, // Use the selected country
             reviewIdList: [],
             likeReviewIdList: [],
-            likePerformIdList: []
+            likePerformIdList: [],
+            empathyCount: 0
         )
 
         do {

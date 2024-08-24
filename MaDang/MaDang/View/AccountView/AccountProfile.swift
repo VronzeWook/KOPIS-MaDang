@@ -38,10 +38,45 @@ struct AccountProfile: View {
 
 
 struct ProfileView : View {
-    
+    @EnvironmentObject var userManager: UserManager
     @State private var showingImagePicker = false
     @State private var profileImage: Image? = Image("profile")
     @State private var inputImage: UIImage?
+    
+    var name: String {
+        guard let user = userManager.user  else {
+            return "No Name"
+        }
+        return user.name
+    }
+    
+    var country: Country {
+        guard let user = userManager.user  else {
+            return .ALL
+        }
+        return user.country
+    }
+    
+    var likeCount: Int {
+        guard let user = userManager.user  else {
+            return 0
+        }
+        return user.likePerformIdList.count
+    }
+    
+    var reviewCount: Int {
+        guard let user = userManager.user else {
+            return 0
+        }
+        return user.reviewIdList.count
+    }
+    
+    var empathyCount: Int {
+        guard let user = userManager.user else {
+            return 0
+        }
+        return user.empathyCount
+    }
     
     var body: some View {
         VStack{
@@ -71,11 +106,11 @@ struct ProfileView : View {
                     .scaledToFit()
                     .cornerRadius(90)
                 HStack{
-                    Text("Ashley")
+                    Text(name)
                         .font(.system(size: 26))
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
-                    Text("🇺🇸")
+                    Text(country.flag)
                         .font(.system(size: 26))
                 }
             }
@@ -90,7 +125,7 @@ struct ProfileView : View {
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)
-                        Text("24")
+                        Text("\(likeCount)")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)
@@ -108,7 +143,7 @@ struct ProfileView : View {
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)
-                        Text("18")
+                        Text("\(reviewCount)")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)
@@ -125,7 +160,7 @@ struct ProfileView : View {
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)
-                        Text("231")
+                        Text("\(empathyCount)")
                             .font(.system(size: 22))
                             .fontWeight(.bold)
                             .foregroundStyle(.nineYellow)

@@ -16,6 +16,7 @@ struct User: Identifiable, Codable, Hashable {
     var reviewIdList: [String]
     var likeReviewIdList: [String]
     var likePerformIdList: [String]
+    var empathyCount: Int
 }
 //
 //var currentUser = User(

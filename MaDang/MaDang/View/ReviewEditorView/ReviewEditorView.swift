@@ -25,8 +25,8 @@ struct ReviewEditorView: View {
     init(perform: Binding<Performance>) {
            self._perform = perform
 
-           UITabBar.appearance().backgroundColor = UIColor.black
-           UITabBar.appearance().barTintColor = UIColor.NineYellow
+           UITabBar.appearance().backgroundColor = UIColor.nineBlack
+        UITabBar.appearance().barTintColor = UIColor.nineBlack
        }
 
     
@@ -105,8 +105,18 @@ struct ReviewEditorView: View {
                 }
                 .navigationTitle("Write Review")
                 .navigationBarItems(trailing: Button("Save") {
+                    
+                    // 포스터 url 저장
+                    var url = ""
+                    
+                    if !perform.posterUrlList.isEmpty {
+                        url = perform.posterUrlList[0]
+                    }
+                    
+                    // Firestore에 리뷰 저장
                     FirestoreManager.shared.addReview(
                         performanceId: perform.id,
+                        posterUrl: url,
                         writerId: writerId,
                         writerCountry: writerCountry,
                         writerName: writerName,
@@ -114,13 +124,33 @@ struct ReviewEditorView: View {
                         starRating: rating
                     ) { result in
                         switch result {
-                        case .success():
+                        case .success(let reviewId):
                             print("Review added successfully")
+                            
+                            // 유저의 reviewIdList에 추가
+                            guard var user = userManager.user else { return }
+                            user.reviewIdList.append(reviewId)
+                            
+                            // Firestore에 업데이트된 유저 정보 저장
+                            FirestoreManager.shared.updateUser(user) { updateResult in
+                                switch updateResult {
+                                case .success():
+                                    // userManager에 반영
+                                    userManager.user = user
+                                    print("User's reviewIdList updated successfully in Firestore")
+                                case .failure(let error):
+                                    print("Failed to update user's reviewIdList in Firestore: \(error.localizedDescription)")
+                                }
+                            }
+                            
                             presentationMode.wrappedValue.dismiss()
                         case .failure(let error):
                             print("Failed to add review: \(error.localizedDescription)")
                         }
                     }
+                    
+                    
+                    
                 })
             }
     }

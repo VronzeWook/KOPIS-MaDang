@@ -13,4 +13,19 @@ enum Country: String, Codable, CaseIterable, Hashable {
     case CHN
     case KOR
     case ALL
+    
+    var flag: String {
+        switch self {
+        case .KOR:
+            return "🇰🇷"
+        case .USA:
+            return "🇺🇸"
+        case .CHN:
+            return "🇨🇳"
+        case .JPN:
+            return "🇯🇵"
+        case .ALL:
+            return "🏳️"
+        }
+    }
 }

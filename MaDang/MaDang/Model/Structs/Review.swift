@@ -11,6 +11,7 @@ import FirebaseFirestore
 struct Review : Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     var performanceId: String
+    var posterUrl: String
     var writerId: String
     var writerCountry: Country
     var writerName: String

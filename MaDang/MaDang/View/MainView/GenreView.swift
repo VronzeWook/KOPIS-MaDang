@@ -27,13 +27,11 @@ struct GenreView: View {
     var body: some View {
         
         let filteredPerforms = performs
-//            
-//            .filter { per in
-//            if currentGenre == .All {return true}
-//            return per.genre == currentGenre
-//              return true
-//        }
-//        .prefix(9)
+            .filter { per in
+            if currentGenre == .All {return true}
+            return per.genre == currentGenre
+        }
+        .prefix(9)
         
         
         let columns = Array(repeating: GridItem(.flexible()), count: 3)

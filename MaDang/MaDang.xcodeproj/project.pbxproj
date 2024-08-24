@@ -290,8 +290,6 @@
 				33388DBB2C7085A700DECDC3 /* MainView */,
 				33388D822C6F362B00DECDC3 /* DetailView */,
 				33388D712C6F2C0A00DECDC3 /* ContentView.swift */,
-				334FE85F2C78D4B400A5404E /* RegisterView.swift */,
-				334FE8612C78FD6400A5404E /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +405,8 @@
 		33A068A32C7479E900EF0F09 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
+				334FE8612C78FD6400A5404E /* LoginView.swift */,
+				334FE85F2C78D4B400A5404E /* RegisterView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
