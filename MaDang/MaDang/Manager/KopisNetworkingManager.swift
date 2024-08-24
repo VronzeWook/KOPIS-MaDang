@@ -242,6 +242,4 @@ extension KopisNetworkingManager {
                            starRating: 0
         )
     }
-    
-
 }

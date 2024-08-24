@@ -16,30 +16,44 @@ struct BestReviewRow: View {
         
         let screenWidth = UIScreen.main.bounds.width
         let imageWidth = screenWidth * 3 / 10
-        let aspectRatio: CGFloat = 135 / 100
+//        let aspectRatio: CGFloat = 135 / 100
         
         HStack{
-            Image("kopisTestImage")
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .frame(width: imageWidth, height: imageWidth * aspectRatio)
+//            Image("kopisTestImage")
+//                .resizable()
+//                .scaledToFit()
+//                .cornerRadius(10)
+            AsyncImage(url: URL(string: review.posterUrl)) {image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(10)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: imageWidth)
             
             VStack {
                 HStack {
                     StarRatingView(rating: review.starRating)
-                        .padding(.bottom, 4)
-                    
                     Spacer()
                 }
-                Text(review.content)
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(5)
+                .padding(.top, 20)
+                .padding(.bottom, 8)
+                
+                HStack {
+                    Text(review.content)
+                        .font(.system(size: 14))
+                        .foregroundStyle(.white)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(5)
+                    Spacer()
+                }
+                
+                Spacer()
             }
-            
         }
+        .frame(maxHeight: 350)
         .background(.nineDarkGray)
         .cornerRadius(10)
     }
@@ -80,5 +94,5 @@ extension BestReviewRow {
 }
 
 #Preview {
-    BestReviewRow(review: Review(id: UUID().uuidString, performanceId: Performance.performList[0].id, writerId: UUID().uuidString, writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop  abcdefgh ijklmnop abcdefghijklmnop efghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghijklmnop abcdefghi", likeCount: 123, starRating: 4.5, isReported: false))
+    BestReviewRow(review: Review(id: UUID().uuidString, performanceId: Performance.performList[0].id, posterUrl: "", writerId: UUID().uuidString, writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop i", likeCount: 123, starRating: 4.5, isReported: false))
 }

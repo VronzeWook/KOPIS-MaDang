@@ -10,9 +10,10 @@ final class FirestoreManager: ObservableObject {
     private init() {}
 
     // MARK: - 리뷰 등록
-    func addReview(performanceId: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addReview(performanceId: String, posterUrl: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<String, Error>) -> Void) {
         let newReview = Review(
             performanceId: performanceId,
+            posterUrl: posterUrl,
             writerId: writerId,
             writerCountry: writerCountry,
             writerName: writerName,
@@ -23,9 +24,18 @@ final class FirestoreManager: ObservableObject {
             isReported: false
         )
 
+        let documentRef = db.collection("reviews").document()
+
         do {
-            let _ = try db.collection("reviews").addDocument(from: newReview)
-            completion(.success(()))
+            try documentRef.setData(from: newReview) { error in
+                if let error = error {
+                    print("Error adding review: \(error)")
+                    completion(.failure(error))
+                    return
+                }
+                // 문서 ID 반환
+                completion(.success(documentRef.documentID))
+            }
         } catch {
             print("Error adding review: \(error)")
             completion(.failure(error))
@@ -108,27 +118,27 @@ final class FirestoreManager: ObservableObject {
         }
     }
     
-    // MARK: - 좋아요 수로 정렬된 리뷰 요청
-    func fetchReviewsOrderedByLikes(completion: @escaping (Result<[Review], Error>) -> Void) {
+    func fetchReviewsOrderedByLikes(limit: Int = 20 , completion: @escaping (Result<[Review], Error>) -> Void) {
         db.collection("reviews")
             .order(by: "likeCount", descending: true)
+            .limit(to: limit)
             .getDocuments { snapshot, error in
                 if let error = error {
                     print("Error fetching reviews: \(error)")
                     completion(.failure(error))
                     return
                 }
-                
+
                 guard let documents = snapshot?.documents else {
                     print("No documents")
                     completion(.success([]))
                     return
                 }
-                
+
                 let reviews = documents.compactMap { docSnapshot -> Review? in
                     return try? docSnapshot.data(as: Review.self)
                 }
-                
+
                 DispatchQueue.main.async {
                     self.reviews = reviews
                     completion(.success(reviews))

@@ -33,7 +33,7 @@ struct WhatIsNewView: View {
         }
 
         .background(.nineBlack)
-        .border(.yellow)
+        //.border(.yellow)
     }
 }
 
@@ -103,7 +103,7 @@ fileprivate struct CarouselView: View {
                 }
                 .contentShape(RoundedRectangle(cornerRadius: 20))
             }
-            .border(Color.red, width: 2)
+            //.border(Color.red, width: 2)
             /// offset을 통해 보이는 곳을 옮깁니다.
             .offset(x: offsetX)
             .gesture(
@@ -122,7 +122,7 @@ fileprivate struct CarouselView: View {
             /// dragOffset이 0이 되면 다음 페이지로 넘어갑니다.
             .animation(.easeInOut, value: dragOffset == 0)
         }
-        .border(Color.blue)
+        //.border(Color.blue)
         .sheet(isPresented: $isDetailViewPresented) {
                 DetailView(perform: $selectedPerform)
 //                DetailView(perform: Binding(get: { selectedPerform }, set: { _ in }))

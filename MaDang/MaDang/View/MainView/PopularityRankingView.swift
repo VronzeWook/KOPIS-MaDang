@@ -59,7 +59,7 @@ struct PopularityRankingView: View {
                     .padding(.leading, 16)
                 }
             }
-            .border(.pink)
+            //.border(.pink)
             .background(.nineBlack)
         }
     

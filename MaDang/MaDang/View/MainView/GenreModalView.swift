@@ -10,6 +10,7 @@ import SwiftUI
 struct GenreModalView: View {
     @Binding var showModal: Bool
     @Binding var selectedGenre: Genre
+    
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
@@ -58,8 +59,6 @@ struct GenreModalView: View {
         }
     }
 }
-
-
 
 #Preview {
     GenreModalView(showModal: .constant(true), selectedGenre: .constant(.All))
