@@ -79,20 +79,22 @@ struct GenreView: View {
                                 
                                 let url = perform.posterUrlList.isEmpty ? "" : perform.posterUrlList[0]
                                 
-                                AsyncImage(url: URL(string: url)) {image in
-                                    image
-                                        .resizable()
-                                        .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
-                                        //.frame(width: 100, height: 150) // 적절한 크기로 제한
-                                        //.clipped()
-                                        
-                                } placeholder: {
-                                    ProgressView()
-                                        .foregroundStyle(.nineDarkGray)
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                }
-                                .aspectRatio(contentMode: .fit)
-                                .clipped()
+//                                AsyncImage(url: URL(string: url)) {image in
+//                                    image
+//                                        .resizable()
+//                                        .scaledToFill() // 이미지를 그리드 아이템에 맞게 채우기
+//                                    //.frame(width: 100, height: 150) // 적절한 크기로 제한
+//                                    //.clipped()
+//                                    
+//                                } placeholder: {
+//                                    ProgressView()
+//                                        .foregroundStyle(.nineDarkGray)
+//                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                                }
+                                ReloadableImageView(url: url)
+                                    .frame(width: 100, height: 150) // 적절한 크기로 제한
+                                    .clipped()
+                                
                                 LinearGradient(
                                     gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
                                     startPoint: .bottom,
