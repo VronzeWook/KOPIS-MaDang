@@ -9,17 +9,18 @@ import SwiftUI
 
 struct RankingView: View {
     @State private var currentRanking: Ranking = .Likes
-
+    @Binding var performs: [Performance]
+    
     var body: some View {
         ScrollView {
-                LogoHeader(currentRanking: $currentRanking)
-                LangSelectionView()
-                RankingListView(performs: Performance.performList)
+            LogoHeader(currentRanking: $currentRanking)
+            LangSelectionView()
+            RankingListView(performs: $performs)
         }
         .background(.nineBlack)
     }
 }
 
 #Preview {
-    RankingView()
+    RankingView(performs: .constant(Performance.performList))
 }
