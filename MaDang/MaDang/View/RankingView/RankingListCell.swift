@@ -8,29 +8,21 @@
 import SwiftUI
 
 struct RankingListCell: View {
-    
-    let title: String
     let rank: Int
-    let imageUrl: String
-    let likeCount : Int
-    let startRating : Double
-    let genre : Genre
-    
-    
-    
-    
+    let perform: Performance
+
+    @State private var averageRating: Double = 0.0
+
     var body: some View {
         let screenWidth = UIScreen.main.bounds.width
         let imageWidth = screenWidth * 1 / 3.1
         let aspectRatio: CGFloat = 173 / 123
-        
-        
-        
+
         HStack(alignment:.top){
             VStack(alignment:.leading){
                 HStack {
                     Circle()
-                        .frame(width:33, height:33)
+                        .frame(width: 33, height: 33)
                         .foregroundColor(.nineYellow.opacity(0.2))
                         .overlay(
                             Text("\(rank)")
@@ -38,35 +30,33 @@ struct RankingListCell: View {
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.nineYellow)
                         )
-                        .padding(.horizontal,15)
+                        .padding(.horizontal, 15)
                     
                     Spacer()
                     
                     Image(systemName: "heart.fill")
                         .font(.system(size: 14))
                         .foregroundStyle(.nineYellow)
-                    Text("\(likeCount)")
+                    Text("\(perform.likeCount)")
                         .font(.system(size: 12))
                         .fontWeight(.semibold)
                         .foregroundStyle(.nineYellow)
-                        .padding(.trailing,16)
+                        .padding(.trailing, 16)
                 }
-                .padding(.top,15)
+                .padding(.top, 15)
                 
+                StarRatingView(rating: averageRating)  // Updated to use averageRating
+                    .padding(.horizontal, 16)
+                    .padding(.top, 12)
                 
-                StarRatingView(rating:startRating)
-                    .padding(.horizontal,16)
-                    .padding(.top,12)
-                
-                
-                Text(title)
+                Text(perform.title)
                     .font(.system(size: 24))
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
-                    .padding(.horizontal,16)
-                    .padding(.top,1)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 1)
                 
-                Text(genre.rawValue)
+                Text(perform.genre.rawValue)
                     .font(.system(size: 10))
                     .fontWeight(.medium)
                     .foregroundStyle(.white)
@@ -79,46 +69,57 @@ struct RankingListCell: View {
                     )
                     .padding(.horizontal, 16)
                     .padding(.top, 0)
-                    .padding(.bottom,16)
+                    .padding(.bottom, 16)
                 
             }
-            Image("kopisTestImage")
-                .resizable()
-                .scaledToFill()
-                .cornerRadius(10)
-                .frame(width: imageWidth, height: imageWidth * aspectRatio)
             
+            AsyncImage(url: URL(string: perform.posterUrlList[0])) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+            } placeholder: {
+                Color.gray
+            }
         }
         .background(.nineDarkGray)
         .cornerRadius(10)
-        
+        .onAppear {
+            loadAverageRating()
+        }
+    }
+    
+    private func loadAverageRating() {
+        FirestoreManager.shared.fetchReviewsByPerformance(performanceId: perform.id) { result in
+            switch result {
+            case .success(let reviews):
+                let totalRating = reviews.reduce(0) { $0 + $1.starRating }
+                self.averageRating = reviews.isEmpty ? 0 : totalRating / Double(reviews.count)
+            case .failure(let error):
+                print("Failed to fetch reviews: \(error.localizedDescription)")
+            }
+        }
     }
 }
-
 
 extension RankingListCell {
     private struct StarRatingView: View {
         var rating: Double
         
-        
         var body: some View {
-            
-            VStack{
-                
-                HStack (spacing: 0){
-                    ForEach(0..<5) { index in
-                        self.starType(for: index)
-                            .foregroundColor(.nineYellow)
-                            .font(.system(size: 14))
-                    }
-                    
-                    Text(String(format: "%.2f", rating))
-                        .padding(.top,3)
+            HStack (spacing: 0) {
+                ForEach(0..<5) { index in
+                    self.starType(for: index)
+                        .foregroundColor(.nineYellow)
                         .font(.system(size: 14))
-                        .fontWeight(.bold)
-                        .foregroundStyle(.nineYellow)
-                        .padding(.leading, 10)
                 }
+                
+                Text(String(format: "%.2f", rating))
+                    .padding(.top, 3)
+                    .font(.system(size: 14))
+                    .fontWeight(.bold)
+                    .foregroundStyle(.nineYellow)
+                    .padding(.leading, 10)
             }
         }
         
@@ -134,9 +135,4 @@ extension RankingListCell {
             }
         }
     }
-}
-
-
-#Preview {
-    RankingListCell(title: "A Store Selling Time", rank: 2, imageUrl: "url", likeCount: 120, startRating: 4.50, genre: .Musical)
 }

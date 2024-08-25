@@ -28,7 +28,7 @@ struct MainTabView: View {
                             Text(Title.genre.name)
                         }
                         .tag(1)
-                    RankingView()
+                    RankingView(performs: $performs)
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text(Title.ranking.name)
