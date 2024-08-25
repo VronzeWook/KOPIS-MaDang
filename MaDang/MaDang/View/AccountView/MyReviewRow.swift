@@ -11,15 +11,6 @@ import SwiftUI
 
 struct MyReviewRow: View {
     let review: Review
-    let performances: [Performance] // Pass the list of performances to find the title
-
-    private var performanceTitle: String {
-        if let performance = performances.first(where: { $0.id == review.performanceId }) {
-            return performance.title
-        } else {
-            return "Unknown Performance"
-        }
-    }
 
     private var formattedDate: String {
         let formatter = DateFormatter()
@@ -34,28 +25,39 @@ struct MyReviewRow: View {
         let aspectRatio: CGFloat = 135 / 100
         
         HStack {
-            Image("kopisTestImage") // Replace with actual image if needed
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .frame(width: imageWidth, height: imageWidth * aspectRatio)
+//            Image("kopisTestImage") // Replace with actual image if needed
+//                .resizable()
+//                .scaledToFit()
+//                .cornerRadius(10)
+//                .frame(width: imageWidth, height: imageWidth * aspectRatio)
+//
+            AsyncImage(url: URL(string: review.posterUrl)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+            } placeholder: {
+                Color.gray
+            }
             
             VStack(alignment: .leading) {
-                Text(performanceTitle)
+                Text(review.performanceTitle)
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(.white)
+                    .padding(.top, 4)
                     .padding(.bottom, 2)
+                Text(formattedDate)
+                    .font(.system(size: 12))
+                    .foregroundStyle(.gray)
+                    .padding(.bottom, 2)
+                    //.padding(.horizontal,15)
                 
                 HStack {
                     StarRatingView(rating: review.starRating)
                         .padding(.bottom, 4)
                     
                     Spacer()
-                    
-                    Text(formattedDate)
-                        .font(.system(size: 12))
-                        .foregroundStyle(.gray)
-                        .padding(.horizontal,15)
+
                 }
               
                 
@@ -64,6 +66,8 @@ struct MyReviewRow: View {
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.leading)
                     .lineLimit(5)
+                
+                Spacer()
             }
             .padding(.leading, 8)
         }
@@ -106,3 +110,6 @@ extension MyReviewRow {
 }
 
 
+#Preview {
+    MyReviewRow(review: Review(performanceId: "idasf", performanceTitle: "재밌는 공연", posterUrl: "no", writerId: "dd", writerCountry: .USA, writerName: "Me", createdDate: Date(), content: "asdfasldjfaogihwori wpeihgoa. w. wiheo ", likeCount: 4, starRating: 2.5, isReported: false))
+}

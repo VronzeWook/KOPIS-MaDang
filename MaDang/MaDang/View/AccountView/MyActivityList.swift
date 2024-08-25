@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MyActivityList: View {
+    @EnvironmentObject var userManager: UserManager
+    @Binding var performs: [Performance]
     
     var body: some View {
-        //NavigationView {
+        NavigationStack {
             VStack {
-                
-                
                 HStack {
                     Text("My activity")
                         .font(.system(size: 22))
@@ -21,8 +21,9 @@ struct MyActivityList: View {
                         .foregroundStyle(.white)
                     Spacer()
                 }
+                
                 VStack{
-                    //NavigationLink(destination: LikesView(user: currentUser)) {
+                    NavigationLink(destination: LikesView(performs: $performs)) {
                         HStack{
                             Image(systemName: "heart")
                                 .font(.system(size: 18))
@@ -40,12 +41,13 @@ struct MyActivityList: View {
                                 .fontWeight(.medium)
                                 .foregroundStyle(.white)
                         }
-                    //}
+                    }
+                    
                     Divider()
                         .background(Color.gray)
                         .padding(.vertical,4)
                     
-                    //NavigationLink(destination: MyReviewView(user: currentUser)) {
+                    NavigationLink(destination: MyReviewView()) {
                         HStack{
                             Image(systemName: "text.bubble")
                                 .font(.system(size: 18))
@@ -64,7 +66,7 @@ struct MyActivityList: View {
                                 .foregroundStyle(.white)
                         }
                         .padding(.vertical,4)
-                    //}
+                    }
                     Divider()
                         .background(Color.gray)
                         .padding(.vertical,4)
@@ -97,10 +99,10 @@ struct MyActivityList: View {
             }
             .background(.nineBlack)
             .padding(.horizontal, 16)
-        //}
+        }
     }
 }
 
 #Preview {
-    MyActivityList()
+    MyActivityList(performs: .constant([]))
 }

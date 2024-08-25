@@ -10,9 +10,10 @@ final class FirestoreManager: ObservableObject {
     private init() {}
 
     // MARK: - 리뷰 등록
-    func addReview(performanceId: String, posterUrl: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<String, Error>) -> Void) {
+    func addReview(performanceId: String,  performanceTitle: String, posterUrl: String, writerId: String, writerCountry: Country, writerName: String, content: String, starRating: Double, completion: @escaping (Result<String, Error>) -> Void) {
         let newReview = Review(
             performanceId: performanceId,
+            performanceTitle: performanceTitle,
             posterUrl: posterUrl,
             writerId: writerId,
             writerCountry: writerCountry,
@@ -150,7 +151,7 @@ final class FirestoreManager: ObservableObject {
     func fetchReviewsByUser(writerId: String, completion: @escaping (Result<[Review], Error>) -> Void) {
         db.collection("reviews")
             .whereField("writerId", isEqualTo: writerId)
-            .order(by: "createdDate", descending: true)
+           // .order(by: "createdDate", descending: true)
             .getDocuments { snapshot, error in
                 if let error = error {
                     print("Error fetching reviews: \(error)")
