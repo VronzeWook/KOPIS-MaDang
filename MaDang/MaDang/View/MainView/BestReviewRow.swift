@@ -94,5 +94,5 @@ extension BestReviewRow {
 }
 
 #Preview {
-    BestReviewRow(review: Review(id: UUID().uuidString, performanceId: Performance.performList[0].id, posterUrl: "", writerId: UUID().uuidString, writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop i", likeCount: 123, starRating: 4.5, isReported: false))
+    BestReviewRow(review: Review(id: UUID().uuidString, performanceId: Performance.performList[0].id, performanceTitle: "", posterUrl: "", writerId: UUID().uuidString, writerCountry: .USA, writerName: "joy", createdDate: Date(), content: "abcdefghijklmn op abcdef g hijk lmnop abc defg hijklmnop abcdefgh ijkl mnop i", likeCount: 123, starRating: 4.5, isReported: false))
 }

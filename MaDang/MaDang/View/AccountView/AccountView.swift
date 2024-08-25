@@ -12,6 +12,7 @@ struct AccountView: View {
     @EnvironmentObject var userManager: UserManager
     @State private var showReauthAlert = false
     @State private var reauthPassword = ""
+    @Binding var performs: [Performance]
     
     var body: some View {
         ZStack {
@@ -19,7 +20,7 @@ struct AccountView: View {
                 AccountProfile()
                     .padding(.bottom, 51)
                 
-                MyActivityList()
+                MyActivityList(performs: $performs)
                     .padding(.bottom, 51)
                 
                 CommunityList()
@@ -82,5 +83,5 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    AccountView(performs: .constant([]))
 }

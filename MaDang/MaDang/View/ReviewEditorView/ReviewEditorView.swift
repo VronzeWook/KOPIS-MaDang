@@ -116,6 +116,7 @@ struct ReviewEditorView: View {
                     // Firestore에 리뷰 저장
                     FirestoreManager.shared.addReview(
                         performanceId: perform.id,
+                        performanceTitle: perform.title,
                         posterUrl: url,
                         writerId: writerId,
                         writerCountry: writerCountry,
