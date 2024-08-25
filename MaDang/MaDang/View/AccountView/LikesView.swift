@@ -48,6 +48,7 @@ struct LikesView: View {
                     .foregroundStyle(.white)
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .center)
+                
                 Spacer()
             }
             .background(Color.black)
@@ -171,6 +172,65 @@ struct LikesView: View {
             }
             .background(Color.black)
             .navigationTitle("Likes")
+        }
+    }
+    
+    private func favoriteButtonTapped(_ state: Bool, perform: inout Performance) {
+        guard let country = userManager.user?.country else {
+            print("User's country is not set.")
+            return
+        }
+
+        // Perform 업데이트 함수
+        func updateLikeCount(for countryLikeCount: inout Int) {
+            if state {
+                countryLikeCount += 1
+            } else {
+                if countryLikeCount > 0 {
+                    countryLikeCount -= 1
+                }
+            }
+        }
+
+        // 국가에 따른 likeCount 업데이트
+        switch country {
+        case .USA:
+            updateLikeCount(for: &perform.likeCountUSA)
+        case .JPN:
+            updateLikeCount(for: &perform.likeCountJPN)
+        case .CHN:
+            updateLikeCount(for: &perform.likeCountCHN)
+        case .KOR:
+            updateLikeCount(for: &perform.likeCountKOR)
+        default:
+            print("Unhandled country case.")
+        }
+
+        // Firestore에 업데이트된 Perform 저장
+        FirestoreManager.shared.upsertPerformance(performance: perform) { result in
+            switch result {
+            case .success():
+                print("Performance favorite changed successfully")
+            case .failure(_):
+                print("Failed to change performance favorite")
+            }
+        }
+        
+        // User의 likePerformIdList 업데이트
+        if state {
+            userManager.user?.likePerformIdList.append(perform.id)
+        } else {
+            userManager.user?.likePerformIdList.removeAll { $0 == perform.id }
+        }
+        
+        // Firestore에 업데이트된 User 저장
+        FirestoreManager.shared.updateUser(userManager.user!) { result in
+            switch result {
+            case .success():
+                print("User's likePerformIdList updated successfully")
+            case .failure(let error):
+                print("Failed to update user's likePerformIdList: \(error.localizedDescription)")
+            }
         }
     }
 }
