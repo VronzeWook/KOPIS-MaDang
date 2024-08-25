@@ -209,9 +209,8 @@ extension KopisNetworkingManager {
                 salesVolume: 0,
                 area: db.area,
                 posterUrlList: [db.poster], // 포스터 URL을 배열로 초기화
-                reviewList: [], // 리뷰 목록 초기화
+                //reviewList: [], // 리뷰 목록 초기화
                 actorList: [], // 배우 목록 초기화
-                likeCount: 0,
                 starRating: 0
             )
         }
@@ -236,9 +235,9 @@ extension KopisNetworkingManager {
                            ageLimit: detailDB.ageLimit,
                            salesVolume: 0,
                            posterUrlList: detailDB.imageUrls,
-                           reviewList: [],
+                           //reviewList: [],
                            actorList: [],
-                           likeCount: 0,
+                           likeCountUSA: 0,
                            starRating: 0
         )
     }

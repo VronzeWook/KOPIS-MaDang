@@ -43,7 +43,8 @@ final class FirestoreManager: ObservableObject {
         }
     }
 
-  
+    
+    
     // MARK: - 리뷰 업데이트 또는 생성 (업서트)
     func upsertReview(performId: String, writerId: String, review: Review, completion: @escaping (Result<Void, Error>) -> Void) {
         let query = db.collection("reviews")
@@ -118,6 +119,53 @@ final class FirestoreManager: ObservableObject {
             completion(.failure(error))
         }
     }
+    
+    // MARK: - Performance 업데이트 또는 생성 (업서트)
+      func upsertPerformance(performance: Performance, completion: @escaping (Result<Void, Error>) -> Void) {
+          let performanceRef = db.collection("performances").document(performance.id)
+
+          performanceRef.getDocument { document, error in
+              if let error = error {
+                  print("Error fetching performance: \(error)")
+                  completion(.failure(error))
+                  return
+              }
+
+              if document?.exists == true {
+                  // 문서가 존재하면 덮어씌우기 (업데이트)
+                  do {
+                      try performanceRef.setData(from: performance, merge: true) { error in
+                          if let error = error {
+                              print("Error updating performance: \(error)")
+                              completion(.failure(error))
+                          } else {
+                              print("Performance updated successfully")
+                              completion(.success(()))
+                          }
+                      }
+                  } catch {
+                      print("Error encoding performance: \(error)")
+                      completion(.failure(error))
+                  }
+              } else {
+                  // 문서가 없으면 새로 생성하기
+                  do {
+                      try performanceRef.setData(from: performance) { error in
+                          if let error = error {
+                              print("Error creating performance: \(error)")
+                              completion(.failure(error))
+                          } else {
+                              print("Performance created successfully")
+                              completion(.success(()))
+                          }
+                      }
+                  } catch {
+                      print("Error encoding performance: \(error)")
+                      completion(.failure(error))
+                  }
+              }
+          }
+      }
     
     func fetchReviewsOrderedByLikes(limit: Int = 20 , completion: @escaping (Result<[Review], Error>) -> Void) {
         db.collection("reviews")
@@ -236,6 +284,33 @@ final class FirestoreManager: ObservableObject {
             }
         }
 
+    // MARK: - Performance 요청 메서드
+    func fetchPerformanceById(performanceId: String, completion: @escaping (Result<Performance, Error>) -> Void) {
+        let performanceRef = db.collection("performances").document(performanceId)
+        
+        performanceRef.getDocument { document, error in
+            if let error = error {
+                print("Error fetching performance: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = document, document.exists else {
+                print("No performance found with the given ID")
+                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "No performance found with the given ID"])))
+                return
+            }
+            
+            do {
+                let performance = try document.data(as: Performance.self)
+                completion(.success(performance))
+            } catch {
+                print("Error decoding performance data: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        }
+    }
+    
     // MARK: - User 생성 메서드
        func createUser(_ user: User, completion: @escaping (Result<Void, Error>) -> Void) {
            guard let userId = user.id else {
