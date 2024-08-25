@@ -39,15 +39,14 @@ struct ReviewEditorView: View {
                 
                 VStack {
                     HStack {
-                        Image("kopisTestImage")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: width, height: width)
-                            .clipped()
-                            .mask(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .frame(width: width, height: width)
-                            )
+                        AsyncImage(url: URL(string: perform.posterUrlList[0])) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: .infinity)
+                        } placeholder: {
+                            Color.gray
+                        }
                         
                         VStack(alignment: .leading) {
                             HStack {

@@ -11,7 +11,7 @@ struct LangSelectionView: View {
     @State private var selection = 0
     
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 Button(action: {
                     selection = 0
