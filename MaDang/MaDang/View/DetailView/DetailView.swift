@@ -6,6 +6,22 @@ struct DetailView: View {
     @State private var isDataLoaded = false
     @State private var isFavorite = false
 
+    init(perform: Binding<Performance>) {
+        self._perform = perform // @Binding 변수를 초기화합니다.
+         // Create a custom appearance for the navigation bar
+         let appearance = UINavigationBarAppearance()
+         appearance.configureWithOpaqueBackground()
+         appearance.backgroundColor = UIColor.black // Set the background color to black
+         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // Set the title color to white
+         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white] // Set the large title color to white
+
+         // Apply the appearance settings to the navigation bar
+         UINavigationBar.appearance().standardAppearance = appearance
+         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+         UINavigationBar.appearance().compactAppearance = appearance
+     }
+
+    
     var body: some View {
         ScrollView {
             DetailInfoView(perform: $perform)
