@@ -54,6 +54,7 @@
 		33739E002C7CCC6E00757C93 /* DetailViewForBestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */; };
 		33739E022C7CF65C00757C93 /* ReportModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739E012C7CF65C00757C93 /* ReportModalView.swift */; };
 		33739E042C7D002800757C93 /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739E032C7D002800757C93 /* ReportManager.swift */; };
+		33739E062C7D1CDC00757C93 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739E052C7D1CDC00757C93 /* Date+.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
 		33A068A82C747BB300EF0F09 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A72C747BB300EF0F09 /* FirebaseAnalytics */; };
@@ -164,6 +165,7 @@
 		33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewForBestReview.swift; sourceTree = "<group>"; };
 		33739E012C7CF65C00757C93 /* ReportModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModalView.swift; sourceTree = "<group>"; };
 		33739E032C7D002800757C93 /* ReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
+		33739E052C7D1CDC00757C93 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		33A0689C2C7464C300EF0F09 /* MaDang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaDang.entitlements; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				33388D902C6F635300DECDC3 /* Color+.swift */,
 				33388DEC2C713E5C00DECDC3 /* XMLParser.swift */,
 				33388DFE2C7226D900DECDC3 /* DetailXMLParser.swift */,
+				33739E052C7D1CDC00757C93 /* Date+.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
+				33739E062C7D1CDC00757C93 /* Date+.swift in Sources */,
 				4665F1262C73B04B007867FB /* ByGenreListCell.swift in Sources */,
 				4665F12A2C73B08B007867FB /* ByGenreView.swift in Sources */,
 				4665F0F02C72384F007867FB /* Title.swift in Sources */,

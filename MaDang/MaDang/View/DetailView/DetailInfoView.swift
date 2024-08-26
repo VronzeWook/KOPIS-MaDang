@@ -65,7 +65,7 @@ struct DetailInfoView: View {
                             .stroke(.nineYellow, lineWidth: 2)
                     )
                 
-                Text("\(perform.startDate) ~ \(perform.endDate)")
+                Text("\(perform.startDate.toFormattedString() ) ~ \(perform.endDate.toFormattedString())")
                     .font(.system(size: 14))
                     .foregroundStyle(.white)
                     .padding(.leading, 10)
