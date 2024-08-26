@@ -368,4 +368,19 @@ final class FirestoreManager: ObservableObject {
              }
          }
      }
+    
+    // MARK: - 리뷰 삭제 메서드
+    func deleteReview(reviewId: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let reviewRef = db.collection("reviews").document(reviewId)
+        
+        reviewRef.delete { error in
+            if let error = error {
+                print("Error deleting review: \(error.localizedDescription)")
+                completion(.failure(error))
+            } else {
+                print("Review deleted successfully")
+                completion(.success(()))
+            }
+        }
+    }
 }
