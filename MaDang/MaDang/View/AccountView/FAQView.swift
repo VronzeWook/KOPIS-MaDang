@@ -10,10 +10,19 @@ struct FAQView: View {
     ]
     
     init() {
-         // Customize the appearance of the navigation bar title
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.NineYellow]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.NineYellow]
+         // Create a custom appearance for the navigation bar
+         let appearance = UINavigationBarAppearance()
+         appearance.configureWithOpaqueBackground()
+         appearance.backgroundColor = UIColor.black // Set the background color to black
+         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // Set the title color to white
+         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white] // Set the large title color to white
+
+         // Apply the appearance settings to the navigation bar
+         UINavigationBar.appearance().standardAppearance = appearance
+         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+         UINavigationBar.appearance().compactAppearance = appearance
      }
+
     
     var body: some View {
         NavigationView {
