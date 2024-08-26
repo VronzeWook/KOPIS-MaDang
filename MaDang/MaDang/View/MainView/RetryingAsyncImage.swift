@@ -20,13 +20,13 @@ struct ReloadableImageView: View {
                 case .empty:
                     // 로딩 중
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .orange))
+                        .progressViewStyle(CircularProgressViewStyle(tint: .nineYellow))
                         .scaleEffect(2)
                 case .success(let image):
                     // 이미지 로드 성공
                     image
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .aspectRatio(contentMode: .fit)
                         .id(id)
                         .onAppear{
@@ -37,12 +37,12 @@ struct ReloadableImageView: View {
                 case .failure:
                     // 이미지 로드 실패
                     VStack {
-                        Text("Failed to load image")
-                            .foregroundColor(.red)
-                        Button("Retry") {
-                            id = UUID() // UUID를 갱신하여 다시 로드 시도
-                            isLoadingFailed = true
-                        }
+                        Text("Tap to see!")
+                            .foregroundColor(.nineYellow)
+                            .onAppear{
+                                id = UUID() // UUID를 갱신하여 다시 로드 시도
+                                isLoadingFailed = true
+                            }
                     }
                 @unknown default:
                     // 기본 처리

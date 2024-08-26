@@ -47,8 +47,8 @@ struct RankingModalView: View {
                 }
             }.padding(.bottom, 16)
             .background(.nineDarkGray)
-                .cornerRadius(15)
-                .padding(.horizontal,44)
+            .cornerRadius(15)
+            .padding(.horizontal,44)
     }
 }
 

@@ -12,7 +12,6 @@ struct GenreModalView: View {
     @Binding var selectedGenre: Genre
     
     var body: some View {
-        GeometryReader { geometry in
             VStack(spacing: 0) {
                 Text("Genre")
                     .font(.title3)
@@ -22,12 +21,12 @@ struct GenreModalView: View {
                     .font(.callout)
                     .foregroundStyle(.gray)
                 
-                Rectangle()
-                    .frame(height: 1)
-                    .frame(maxWidth: geometry.size.width * 0.7)
-                    .foregroundStyle(.gray)
-                    .padding(.top, 16)
-                
+//                Rectangle()
+//                    .frame(height: 1)
+//                    .frame(maxWidth: geometry.size.width * 0.7)
+//                    .foregroundStyle(.gray)
+//                    .padding(.top, 16)
+//                
                 ForEach(Genre.allCases, id: \.self) { genre in
                     
                     Button(action: {
@@ -42,21 +41,21 @@ struct GenreModalView: View {
                                 .foregroundStyle(.white)
                                 .cornerRadius(8)
                                 .padding(.vertical, 12)
-                            
-                            Rectangle()
-                                .frame(height: 1)
-                                .frame(maxWidth: geometry.size.width * 0.7)
-                                .foregroundStyle(.gray)
+//                            
+//                            Rectangle()
+//                                .frame(height: 1)
+//                                .frame(maxWidth: geometry.size.width * 0.7)
+//                                .foregroundStyle(.gray)
                         }
                     })
 
                 }
             }
+            .padding(.horizontal,44)
             .background(.nineDarkGray)
             .cornerRadius(20)
             .shadow(radius: 10)
-            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-        }
+            
     }
 }
 

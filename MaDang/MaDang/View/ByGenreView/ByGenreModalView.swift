@@ -18,6 +18,7 @@ struct ByGenreModalView: View {
                 .foregroundStyle(.nineYellow)
                 .padding(.top, 20)
                 .padding(.bottom, 6)
+            
             Text("Please select the genre you want.")
                 .font(.callout)
                 .foregroundStyle(.gray)

@@ -47,6 +47,7 @@ struct DetailView: View {
                     perform.showtime = data.showtime
                     perform.ageLimit = data.ageLimit
                     perform.posterUrlList.append(contentsOf: data.posterUrlList)
+                    perform.area = data.area
                 }
                 isDataLoaded = true
             case .failure(_):

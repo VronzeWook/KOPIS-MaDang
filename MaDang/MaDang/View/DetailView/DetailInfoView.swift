@@ -123,21 +123,21 @@ struct DetailInfoView: View {
                     .padding(.horizontal, 5)
                     .padding(.bottom, 8)
                 
-                Text("Price")
-                    .font(.system(size: 14))
-                    .foregroundColor(.nineYellow)
-                    .padding(.vertical, 2)
-                    .padding(.horizontal, 10)
-                    .background(Color.clear)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 18.5)
-                            .stroke(.nineYellow, lineWidth: 2)
-                    )
-                
-                Text("삭제 예정")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.white)
-                    .padding(.leading, 10)
+//                Text("Price")
+//                    .font(.system(size: 14))
+//                    .foregroundColor(.nineYellow)
+//                    .padding(.vertical, 2)
+//                    .padding(.horizontal, 10)
+//                    .background(Color.clear)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 18.5)
+//                            .stroke(.nineYellow, lineWidth: 2)
+//                    )
+//                
+//                Text("삭제 예정")
+//                    .font(.system(size: 14))
+//                    .foregroundStyle(.white)
+//                    .padding(.leading, 10)
             }
             .padding(.horizontal, 6)
             .background(.black)

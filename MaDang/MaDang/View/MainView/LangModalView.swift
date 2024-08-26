@@ -13,10 +13,10 @@ struct LangModalView: View {
     
     var body: some View {
         
-        ZStack{
-            Color.nineBlack.opacity(0.2)
-                .edgesIgnoringSafeArea(.all)
-            
+//        ZStack{
+//            Color.nineBlack.opacity(0.2)
+//                .edgesIgnoringSafeArea(.all)
+//            
             VStack(spacing: 0) {
                 Text("Language")
                     .font(.title3)
@@ -52,7 +52,7 @@ struct LangModalView: View {
             .padding(.horizontal, 44)
             .shadow(radius: 20)
         }
-    }
+   // }
 }
 
 #Preview {

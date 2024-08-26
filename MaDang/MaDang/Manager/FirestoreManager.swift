@@ -167,6 +167,28 @@ final class FirestoreManager: ObservableObject {
           }
       }
     
+    
+    func fetchAllPerformanceIds(completion: @escaping (Result<[String], Error>) -> Void) {
+        let performanceRef = db.collection("performances")
+        
+        performanceRef.getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching performance IDs: \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                print("No performances found")
+                completion(.success([]))
+                return
+            }
+            
+            let performanceIds = documents.compactMap { $0.documentID }
+            completion(.success(performanceIds))
+        }
+    }
+    
     func fetchReviewsOrderedByLikes(limit: Int = 20 , completion: @escaping (Result<[Review], Error>) -> Void) {
         db.collection("reviews")
             .order(by: "likeCount", descending: true)

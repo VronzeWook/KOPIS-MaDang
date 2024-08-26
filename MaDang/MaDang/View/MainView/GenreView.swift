@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GenreView: View {
     
-    @State private var isModalPresented: Bool = false
+    @Binding var isModalPresented: Bool
     @Binding var currentGenre: Genre
     @Binding var performs: [Performance]
     
@@ -92,9 +92,9 @@ struct GenreView: View {
 //                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
 //                                }
                                 ReloadableImageView(url: url)
-                                    .frame(width: 100, height: 150) // 적절한 크기로 제한
+                                    .frame(width: 120, height: 160) // 적절한 크기로 제한
                                     .clipped()
-                                
+//                                
                                 LinearGradient(
                                     gradient: Gradient(colors: [Color.black.opacity(0.8), Color.black.opacity(0)]),
                                     startPoint: .bottom,
@@ -112,21 +112,21 @@ struct GenreView: View {
   
             }
             .background(.nineBlack)
-            .allowsHitTesting(!isModalPresented)
+//            .allowsHitTesting(!isModalPresented)
             
             
-            if isModalPresented {
-                Color.black.opacity(0.4)
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                        withAnimation {
-                            isModalPresented.toggle()
-                        }
-                    }
-                
-                GenreModalView(showModal: $isModalPresented, selectedGenre: $currentGenre)
-    
-            }
+//            if isModalPresented {
+//                Color.black.opacity(0.4)
+//                    .edgesIgnoringSafeArea(.all)
+//                    .onTapGesture {
+//                        withAnimation {
+//                            isModalPresented.toggle()
+//                        }
+//                    }
+//                
+//                GenreModalView(showModal: $isModalPresented, selectedGenre: $currentGenre)
+//    
+//            }
         }
     }
     private func translateText() {
@@ -175,5 +175,5 @@ extension Image {
 
 
 #Preview {
-    GenreView(currentGenre: .constant(.All), performs: .constant(Performance.performList))
+    GenreView(isModalPresented: .constant(false), currentGenre: .constant(.All), performs: .constant(Performance.performList))
 }
