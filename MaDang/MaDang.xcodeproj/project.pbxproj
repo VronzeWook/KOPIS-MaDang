@@ -51,6 +51,7 @@
 		334FE8642C79CEC300A5404E /* RetryingAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */; };
 		33739DFC2C7C850600757C93 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFB2C7C850600757C93 /* FAQView.swift */; };
 		33739DFE2C7C851500757C93 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFD2C7C851500757C93 /* AboutUsView.swift */; };
+		33739E002C7CCC6E00757C93 /* DetailViewForBestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
 		33A068A82C747BB300EF0F09 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A72C747BB300EF0F09 /* FirebaseAnalytics */; };
@@ -158,6 +159,7 @@
 		334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryingAsyncImage.swift; sourceTree = "<group>"; };
 		33739DFB2C7C850600757C93 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		33739DFD2C7C851500757C93 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
+		33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewForBestReview.swift; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		33A0689C2C7464C300EF0F09 /* MaDang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaDang.entitlements; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				46C62C682C77A36800357422 /* MainHeader.swift */,
 				46C62C6A2C77AC7000357422 /* LangModalView.swift */,
 				334FE8632C79CEC300A5404E /* RetryingAsyncImage.swift */,
+				33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468EEEE32C73EAFD00C07488 /* MyReviewView.swift in Sources */,
+				33739E002C7CCC6E00757C93 /* DetailViewForBestReview.swift in Sources */,
 				33388D722C6F2C0A00DECDC3 /* ContentView.swift in Sources */,
 				4665F0E22C721C22007867FB /* RankingListView.swift in Sources */,
 				33DF50692C77B1F300D0A5C1 /* UserManager.swift in Sources */,

@@ -1,26 +1,11 @@
 import SwiftUI
 
-struct DetailView: View {
+struct DetailViewForBestReview: View {
     @EnvironmentObject var userManager: UserManager
-    @Binding var perform: Performance
+    var review: Review
+    @State private var perform: Performance
     @State private var isDataLoaded = false
     @State private var isFavorite = false
-
-    init(perform: Binding<Performance>) {
-        self._perform = perform // @Binding 변수를 초기화합니다.
-         // Create a custom appearance for the navigation bar
-         let appearance = UINavigationBarAppearance()
-         appearance.configureWithOpaqueBackground()
-         appearance.backgroundColor = UIColor.black // Set the background color to black
-         appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // Set the title color to white
-         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white] // Set the large title color to white
-
-         // Apply the appearance settings to the navigation bar
-         UINavigationBar.appearance().standardAppearance = appearance
-         UINavigationBar.appearance().scrollEdgeAppearance = appearance
-         UINavigationBar.appearance().compactAppearance = appearance
-     }
-
     
     var body: some View {
         ScrollView {
@@ -55,7 +40,7 @@ struct DetailView: View {
 
         // KOPIS 데이터를 가져오기
         dispatchGroup.enter()
-        KopisNetworkingManager.shared.fetchPerform(id: perform.id) { result in
+        KopisNetworkingManager.shared.fetchPerform(id: review.performanceId) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -77,7 +62,7 @@ struct DetailView: View {
 
         // Firestore에 저장된 perform 받아오기
         dispatchGroup.enter()
-        FirestoreManager.shared.fetchPerformanceById(performanceId: perform.id) { result in
+        FirestoreManager.shared.fetchPerformanceById(performanceId: review.performanceId) { result in
             switch result {
             case .success(let fetchedPerform):
                 DispatchQueue.main.async {

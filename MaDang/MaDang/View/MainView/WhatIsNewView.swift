@@ -122,11 +122,20 @@ fileprivate struct CarouselView: View {
             /// dragOffset이 0이 되면 다음 페이지로 넘어갑니다.
             .animation(.easeInOut, value: dragOffset == 0)
         }
-        //.border(Color.blue)
         .sheet(isPresented: $isDetailViewPresented) {
+            VStack {
+                // 시트 표시
+                RoundedRectangle(cornerRadius: 16)
+                    .frame(width: 100, height: 2)
+                    .foregroundStyle(.nineYellow)
+                    .padding(.top, 16)
+                Spacer()
+                
+                // DetailView 표시
                 DetailView(perform: $selectedPerform)
-//                DetailView(perform: Binding(get: { selectedPerform }, set: { _ in }))
-            
+                    .navigationBarHidden(true) // 네비게이션 바 숨기기
+            }
+            .background(.nineBlack)
         }
     }
 
