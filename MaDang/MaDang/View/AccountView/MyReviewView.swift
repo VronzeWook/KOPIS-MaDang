@@ -25,7 +25,7 @@ struct MyReviewView: View {
                 Spacer()
                 Text("No Reviews")
                     .foregroundStyle(.white)
-                    .font(.system(size: 16))
+                    .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .center)
                 Spacer()
             } else {

@@ -82,6 +82,7 @@ struct MaDangApp: App {
             NavigationStack {
                 if !userManager.isUserLoggedIn {
                     LoginView()
+                        .background(.nineBlack)
                 } else {
                     MainTabView(performs: $performs)
                         .onAppear {
