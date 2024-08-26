@@ -222,9 +222,13 @@ extension KopisNetworkingManager {
     func convertDetailDBtoPerformance(_ detailDB: DetailDB?) -> Performance? {
         guard let detailDB = detailDB else { return nil}
         
-        for url in detailDB.imageUrls {
-            print("********* \(url)")
-        }
+//        for url in detailDB.imageUrls {
+//            print("********* \(url)")
+//        }
+        
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+        print("detail area : \(detailDB.area)")
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
         
         return Performance(id: detailDB.id,
                            title: detailDB.title,
@@ -234,6 +238,7 @@ extension KopisNetworkingManager {
                            showtime: detailDB.runtime,
                            ageLimit: detailDB.ageLimit,
                            salesVolume: 0,
+                           area: detailDB.area,
                            posterUrlList: detailDB.imageUrls,
                            //reviewList: [],
                            actorList: [],

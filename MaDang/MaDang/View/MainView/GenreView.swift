@@ -112,21 +112,6 @@ struct GenreView: View {
   
             }
             .background(.nineBlack)
-//            .allowsHitTesting(!isModalPresented)
-            
-            
-//            if isModalPresented {
-//                Color.black.opacity(0.4)
-//                    .edgesIgnoringSafeArea(.all)
-//                    .onTapGesture {
-//                        withAnimation {
-//                            isModalPresented.toggle()
-//                        }
-//                    }
-//                
-//                GenreModalView(showModal: $isModalPresented, selectedGenre: $currentGenre)
-//    
-//            }
         }
     }
     private func translateText() {

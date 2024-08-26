@@ -23,6 +23,7 @@ struct BestReviewRow: View {
 //                .resizable()
 //                .scaledToFit()
 //                .cornerRadius(10)
+            
             AsyncImage(url: URL(string: review.posterUrl)) {image in
                 image
                     .resizable()
