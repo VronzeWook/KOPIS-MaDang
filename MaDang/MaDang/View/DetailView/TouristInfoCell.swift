@@ -19,7 +19,7 @@ struct TouristInfoCell: View {
 
         VStack {
             // touristInfo.imageUrl
-            Image("kopisTestImage")
+            Image(touristInfo.imageUrl)
                 .resizable()
                 .frame(width: imageWidth, height: imageWidth)
                 .cornerRadius(10)
