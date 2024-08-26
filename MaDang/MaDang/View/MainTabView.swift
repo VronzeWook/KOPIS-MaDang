@@ -15,7 +15,7 @@ struct MainTabView: View {
     var body: some View {
 
                 TabView(selection: $selectedTab) {
-                    MainView(performs: $performs)
+                    MainView(performs: $performs, selectedTab: $selectedTab)
                         .tabItem {
                             Image(systemName: "newspaper")
                             Text(Title.main.name)

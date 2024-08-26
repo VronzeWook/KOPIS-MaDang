@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LogoHeader: View {
     
-    @State private var isModalPresented: Bool = false
+    @Binding var isModalPresented: Bool
     @Binding var currentRanking: Ranking
     
     var body: some View {
         
-        ZStack{
+ //       ZStack{
         VStack{
             HStack{
                 Image("logo")
@@ -27,22 +27,24 @@ struct LogoHeader: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
+                
                 Spacer()
                 
-                Button {
-                    withAnimation {
-                        isModalPresented.toggle()
-                    }
-                } label: {
+//                Button {
+//                    withAnimation {
+//                        isModalPresented.toggle()
+//                    }
+//                } label: {
                     HStack{
-                        Text("\(currentRanking.rawValue)")
+//                        Text("\(currentRanking.rawValue)")
+                         Text("By Likes")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(.nineYellow)
                             .padding(.vertical, 8)
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundStyle(.nineYellow)
+//                        
+//                        Image(systemName: "chevron.down")
+//                            .foregroundStyle(.nineYellow)
                         
                     }
                     .padding(.horizontal, 18)
@@ -50,30 +52,37 @@ struct LogoHeader: View {
                         RoundedRectangle(cornerRadius: 18.5)
                             .foregroundStyle(.nineYellow.opacity(0.2))
                     )
-                }
+//                }
             }
             }
-            if isModalPresented {
-                Color.black.opacity(0.4)
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                        withAnimation {
-                            isModalPresented.toggle()
-                        }
-                    }
-                
-                    RankingModalView(showModal: $isModalPresented, selectedRanking: $currentRanking)
-                    
-                
-            }
+//        .sheet(isPresented: $isModalPresented, content: {
+//            RankingModalView(showModal: $isModalPresented, selectedRanking: $currentRanking)
+//                .presentationDetents([.fraction(0.3)]) // 모달 높이를 화면의 30%로 설정
+//                .presentationDragIndicator(.visible)  // 모달 상단에 드래그 바 표시
+//        })
+        
+        
+        //            if isModalPresented {
+//                Color.black.opacity(0.4)
+//                    .edgesIgnoringSafeArea(.all)
+//                    .onTapGesture {
+//                        withAnimation {
+//                            isModalPresented.toggle()
+//                        }
+//                    }
+//                
+//                    RankingModalView(showModal: $isModalPresented, selectedRanking: $currentRanking)
+//                    
+//                
+//            }
             
-        }
+//        }
         .background(.nineBlack)
         .padding(.horizontal,16)
     }
 }
 
 #Preview{
-    LogoHeader(currentRanking: .constant(.Likes))
+    LogoHeader(isModalPresented: .constant(false), currentRanking: .constant(.Likes))
 }
 

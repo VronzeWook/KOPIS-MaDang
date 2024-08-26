@@ -33,14 +33,14 @@ struct AccountView: View {
                         print("Error signing out: %@", signOutError)
                     }
                 } label: {
-                    Text("로그아웃")
+                    Text("Logout")
                 }
                 .padding()
                 
                 Button {
                     showReauthAlert = true
                 } label: {
-                    Text("회원 탈퇴")
+                    Text("Delete Account")
                         .foregroundColor(.red)
                 }
                 .padding()

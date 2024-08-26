@@ -9,15 +9,30 @@ import SwiftUI
 
 struct RankingListCell: View {
     let rank: Int
-    let perform: Performance
-
+    @Binding var perform: Performance
+    let selection: Int
     @State private var averageRating: Double = 0.0
-
+    
+    var likeCount: Int {
+        switch selection {
+        case 0:
+            return perform.likeCount
+        case 1:
+            return perform.likeCountUSA
+        case 2:
+            return perform.likeCountCHN
+        case 3:
+            return perform.likeCountJPN
+        default:
+            return perform.likeCount
+        }
+    }
+    
     var body: some View {
         let screenWidth = UIScreen.main.bounds.width
         let imageWidth = screenWidth * 1 / 3.1
         let aspectRatio: CGFloat = 173 / 123
-
+        
         HStack(alignment:.top){
             VStack(alignment:.leading){
                 HStack {
@@ -37,7 +52,7 @@ struct RankingListCell: View {
                     Image(systemName: "heart.fill")
                         .font(.system(size: 14))
                         .foregroundStyle(.nineYellow)
-                    Text("\(perform.likeCount)")
+                    Text("\(likeCount)")
                         .font(.system(size: 12))
                         .fontWeight(.semibold)
                         .foregroundStyle(.nineYellow)
@@ -85,6 +100,9 @@ struct RankingListCell: View {
         .background(.nineDarkGray)
         .cornerRadius(10)
         .onAppear {
+            loadAverageRating()
+        }
+        .onChange(of: perform) { _ in
             loadAverageRating()
         }
     }

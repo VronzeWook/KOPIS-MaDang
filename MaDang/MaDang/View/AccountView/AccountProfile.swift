@@ -80,24 +80,24 @@ struct ProfileView : View {
     
     var body: some View {
         VStack{
-            HStack{
-                Spacer()
-                
-                Button(action: {
-                    showingImagePicker = true
-                }) {
-                    HStack {
-                        Image(systemName: "square.and.pencil")
-                            .font(.system(size: 14))
-                            .foregroundStyle(.gray)
-                        Text("Edit")
-                            .font(.system(size: 14))
-                            .foregroundStyle(.gray)
-                    }
-                }
-            }
-            .padding(.top,24)
-            .padding(.horizontal, 22)
+//            HStack{
+//                Spacer()
+//                
+//                Button(action: {
+//                    showingImagePicker = true
+//                }) {
+//                    HStack {
+//                        Image(systemName: "square.and.pencil")
+//                            .font(.system(size: 14))
+//                            .foregroundStyle(.gray)
+//                        Text("Edit")
+//                            .font(.system(size: 14))
+//                            .foregroundStyle(.gray)
+//                    }
+//                }
+//            }
+//            .padding(.top,24)
+//            .padding(.horizontal, 22)
             
             VStack{
                 profileImage?
@@ -105,6 +105,7 @@ struct ProfileView : View {
                     .frame(width: 82, height: 82)
                     .scaledToFit()
                     .cornerRadius(90)
+                    .padding(.top, 24)
                 HStack{
                     Text(name)
                         .font(.system(size: 26))

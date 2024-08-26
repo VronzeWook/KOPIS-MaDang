@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LangSelectionView: View {
-    @State private var selection = 0
+    @Binding var selection: Int
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -70,5 +70,5 @@ struct LangSelectionView: View {
 }
 
 #Preview{
-    LangSelectionView()
+    LangSelectionView(selection: .constant(1))
 }
