@@ -2,10 +2,13 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var userManager: UserManager
+    @EnvironmentObject var reportManager: ReportManager
     @Binding var perform: Performance
     @State private var isDataLoaded = false
     @State private var isFavorite = false
     @State private var isReportModalPresented = false
+    @State private var isDeleteModalPresented = false
+    @State private var isChangedReview = false
     
     init(perform: Binding<Performance>) {
         self._perform = perform // @Binding 변수를 초기화합니다.
@@ -31,7 +34,7 @@ struct DetailView: View {
                     DetailInfoView(perform: $perform)
                         .padding(.bottom, 96)
                     DetailImageView(perform: $perform)
-                    DetailReviewView(perform: $perform, isReportModalPresented: $isReportModalPresented)
+                    DetailReviewView(perform: $perform, isReportModalPresented: $isReportModalPresented, isDeleteModalPresented: $isDeleteModalPresented, isChangedReview: $isChangedReview)
                     // DetailCastingView(numberOfCircles: 7, perform: $perform)
                     DetailTouristInfoView()
                 }
@@ -54,6 +57,49 @@ struct DetailView: View {
                         .transition(.scale)
                         .animation(.easeInOut, value: isReportModalPresented)
                 }
+                
+                if isDeleteModalPresented {
+                    Color.black.opacity(0.4)
+                        .edgesIgnoringSafeArea(.all)
+                        .onTapGesture {
+                            withAnimation {
+                                isReportModalPresented.toggle()
+                            }
+                        }
+                    
+                    VStack{
+                        Button {
+                            guard let review = reportManager.selectedReview else { return }
+                            FirestoreManager.shared.deleteReview(reviewId: review.id!) { result in
+                                switch result {
+                                case .success():
+                                    print("Review deleted successfully.")
+                                case .failure(let error):
+                                    print("Failed to delete review: \(error.localizedDescription)")
+                                }
+                            }
+                            isDeleteModalPresented.toggle()
+                            isChangedReview.toggle()
+                        } label: {
+                            Text("Delete")
+                                .foregroundStyle(.nineYellow)
+                        }
+
+                        Divider()
+                            .foregroundStyle(.gray)
+                        
+                        Button {
+                            isDeleteModalPresented.toggle()
+                        } label: {
+                            Text("Cancel")
+                                .foregroundStyle(.red)
+                        }
+                        
+                    }
+                    .background(.nineDarkGray)
+                    
+                }
+                
             }
         }
         .navigationTitle("\(perform.title)")
