@@ -71,6 +71,7 @@ struct MaDangApp: App {
         
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var userManager: UserManager = UserManager()
+    @StateObject private var reportManager: ReportManager = ReportManager()
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.black
@@ -93,6 +94,7 @@ struct MaDangApp: App {
                 }
             }
             .environmentObject(userManager)
+            .environmentObject(reportManager)
         }
     }
     

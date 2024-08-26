@@ -5,7 +5,8 @@ struct DetailView: View {
     @Binding var perform: Performance
     @State private var isDataLoaded = false
     @State private var isFavorite = false
-
+    @State private var isReportModalPresented = false
+    
     init(perform: Binding<Performance>) {
         self._perform = perform // @Binding 변수를 초기화합니다.
          // Create a custom appearance for the navigation bar
@@ -23,18 +24,37 @@ struct DetailView: View {
 
     
     var body: some View {
-        ScrollView {
-            DetailInfoView(perform: $perform)
-                .padding(.bottom, 96)
-            DetailImageView(perform: $perform)
-            DetailReviewView(perform: $perform)
-            // DetailCastingView(numberOfCircles: 7, perform: $perform)
-            DetailTouristInfoView()
-        }
-        .background(.nineBlack)
-        .onAppear {
-            isFavorite = userManager.user!.likePerformIdList.contains(perform.id)
-            loadPerformanceData()
+        NavigationStack{
+            ZStack{
+                
+                ScrollView {
+                    DetailInfoView(perform: $perform)
+                        .padding(.bottom, 96)
+                    DetailImageView(perform: $perform)
+                    DetailReviewView(perform: $perform, isReportModalPresented: $isReportModalPresented)
+                    // DetailCastingView(numberOfCircles: 7, perform: $perform)
+                    DetailTouristInfoView()
+                }
+                .background(.nineBlack)
+                .onAppear {
+                    isFavorite = userManager.user!.likePerformIdList.contains(perform.id)
+                    loadPerformanceData()
+                }
+                
+                if isReportModalPresented {
+                    Color.black.opacity(0.4)
+                        .edgesIgnoringSafeArea(.all)
+                        .onTapGesture {
+                            withAnimation {
+                                isReportModalPresented.toggle()
+                            }
+                        }
+                    
+                    ReportModalView(showModal: $isReportModalPresented)
+                        .transition(.scale)
+                        .animation(.easeInOut, value: isReportModalPresented)
+                }
+            }
         }
         .navigationTitle("\(perform.title)")
         .toolbar {

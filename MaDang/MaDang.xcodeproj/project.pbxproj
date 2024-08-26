@@ -52,6 +52,8 @@
 		33739DFC2C7C850600757C93 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFB2C7C850600757C93 /* FAQView.swift */; };
 		33739DFE2C7C851500757C93 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFD2C7C851500757C93 /* AboutUsView.swift */; };
 		33739E002C7CCC6E00757C93 /* DetailViewForBestReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */; };
+		33739E022C7CF65C00757C93 /* ReportModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739E012C7CF65C00757C93 /* ReportModalView.swift */; };
+		33739E042C7D002800757C93 /* ReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33739E032C7D002800757C93 /* ReportManager.swift */; };
 		33A068982C73B79200EF0F09 /* TouristInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068972C73B79200EF0F09 /* TouristInfoCell.swift */; };
 		33A0689A2C73C1AD00EF0F09 /* TouristInfoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */; };
 		33A068A82C747BB300EF0F09 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33A068A72C747BB300EF0F09 /* FirebaseAnalytics */; };
@@ -160,6 +162,8 @@
 		33739DFB2C7C850600757C93 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		33739DFD2C7C851500757C93 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		33739DFF2C7CCC6E00757C93 /* DetailViewForBestReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewForBestReview.swift; sourceTree = "<group>"; };
+		33739E012C7CF65C00757C93 /* ReportModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModalView.swift; sourceTree = "<group>"; };
+		33739E032C7D002800757C93 /* ReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportManager.swift; sourceTree = "<group>"; };
 		33A068972C73B79200EF0F09 /* TouristInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoCell.swift; sourceTree = "<group>"; };
 		33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristInfoGridView.swift; sourceTree = "<group>"; };
 		33A0689C2C7464C300EF0F09 /* MaDang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MaDang.entitlements; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 				33388D8C2C6F368300DECDC3 /* DetailTouristInfoView.swift */,
 				33A068992C73C1AD00EF0F09 /* TouristInfoGridView.swift */,
 				33A068972C73B79200EF0F09 /* TouristInfoCell.swift */,
+				33739E012C7CF65C00757C93 /* ReportModalView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				33388DF52C720F3300DECDC3 /* GPTManager.swift */,
 				33A068DB2C7518AC00EF0F09 /* FirestoreManager.swift */,
 				33DF50682C77B1F300D0A5C1 /* UserManager.swift */,
+				33739E032C7D002800757C93 /* ReportManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -605,12 +611,14 @@
 				4665F0E82C721F68007867FB /* RankingListCell.swift in Sources */,
 				46C62C752C77D64300357422 /* GPTTesttView.swift in Sources */,
 				33739DFC2C7C850600757C93 /* FAQView.swift in Sources */,
+				33739E042C7D002800757C93 /* ReportManager.swift in Sources */,
 				33388D982C6F8E2800DECDC3 /* Actor.swift in Sources */,
 				33388D9A2C6F8EC000DECDC3 /* Review.swift in Sources */,
 				33388DFF2C7226D900DECDC3 /* DetailXMLParser.swift in Sources */,
 				4665F1262C73B04B007867FB /* ByGenreListCell.swift in Sources */,
 				4665F12A2C73B08B007867FB /* ByGenreView.swift in Sources */,
 				4665F0F02C72384F007867FB /* Title.swift in Sources */,
+				33739E022C7CF65C00757C93 /* ReportModalView.swift in Sources */,
 				46E02B9F2C750A6F002CA1A3 /* AlertSettingView.swift in Sources */,
 				4665F0EE2C723802007867FB /* MainTabView.swift in Sources */,
 				33388D9E2C6F906B00DECDC3 /* User.swift in Sources */,
