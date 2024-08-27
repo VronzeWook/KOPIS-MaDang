@@ -18,6 +18,7 @@ struct ReportModalView: View {
             )
             .font(.callout)
             .foregroundStyle(.gray)
+            .padding(.horizontal, 16)
             .padding(.bottom, 20)
             
             Text("Please select a reason for reporting.")

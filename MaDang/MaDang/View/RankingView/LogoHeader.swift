@@ -16,11 +16,11 @@ struct LogoHeader: View {
         
  //       ZStack{
         VStack{
-            HStack{
-                Image("logo")
-                
-                Spacer()
-            }.padding(.bottom,5)
+//            HStack{
+//                Image("logo")
+//                
+//                Spacer()
+//            }.padding(.bottom,5)
             
             HStack{
                 Text("Ranking")
