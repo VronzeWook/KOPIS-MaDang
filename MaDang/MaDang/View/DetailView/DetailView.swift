@@ -36,7 +36,7 @@ struct DetailView: View {
                     DetailImageView(perform: $perform)
                     DetailReviewView(perform: $perform, isReportModalPresented: $isReportModalPresented, isDeleteModalPresented: $isDeleteModalPresented, isChangedReview: $isChangedReview)
                     // DetailCastingView(numberOfCircles: 7, perform: $perform)
-                    DetailTouristInfoView()
+                    // DetailTouristInfoView()
                 }
                 .background(.nineBlack)
                 .onAppear {

@@ -47,7 +47,7 @@ struct DetailImageView: View {
                             .scaledToFit()
                             .frame(maxWidth: .infinity)
                     } placeholder: {
-                        Color.gray
+                        ProgressView()
                     }
                     
                     

@@ -33,7 +33,7 @@ struct RankingListCell: View {
         let imageWidth = screenWidth * 1 / 3.1
         let aspectRatio: CGFloat = 173 / 123
         
-        HStack(alignment:.top){
+        HStack(alignment:.center){
             VStack(alignment:.leading){
                 HStack {
                     Circle()
@@ -65,11 +65,12 @@ struct RankingListCell: View {
                     .padding(.top, 12)
                 
                 Text(perform.title)
-                    .font(.system(size: 24))
+                    .font(.system(size: 16))
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
                     .padding(.horizontal, 16)
                     .padding(.top, 1)
+                    .lineLimit(2)
                 
                 Text(perform.genre.rawValue)
                     .font(.system(size: 10))
@@ -85,8 +86,9 @@ struct RankingListCell: View {
                     .padding(.horizontal, 16)
                     .padding(.top, 0)
                     .padding(.bottom, 16)
-                
             }
+            
+            Spacer()
             
             AsyncImage(url: URL(string: perform.posterUrlList[0])) { image in
                 image
@@ -94,7 +96,8 @@ struct RankingListCell: View {
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
             } placeholder: {
-                Color.gray
+                ProgressView()
+                    .padding(.trailing, 36)
             }
         }
         .background(.nineDarkGray)

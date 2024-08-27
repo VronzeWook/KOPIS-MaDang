@@ -99,17 +99,17 @@ struct LikesView: View {
                                         )
                                 }
                                 
-                                Button(action: {
-                                    // toggleFavorite(for: performance.id)
-                                    
-                                }) {
+//                                Button(action: {
+//                                    // toggleFavorite(for: performance.id)
+//                                    
+//                                }) {
                                     Image(systemName: userManager.user!.likePerformIdList.contains(performance.id) ? "heart.fill" : "heart")
                                         .font(.system(size: 20))
                                         .foregroundColor(userManager.user!.likePerformIdList.contains(performance.id) ? .nineYellow : .white)
                                         .padding(5)
                                         .scaleEffect(userManager.user!.likePerformIdList.contains(performance.id) ? 1.2 : 1.0)
-                                }
-                                .padding(10)
+//                                }
+//                                .padding(10)
                             }
                             
                             Text(performance.title)
