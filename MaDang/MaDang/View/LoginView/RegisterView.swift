@@ -218,7 +218,7 @@ struct RegisterView: View {
 
             Spacer()
 
-            Image("Madang1")
+            Image("logo")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 60)

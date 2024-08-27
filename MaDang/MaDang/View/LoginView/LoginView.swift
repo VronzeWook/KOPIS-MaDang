@@ -14,7 +14,7 @@ struct LoginView: View {
 
             Spacer()
 
-            Image("Madang1")
+            Image("logo")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 60)
@@ -129,10 +129,10 @@ extension View {
         }
     }
 }
-
-#Preview {
-    NavigationStack {
-        LoginView()
-            .environmentObject(UserManager())
-    }
-}
+//
+//#Preview {
+//    NavigationStack {
+//        LoginView()
+//            .environmentObject(UserManager())
+//    }
+//}

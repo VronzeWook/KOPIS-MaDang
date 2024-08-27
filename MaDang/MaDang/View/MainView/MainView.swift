@@ -19,7 +19,7 @@ struct MainView: View {
                         
                         WhatIsNewView(performs: $performs)
                             .padding(.bottom, 8)
-                        
+                            .padding(.top, 16)
                         PopularityRankingView(selectedTab: $selectedTab, performs: $performs)
                             .padding(.top, 16)
                         //.border(.nineYellow)
@@ -72,6 +72,8 @@ struct MainView: View {
                 }
             }
         }
+        .padding(.horizontal, 8)
+        .background(.nineBlack)
 
     }
 }
