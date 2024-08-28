@@ -18,7 +18,14 @@ enum Genre: String, Codable, CaseIterable {
     case PublicDance = "대중무용"
     case CircusMagic = "서커스/마술"
     
-    
+//    case Theater
+//    case Musical
+//    case Classic
+//    case KoreanTraditionalMusic
+//    case PopularMusic
+//    case KoreanTraditionalDancing
+//    case PublicDance
+//    case CircusMagic
 //    case All
 //    case Theater = "Theater"
 //    case Musical = "Musical"

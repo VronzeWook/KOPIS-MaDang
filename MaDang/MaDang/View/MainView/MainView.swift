@@ -15,7 +15,7 @@ struct MainView: View {
             ZStack {
                 ScrollView {
                     VStack {
-//                        MainHeader(currentLang: $currentLang, isLangModalPresented: $isLangModalPresented)
+                        MainHeader(currentLang: $currentLang, isLangModalPresented: $isLangModalPresented)
                         
                         WhatIsNewView(performs: $performs)
                             .padding(.bottom, 8)

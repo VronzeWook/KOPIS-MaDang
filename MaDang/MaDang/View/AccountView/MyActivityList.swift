@@ -68,30 +68,34 @@ struct MyActivityList: View {
                         .padding(.vertical,4)
                     }
                     
-//                    Divider()
-//                        .background(Color.gray)
-//                        .padding(.vertical,4)
-//                    
-//                    HStack{
-//                        Image(systemName: "alarm")
-//                            .font(.system(size: 18))
-//                            .fontWeight(.medium)
-//                            .foregroundStyle(.white)
-//                        Text("Alarm")
-//                            .font(.system(size: 18))
-//                            .fontWeight(.medium)
-//                            .foregroundStyle(.white)
-//                        
-//                        Spacer()
-//                        
-//                        Image(systemName:"chevron.right")
-//                            .font(.system(size: 18))
-//                            .fontWeight(.medium)
-//                            .foregroundStyle(.white)
-//                    }
+                    Divider()
+                        .background(Color.gray)
+                        .padding(.vertical,4)
                     
                     
-                    
+                    NavigationLink {
+                        AlertSettingView()
+                    } label: {
+                        HStack{
+                            Image(systemName: "alarm")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            Text("Alarm")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                            
+                            Spacer()
+                            
+                            Image(systemName:"chevron.right")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                        }
+                        
+                    }
+   
                 }
                 .padding(20)
                 .background(.nineDarkGray)

@@ -14,11 +14,11 @@ struct ByGenreHeader: View {
 
     var body: some View {
         VStack {
-//            HStack {
-//                Image("logo")
-//                Spacer()
-//            }
-//            .padding(.bottom, 5)
+            HStack {
+                Image("logo")
+                Spacer()
+            }
+            .padding(.bottom, 5)
 
             HStack {
                 Text("Genre")
