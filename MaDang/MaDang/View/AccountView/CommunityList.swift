@@ -48,28 +48,28 @@ struct CommunityList: View {
 
                     
                     
-                    //                Divider()
-                    //                    .background(Color.gray)
-                    //                    .padding(.vertical,4)
-                    //
-                    //                HStack{
-                    //                    Image(systemName: "doc.text")
-                    //                        .font(.system(size: 18))
-                    //                        .fontWeight(.medium)
-                    //                        .foregroundStyle(.white)
-                    //                    Text("Report record")
-                    //                        .font(.system(size: 18))
-                    //                        .fontWeight(.medium)
-                    //                        .foregroundStyle(.white)
-                    //
-                    //                    Spacer()
-                    //
-                    //                    Image(systemName:"chevron.right")
-                    //                        .font(.system(size: 18))
-                    //                        .fontWeight(.medium)
-                    //                        .foregroundStyle(.white)
-                    //                }
-                    //                .padding(.vertical,4)
+                                    Divider()
+                                        .background(Color.gray)
+                                        .padding(.vertical,4)
+                    
+                                    HStack{
+                                        Image(systemName: "doc.text")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                            .foregroundStyle(.white)
+                                        Text("Report record")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                            .foregroundStyle(.white)
+                    
+                                        Spacer()
+                    
+                                        Image(systemName:"chevron.right")
+                                            .font(.system(size: 18))
+                                            .fontWeight(.medium)
+                                            .foregroundStyle(.white)
+                                    }
+                                    .padding(.vertical,4)
                     //
                     Divider()
                         .background(Color.gray)

@@ -16,11 +16,11 @@ struct LogoHeader: View {
         
  //       ZStack{
         VStack{
-//            HStack{
-//                Image("logo")
-//                
-//                Spacer()
-//            }.padding(.bottom,5)
+            HStack{
+                Image("logo")
+                
+                Spacer()
+            }.padding(.bottom,5)
             
             HStack{
                 Text("Ranking")
@@ -30,21 +30,21 @@ struct LogoHeader: View {
                 
                 Spacer()
                 
-//                Button {
-//                    withAnimation {
-//                        isModalPresented.toggle()
-//                    }
-//                } label: {
+                Button {
+                    withAnimation {
+                        isModalPresented.toggle()
+                    }
+                } label: {
                     HStack{
-//                        Text("\(currentRanking.rawValue)")
-                         Text("By Likes")
+                        Text("\(currentRanking.rawValue)")
+                       //  Text("By Likes")
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(.nineYellow)
                             .padding(.vertical, 8)
-//                        
-//                        Image(systemName: "chevron.down")
-//                            .foregroundStyle(.nineYellow)
+                        
+                        Image(systemName: "chevron.down")
+                            .foregroundStyle(.nineYellow)
                         
                     }
                     .padding(.horizontal, 18)
@@ -52,7 +52,7 @@ struct LogoHeader: View {
                         RoundedRectangle(cornerRadius: 18.5)
                             .foregroundStyle(.nineYellow.opacity(0.2))
                     )
-//                }
+                }
             }
             }
 //        .sheet(isPresented: $isModalPresented, content: {
