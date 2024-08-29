@@ -73,26 +73,26 @@ final class MyXMLParser: NSObject, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         let dbs = Dbs(script: script, db: dbList)
         welcome4 = Welcome4(dbs: dbs)
-    
-        if let welcome4 = welcome4 {
-            print("script: \(welcome4.dbs.script)")
-            print("=========================")
-            for db in welcome4.dbs.db {
-                print("=========================")
-                print("mt20id: \(db.mt20id)")
-                print("prfnm: \(db.prfnm)")
-                print("prfpdfrom: \(db.prfpdfrom)")
-                print("prfpdto: \(db.prfpdto)")
-                print("fcltynm: \(db.fcltynm)")
-                print("poster: \(db.poster)")
-                print("area: \(db.area)")
-                print("genrenm: \(db.genrenm)")
-                print("openrun: \(db.openrun)")
-                print("prfstate: \(db.prfstate)")
-                print("=========================")
-            }
-            print("=========================")
-        }
+//    
+//        if let welcome4 = welcome4 {
+//            print("script: \(welcome4.dbs.script)")
+//            print("=========================")
+//            for db in welcome4.dbs.db {
+//                print("=========================")
+//                print("mt20id: \(db.mt20id)")
+//                print("prfnm: \(db.prfnm)")
+//                print("prfpdfrom: \(db.prfpdfrom)")
+//                print("prfpdto: \(db.prfpdto)")
+//                print("fcltynm: \(db.fcltynm)")
+//                print("poster: \(db.poster)")
+//                print("area: \(db.area)")
+//                print("genrenm: \(db.genrenm)")
+//                print("openrun: \(db.openrun)")
+//                print("prfstate: \(db.prfstate)")
+//                print("=========================")
+//            }
+//            print("=========================")
+//        }
     }
     
     // 파싱된 데이터를 반환하는 메서드

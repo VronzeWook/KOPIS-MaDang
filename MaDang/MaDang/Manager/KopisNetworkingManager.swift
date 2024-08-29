@@ -241,7 +241,7 @@ extension KopisNetworkingManager {
                            area: detailDB.area,
                            posterUrlList: detailDB.imageUrls,
                            //reviewList: [],
-                           actorList: [],
+                           actorList: detailDB.cast,
                            likeCountUSA: 0,
                            starRating: 0
         )

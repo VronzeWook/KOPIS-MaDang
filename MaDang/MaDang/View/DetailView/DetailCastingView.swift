@@ -30,14 +30,14 @@ struct DetailCastingView: View {
             }
             
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(0..<numberOfCircles, id: \.self) { _ in
+                ForEach(perform.actorList.indices, id: \.self) { index in
                     VStack{
                         Image(systemName: "person.circle.fill")
                             .resizable()
                             .foregroundStyle(.white)
                             .scaledToFit()
                             .frame(width: 80)
-                     Text("Se eun Park")
+                        Text("\(perform.actorList[index])")
                             .font(.system(size: 16))
                             .foregroundStyle(.white)
                             .multilineTextAlignment(.center)

@@ -130,7 +130,7 @@ struct DetailView: View {
                     perform.ageLimit = data.ageLimit
                     perform.posterUrlList.append(contentsOf: data.posterUrlList)
                     perform.area = data.area
-
+                    perform.actorList = data.actorList
 //                    perform.startDate = data.startDate
 //                    perform.endDate = data.endDate
                 }
